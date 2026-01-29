@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
 import './globals.css';
+import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/sections/footer';
+import WelcomeScreen from '@/app/components/WelcomeScreen';
 import { DM_Sans } from 'next/font/google';
 import { ReactLenis } from '@/lib/lenis';
 
@@ -31,7 +33,9 @@ export default function RootLayout({
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 </Head>
                 <body className={`${dmsans.className} antialiased`}>
-                    {children}
+                    <WelcomeScreen />
+                    <Navbar />
+                    <main className="pt-[60px] md:pt-[100px]">{children}</main>
                     <Footer />
                 </body>
             </ReactLenis>

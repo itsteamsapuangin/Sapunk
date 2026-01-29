@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Footer() {
     return (
         <footer className="px-12 md:px-0 relative w-full bg-black text-white overflow-hidden border-t border-foreground/10">
-            <div className="absolute inset-0 lg:bottom-20 lg:left-20 opacity-50">
+            <div className="absolute inset-0 lg:bottom-20 lg:left-20 opacity-50 pointer-events-none">
                 <Image
                     src="/asset/race-outline.png"
                     alt="Race Outline"
