@@ -13,7 +13,7 @@ export default function Footer() {
                     alt="Race Outline"
                     width={438}
                     height={1099.53}
-                    className='h-auto max-w-full'
+                    className="h-auto max-w-full"
                 />
             </div>
 
@@ -35,11 +35,15 @@ export default function Footer() {
                         <div className="space-y-4">
                             <div>
                                 <h4 className="text-lg font-semibold">ITS Team Sapuangin</h4>
-                                <p className="text-lg font-semibold">Head Office Building A, 2nd Floor</p>
+                                <p className="text-lg font-semibold">
+                                    Head Office Building A, 2nd Floor
+                                </p>
                             </div>
                             <p className="text-sm text-gray-300 leading-relaxed max-w-md mx-auto lg:mx-0">
-                                Department of Mechanical Engineering<br />
-                                Sepuluh Nopember Institute of Technology · ITS<br />
+                                Department of Mechanical Engineering
+                                <br />
+                                Sepuluh Nopember Institute of Technology · ITS
+                                <br />
                                 Sukolilo Campus Area, Surabaya, 60111
                             </p>
                         </div>
@@ -50,31 +54,46 @@ export default function Footer() {
                         {/* Row 1: About Us and Navigations */}
                         <div className="flex flex-col md:flex-row w-full items-center md:items-start justify-center w-fit gap-12">
                             {/* About Us Links */}
-                            <div className='lg:w-full md:w-1/2 w-fit'>
+                            <div className="lg:w-full md:w-1/2 w-fit">
                                 <h4 className="text-lg font-bold mb-4">About Us</h4>
                                 <ul className="space-y-4">
                                     <li>
-                                        <Link href="/team" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/team"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Team
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/cars" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/cars"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Cars
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/achievements" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/achievements"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Achievements
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/competition" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/competition"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Competition
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/gallery" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/gallery"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Gallery
                                         </Link>
                                     </li>
@@ -82,26 +101,38 @@ export default function Footer() {
                             </div>
 
                             {/* Navigations Links */}
-                            <div className='lg:w-fit md:w-1/2 w-fit'>
+                            <div className="lg:w-fit md:w-1/2 w-fit">
                                 <h4 className="text-lg font-bold mb-4">Navigations</h4>
                                 <ul className="space-y-4">
                                     <li>
-                                        <Link href="/news" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/news"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             News
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/sponsors" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/sponsors"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Sponsors
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/recruitment" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/recruitment"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Recruitment
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/contact" className="text-base text-white hover:text-gray-300 transition-colors">
+                                        <Link
+                                            href="/contact"
+                                            className="text-base text-white hover:text-gray-300 transition-colors"
+                                        >
                                             Contact Us
                                         </Link>
                                     </li>
@@ -110,7 +141,7 @@ export default function Footer() {
                         </div>
 
                         {/* Row 2: Social Media */}
-                        <div className='flex flex-col md:flex-row items-center lg:justify-between justify-center md:gap-12 gap-4'>
+                        <div className="flex flex-col md:flex-row items-center lg:justify-between justify-center md:gap-12 gap-4">
                             <h4 className="text-lg font-bold">Social Media</h4>
                             <div className="flex gap-8 justify-center lg:justify-start">
                                 <a
@@ -178,9 +209,9 @@ export default function Footer() {
 
                     {/* Copyright - Left on Desktop, Center on Mobile */}
                     <p className="text-sm text-gray-400 text-center lg:text-left">
-                        Institut Teknologi Sepuluh Nopember © 2026 ITS Team Sapuangin. All Rights Reserved
+                        Institut Teknologi Sepuluh Nopember © 2026 ITS Team Sapuangin. All Rights
+                        Reserved
                     </p>
-
                 </div>
             </div>
         </footer>

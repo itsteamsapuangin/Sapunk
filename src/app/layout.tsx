@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import Head from 'next/head';
-import "./globals.css";
+import './globals.css';
 import Footer from '@/app/components/sections/footer';
-import { DM_Sans } from "next/font/google";
+import { DM_Sans } from 'next/font/google';
 import { ReactLenis } from '@/lib/lenis';
 
 const dmsans = DM_Sans({
@@ -11,31 +11,30 @@ const dmsans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "ITS Team Sapuangin",
-  description: "Home of The World Champions",
+    title: 'ITS Team Sapuangin',
+    description: 'Home of The World Champions',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en"
-      suppressContentEditableWarning
-      className=" overflow-y-auto [&::-webkit-scrollbar]:w-0"
-    >
-      <ReactLenis root>
-        <Head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Head>
-        <body
-          className={`${dmsans.className} antialiased`}
+    return (
+        <html
+            lang="en"
+            suppressContentEditableWarning
+            className=" overflow-y-auto [&::-webkit-scrollbar]:w-0"
         >
-          {children}
-          <Footer />
-        </body>
-      </ReactLenis>
-    </html>
-  );
+            <ReactLenis root>
+                <Head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                </Head>
+                <body className={`${dmsans.className} antialiased`}>
+                    {children}
+                    <Footer />
+                </body>
+            </ReactLenis>
+        </html>
+    );
 }
