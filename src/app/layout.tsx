@@ -35,7 +35,7 @@ export default function RootLayout({
                 <body className={`${dmsans.className} antialiased`}>
                     <WelcomeScreen />
                     <Navbar />
-                    <main className="pt-[60px] md:pt-[100px]">{children}</main>
+                    <main>{children}</main>
                     <Footer />
                 </body>
             </ReactLenis>

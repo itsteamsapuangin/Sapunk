@@ -1,11 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Change navbar style after scrolling past hero section (typically 400-600px)
+            setIsScrolled(window.scrollY > 400);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navLinks = [
         { href: '/team', label: 'Team' },
@@ -18,7 +29,9 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-[100] bg-transparent">
+        <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+            isScrolled ? 'bg-white/20 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        }`}>
             <div className="hidden md:block h-fit">
                 <div className="container mx-auto h-full py-4 flex items-center justify-between">
                     {/* Logo */}
@@ -26,13 +39,13 @@ export default function Navbar() {
                         href="/"
                         className="flex items-center hover:opacity-80 transition-opacity"
                     >
-                        <div className="relative h-16 w-auto">
+                        <div className="relative h-fit w-auto">
                             <Image
-                                src="/logo/sapuangin-white.png"
+                                src={isScrolled ? "/logo/sapuangin-color.png" : "/logo/sapuangin-white.png"}
                                 alt="ITS Team Sapuangin"
                                 width={200}
                                 height={64}
-                                className="h-12 w-auto object-contain"
+                                className="h-10 w-auto object-contain transition-all duration-300"
                                 priority
                             />
                         </div>
@@ -44,7 +57,9 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="relative text-white text-sm font-medium group"
+                                className={`relative text-md font-medium group transition-colors duration-300 ${
+                                    isScrolled ? 'text-black/70' : 'text-white'
+                                }`}
                             >
                                 <span className="transition-colors duration-200 group-hover:text-[#E50808]">
                                     {link.label}
@@ -67,11 +82,11 @@ export default function Navbar() {
                     >
                         <div className="relative h-fill w-auto">
                             <Image
-                                src="/logo/sapuangin-white.png"
+                                src={isScrolled ? "/asset/logo/sapuangin-color.png" : "/logo/sapuangin-white.png"}
                                 alt="ITS Team Sapuangin"
                                 width={150}
                                 height={40}
-                                className="h-8 w-auto object-contain"
+                                className="h-8 w-auto object-contain transition-all duration-300"
                                 priority
                             />
                         </div>
@@ -80,7 +95,9 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+                        className={`p-2 hover:bg-opacity-10 rounded-lg transition-colors ${
+                            isScrolled ? 'text-black hover:bg-black' : 'text-white hover:bg-white'
+                        }`}
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? (
