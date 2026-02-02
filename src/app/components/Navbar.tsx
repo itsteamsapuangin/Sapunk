@@ -7,13 +7,31 @@ import Image from 'next/image';
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isDarkSection, setIsDarkSection] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             // Change navbar style after scrolling past hero section (typically 400-600px)
             setIsScrolled(window.scrollY > 400);
+
+            // Detect if navbar is over a dark section
+            const navbarHeight = 80; // navbar height
+            const elementAtNavbar = document.elementFromPoint(window.innerWidth / 2, navbarHeight + 5);
+            
+            if (elementAtNavbar) {
+                const bgColor = window.getComputedStyle(elementAtNavbar).backgroundColor;
+                const parent = elementAtNavbar.closest('div[class*="bg-black"], div[class*="bg-gray"], section[class*="bg-black"]');
+                
+                // Check if element or its parent has dark background
+                const isDark = parent !== null || 
+                              bgColor.includes('rgb(0, 0, 0)') || 
+                              bgColor.includes('rgba(0, 0, 0');
+                
+                setIsDarkSection(isDark);
+            }
         };
 
+        handleScroll(); // Initial check
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -30,7 +48,11 @@ export default function Navbar() {
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-            isScrolled ? 'bg-white/20 backdrop-blur-md shadow-sm' : 'bg-transparent'
+            isScrolled 
+                ? isDarkSection 
+                    ? 'bg-white/20 backdrop-blur-md shadow-sm' 
+                    : 'bg-black/50 backdrop-blur-md shadow-sm'
+                : 'bg-transparent'
         }`}>
             <div className="hidden md:block h-fit">
                 <div className="container mx-auto h-full py-4 flex items-center justify-between">
@@ -41,7 +63,7 @@ export default function Navbar() {
                     >
                         <div className="relative h-fit w-auto">
                             <Image
-                                src={isScrolled ? "/logo/sapuangin-color.png" : "/logo/sapuangin-white.png"}
+                                src={isScrolled && !isDarkSection ? "/logo/sapuangin-color.png" : "/logo/sapuangin-white.png"}
                                 alt="ITS Team Sapuangin"
                                 width={200}
                                 height={64}
@@ -58,7 +80,7 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 className={`relative text-md font-medium group transition-colors duration-300 ${
-                                    isScrolled ? 'text-black/70' : 'text-white'
+                                    isScrolled && !isDarkSection ? 'text-black/70' : 'text-white'
                                 }`}
                             >
                                 <span className="transition-colors duration-200 group-hover:text-[#E50808]">
@@ -82,7 +104,7 @@ export default function Navbar() {
                     >
                         <div className="relative h-fill w-auto">
                             <Image
-                                src={isScrolled ? "/asset/logo/sapuangin-color.png" : "/logo/sapuangin-white.png"}
+                                src={isScrolled && !isDarkSection ? "/logo/sapuangin-color.png" : "/logo/sapuangin-white.png"}
                                 alt="ITS Team Sapuangin"
                                 width={150}
                                 height={40}
@@ -96,7 +118,7 @@ export default function Navbar() {
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className={`p-2 hover:bg-opacity-10 rounded-lg transition-colors ${
-                            isScrolled ? 'text-black hover:bg-black' : 'text-white hover:bg-white'
+                            isScrolled && !isDarkSection ? 'text-black hover:bg-black' : 'text-white hover:bg-white'
                         }`}
                         aria-label="Toggle menu"
                     >
