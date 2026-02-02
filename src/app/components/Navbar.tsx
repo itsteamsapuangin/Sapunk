@@ -12,26 +12,42 @@ export default function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             // Change navbar style after scrolling past hero section (typically 400-600px)
-            setIsScrolled(window.scrollY > 400);
+            setIsScrolled(window.scrollY > 100);
 
             // Detect if navbar is over a dark section
             const navbarHeight = 80; // navbar height
             const elementAtNavbar = document.elementFromPoint(
                 window.innerWidth / 2,
-                navbarHeight + 5
+                navbarHeight / 2
             );
 
             if (elementAtNavbar) {
                 const bgColor = window.getComputedStyle(elementAtNavbar).backgroundColor;
                 const parent = elementAtNavbar.closest(
-                    'div[class*="bg-black"], div[class*="bg-gray"], section[class*="bg-black"]'
+                    'div[class*="bg-black"], div[class*="bg-gray"], section[class*="bg-black"], div[class*="bg-white"], section[class*="bg-white"]'
                 );
 
-                // Check if element or its parent has dark background
-                const isDark =
-                    parent !== null ||
-                    bgColor.includes('rgb(0, 0, 0)') ||
-                    bgColor.includes('rgba(0, 0, 0');
+                // Parse RGB values to determine if background is dark or light
+                const rgbaMatch = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+                let isDark = true; // Default to dark
+
+                if (rgbaMatch) {
+                    const r = parseInt(rgbaMatch[1]);
+                    const g = parseInt(rgbaMatch[2]);
+                    const b = parseInt(rgbaMatch[3]);
+                    // Calculate luminance - if it's bright (> 128), it's a light background
+                    const luminance = (r + g + b) / 3;
+                    isDark = luminance < 128;
+                }
+
+                // Also check parent classes for explicit bg colors
+                if (parent) {
+                    if (parent.className.includes('bg-white')) {
+                        isDark = false;
+                    } else if (parent.className.includes('bg-black') || parent.className.includes('bg-gray')) {
+                        isDark = true;
+                    }
+                }
 
                 setIsDarkSection(isDark);
             }
@@ -54,13 +70,10 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-                isScrolled
-                    ? isDarkSection
-                        ? 'bg-white/20 backdrop-blur-md shadow-sm'
-                        : 'bg-black/50 backdrop-blur-md shadow-sm'
-                    : 'bg-transparent'
-            }`}
+            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isDarkSection
+                ? 'bg-white/10 backdrop-blur-md shadow-sm'
+                : 'bg-black/20 backdrop-blur-md shadow-sm'
+                }`}
         >
             <div className="hidden md:block h-fit">
                 <div className="container mx-auto h-full py-4 flex items-center justify-between">
@@ -72,7 +85,7 @@ export default function Navbar() {
                         <div className="relative h-fit w-auto">
                             <Image
                                 src={
-                                    isScrolled && !isDarkSection
+                                    !isDarkSection
                                         ? '/logo/sapuangin-color.png'
                                         : '/logo/sapuangin-white.png'
                                 }
@@ -91,9 +104,8 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`relative text-md font-medium group transition-colors duration-300 ${
-                                    isScrolled && !isDarkSection ? 'text-black/70' : 'text-white'
-                                }`}
+                                className={`relative text-md font-medium group transition-colors duration-300 ${!isDarkSection ? 'text-black/80' : 'text-white'
+                                    }`}
                             >
                                 <span className="transition-colors duration-200 group-hover:text-[#E50808]">
                                     {link.label}
@@ -107,7 +119,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Navbar - 60px height */}
-            <div className="md:hidden h-[80px]">
+            <div className="md:hidden h-[60px]">
                 <div className="container mx-auto h-full px-8 flex items-center justify-between">
                     {/* Mobile Logo */}
                     <Link
@@ -117,7 +129,7 @@ export default function Navbar() {
                         <div className="relative h-fill w-auto">
                             <Image
                                 src={
-                                    isScrolled && !isDarkSection
+                                    !isDarkSection
                                         ? '/logo/sapuangin-color.png'
                                         : '/logo/sapuangin-white.png'
                                 }
@@ -133,11 +145,10 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className={`p-2 hover:bg-opacity-10 rounded-lg transition-colors ${
-                            isScrolled && !isDarkSection
-                                ? 'text-black hover:bg-black'
-                                : 'text-white hover:bg-white'
-                        }`}
+                        className={`p-2 hover:bg-opacity-10 rounded-lg transition-colors ${!isDarkSection
+                            ? 'text-black hover:bg-black'
+                            : 'text-white hover:bg-white'
+                            }`}
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? (
@@ -176,11 +187,13 @@ export default function Navbar() {
 
                 {/* Mobile Menu Dropdown */}
                 <div
-                    className={`absolute top-[60px] left-0 right-0 bg-black/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-                        isMobileMenuOpen
+                    className={`absolute top-[60px] left-0 right-0 backdrop-blur-md transition-all duration-300 ease-in-out ${!isDarkSection
+                            ? 'bg-white/95 shadow-lg'
+                            : 'bg-black/95 shadow-sm'
+                        } ${isMobileMenuOpen
                             ? 'max-h-screen opacity-100'
                             : 'max-h-0 opacity-0 overflow-hidden'
-                    }`}
+                        }`}
                 >
                     <div className="container mx-auto px-4 py-4">
                         <div className="flex flex-col gap-1">
@@ -189,7 +202,10 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="relative text-white px-4 py-3 rounded-lg text-sm font-medium group transition-all duration-200 hover:bg-[#E50808]/10"
+                                    className={`relative px-4 py-3 rounded-lg text-sm font-medium group transition-all duration-200 ${!isDarkSection
+                                            ? 'text-black/80 hover:bg-[#E50808]/10'
+                                            : 'text-white hover:bg-[#E50808]/10'
+                                        }`}
                                 >
                                     <span className="transition-colors duration-200 group-hover:text-[#E50808]">
                                         {link.label}

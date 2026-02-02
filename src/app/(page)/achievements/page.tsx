@@ -316,7 +316,7 @@ const AchievementBadge = ({
         .join(' ');
 
     return (
-        <div className="flex items-center justify-center group relative">
+        <div className="flex items-center justify-center group relative max-w-sm w-full">
             <Image
                 src={`/page/achievements/hall-of-fame/${filename}.svg`}
                 alt={altText}
@@ -376,7 +376,7 @@ export default function AchievementsPage() {
                     </div>
 
                     {/* Stats */}
-                    <div className="flex flex-col md:flex justify-evenly md:justify-start md:items-start md:flex-row gap-8 md:gap-16 lg:gap-lg items-center justify-items-center text-black text-center w-full">
+                    <div className="flex flex-col md:flex justify-evenly md:justify-evenly md:items-start md:flex-row gap-8 md:gap-16 lg:gap-lg items-center justify-items-center text-black text-center w-full">
                         {STATS.map((stat, index) => (
                             <StatCard key={index} {...stat} />
                         ))}
@@ -427,7 +427,7 @@ export default function AchievementsPage() {
             <div className="bg-black flex flex-col items-center overflow-hidden px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-20 relative w-full">
                 <div className="mx-auto flex flex-col gap-8 md:gap-12 items-center relative w-full ">
                     {/* Achievement Badges Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 w-full">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 w-full justify-items-center">
                         {HALL_OF_FAME_BADGES.map((badge, index) => (
                             <AchievementBadge key={index} {...badge} />
                         ))}
