@@ -3,8 +3,8 @@ import Image from 'next/image';
 // Data structures
 const STATS = [
     { number: '8', label: 'Country' },
-    { number: '16', label: 'Years of Experience' },
     { number: '50+', label: 'Championship Title' },
+    { number: '16', label: 'Years of Experience' },
 ];
 
 const COUNTRIES = [
@@ -274,7 +274,7 @@ const SAE_AWARDS = ['2016-sae', '2015-sae', '2014-sae', '2013-sae'];
 
 // Helper Components
 const StatCard = ({ number, label }: { number: string; label: string }) => (
-    <div className="flex flex-col items-center justify-center h-fit gap-2 md:gap-0">
+    <div className="flex flex-col items-center w-fit justify-center h-fit">
         <p className="font-extrabold text-7xl md:text-7xl lg:text-[128px] tracking-[-3.84px] leading-normal">
             {number}
         </p>
@@ -376,7 +376,7 @@ export default function AchievementsPage() {
                     </div>
 
                     {/* Stats */}
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-[140px] items-center justify-center text-black text-center w-full">
+                    <div className="flex flex-col md:flex justify-evenly md:justify-start md:items-start md:flex-row gap-8 md:gap-16 lg:gap-lg items-center justify-items-center text-black text-center w-full">
                         {STATS.map((stat, index) => (
                             <StatCard key={index} {...stat} />
                         ))}
