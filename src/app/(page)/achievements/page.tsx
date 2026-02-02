@@ -19,58 +19,263 @@ const COUNTRIES = [
 ];
 
 const HALL_OF_FAME_BADGES = [
-    { filename: '2018-world-champs', date: '5-9 Sep 2018', location: 'London, UNITED KINGDOM', glowColor: 'gold' },
-    { filename: '2025-urban', date: '18-22 Jun 2025', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2025-vehicle', date: '18-22 Jun 2025', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2025-autonomus', date: '18-22 Jun 2025', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2024-regional', date: '15-19 May 2024', location: 'Jakarta, INDONESIA', glowColor: 'gold' },
-    { filename: '2024-urban', date: '15-19 May 2024', location: 'Jakarta, INDONESIA', glowColor: 'gold' },
-    { filename: '2023-urban', date: '10-14 Jul 2023', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2023-data-elementary', date: '10-14 Jul 2023', location: 'Surabaya, INDONESIA', glowColor: 'blue' },
-    { filename: '2022-data-elementary', date: '8-12 Aug 2022', location: 'Manila, PHILIPPINES', glowColor: 'blue' },
-    { filename: '2021-data-elementary', date: '20-24 Sep 2021', location: 'Singapore, SINGAPORE', glowColor: 'blue' },
-    { filename: '2020-urban', date: '5-9 Oct 2020', location: 'Kuala Lumpur, MALAYSIA', glowColor: 'gold' },
-    { filename: '2020-urban-aero', date: '5-9 Oct 2020', location: 'Kuala Lumpur, MALAYSIA', glowColor: 'silver' },
-    { filename: '2020-urban-vehicle', date: '5-9 Oct 2020', location: 'Kuala Lumpur, MALAYSIA', glowColor: 'silver' },
+    {
+        filename: '2018-world-champs',
+        date: '5-9 Sep 2018',
+        location: 'London, UNITED KINGDOM',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2025-urban',
+        date: '18-22 Jun 2025',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2025-vehicle',
+        date: '18-22 Jun 2025',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2025-autonomus',
+        date: '18-22 Jun 2025',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2024-regional',
+        date: '15-19 May 2024',
+        location: 'Jakarta, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2024-urban',
+        date: '15-19 May 2024',
+        location: 'Jakarta, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2023-urban',
+        date: '10-14 Jul 2023',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2023-data-elementary',
+        date: '10-14 Jul 2023',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'blue',
+    },
+    {
+        filename: '2022-data-elementary',
+        date: '8-12 Aug 2022',
+        location: 'Manila, PHILIPPINES',
+        glowColor: 'blue',
+    },
+    {
+        filename: '2021-data-elementary',
+        date: '20-24 Sep 2021',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'blue',
+    },
+    {
+        filename: '2020-urban',
+        date: '5-9 Oct 2020',
+        location: 'Kuala Lumpur, MALAYSIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2020-urban-aero',
+        date: '5-9 Oct 2020',
+        location: 'Kuala Lumpur, MALAYSIA',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2020-urban-vehicle',
+        date: '5-9 Oct 2020',
+        location: 'Kuala Lumpur, MALAYSIA',
+        glowColor: 'silver',
+    },
     { filename: '2019-urban', date: '12-16 Nov 2019', location: 'Tokyo, JAPAN', glowColor: 'gold' },
-    { filename: '2019-urban-diesel', date: '12-16 Nov 2019', location: 'Tokyo, JAPAN', glowColor: 'silver' },
-    { filename: '2018-urban', date: '8-12 Dec 2018', location: 'Bangkok, THAILAND', glowColor: 'gold' },
-    { filename: '2017-cost-man', date: '7-11 Jul 2017', location: 'Doha, QATAR', glowColor: 'silver' },
+    {
+        filename: '2019-urban-diesel',
+        date: '12-16 Nov 2019',
+        location: 'Tokyo, JAPAN',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2018-urban',
+        date: '8-12 Dec 2018',
+        location: 'Bangkok, THAILAND',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2017-cost-man',
+        date: '7-11 Jul 2017',
+        location: 'Doha, QATAR',
+        glowColor: 'silver',
+    },
     { filename: '2017-urban', date: '7-11 Jul 2017', location: 'Doha, QATAR', glowColor: 'gold' },
-    { filename: '2016-fuel', date: '15-19 Aug 2016', location: 'Mumbai, INDIA', glowColor: 'bronze' },
-    { filename: '2015-urban', date: '20-24 Jun 2015', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: 'liputan6-award', date: '10 Dec 2016', location: 'Jakarta, INDONESIA', glowColor: 'purple' },
-    { filename: '2014-urban', date: '5-9 Sep 2014', location: 'Singapore, SINGAPORE', glowColor: 'gold' },
-    { filename: '2014-tribology', date: '5-9 Sep 2014', location: 'Singapore, SINGAPORE', glowColor: 'silver' },
-    { filename: '2014-grand-champs', date: '5-9 Sep 2014', location: 'Singapore, SINGAPORE', glowColor: 'gold' },
-    { filename: '2013-grand-champs', date: '18-22 Jun 2013', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2012-grand-champs', date: '12-16 Jul 2012', location: 'Manila, PHILIPPINES', glowColor: 'gold' },
-    { filename: '2021-urban', date: '20-24 Sep 2021', location: 'Singapore, SINGAPORE', glowColor: 'gold' },
-    { filename: '2012-combustion', date: '12-16 Jul 2012', location: 'Manila, PHILIPPINES', glowColor: 'silver' },
-    { filename: '2011-urban', date: '8-12 Aug 2011', location: 'Kuala Lumpur, MALAYSIA', glowColor: 'gold' },
-    { filename: '2011-combustion', date: '8-12 Aug 2011', location: 'Kuala Lumpur, MALAYSIA', glowColor: 'silver' },
+    {
+        filename: '2016-fuel',
+        date: '15-19 Aug 2016',
+        location: 'Mumbai, INDIA',
+        glowColor: 'bronze',
+    },
+    {
+        filename: '2015-urban',
+        date: '20-24 Jun 2015',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: 'liputan6-award',
+        date: '10 Dec 2016',
+        location: 'Jakarta, INDONESIA',
+        glowColor: 'purple',
+    },
+    {
+        filename: '2014-urban',
+        date: '5-9 Sep 2014',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2014-tribology',
+        date: '5-9 Sep 2014',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2014-grand-champs',
+        date: '5-9 Sep 2014',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2013-grand-champs',
+        date: '18-22 Jun 2013',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2012-grand-champs',
+        date: '12-16 Jul 2012',
+        location: 'Manila, PHILIPPINES',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2021-urban',
+        date: '20-24 Sep 2021',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2012-combustion',
+        date: '12-16 Jul 2012',
+        location: 'Manila, PHILIPPINES',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2011-urban',
+        date: '8-12 Aug 2011',
+        location: 'Kuala Lumpur, MALAYSIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2011-combustion',
+        date: '8-12 Aug 2011',
+        location: 'Kuala Lumpur, MALAYSIA',
+        glowColor: 'silver',
+    },
     { filename: '2010-urban', date: '15-19 Sep 2010', location: 'Tokyo, JAPAN', glowColor: 'gold' },
-    { filename: '2010-combustion', date: '15-19 Sep 2010', location: 'Tokyo, JAPAN', glowColor: 'silver' },
-    { filename: '2024-safety', date: '15-19 May 2024', location: 'Jakarta, INDONESIA', glowColor: 'green' },
-    { filename: '2024-data', date: '15-19 May 2024', location: 'Jakarta, INDONESIA', glowColor: 'blue' },
-    { filename: '2021-autonomous', date: '20-24 Sep 2021', location: 'Singapore, SINGAPORE', glowColor: 'red' },
-    { filename: '2017-urban-1', date: '7-11 Jul 2017', location: 'Doha, QATAR', glowColor: 'silver' },
-    { filename: '2018-regional', date: '8-12 Dec 2018', location: 'Bangkok, THAILAND', glowColor: 'silver' },
-    { filename: '2025-regional', date: '18-22 Jun 2025', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2021-technical', date: '20-24 Sep 2021', location: 'Singapore, SINGAPORE', glowColor: 'blue' },
-    { filename: '2023-world-champs', date: '10-14 Jul 2023', location: 'Surabaya, INDONESIA', glowColor: 'gold' },
-    { filename: '2017-world-champs', date: '7-11 Jul 2017', location: 'Doha, QATAR', glowColor: 'gold' },
-    { filename: '2022-urban', date: '8-12 Aug 2022', location: 'Manila, PHILIPPINES', glowColor: 'gold' },
-    { filename: '2022-autonomous', date: '8-12 Aug 2022', location: 'Manila, PHILIPPINES', glowColor: 'red' },
-    { filename: '2021-league', date: '20-24 Sep 2021', location: 'Singapore, SINGAPORE', glowColor: 'bronze' },
+    {
+        filename: '2010-combustion',
+        date: '15-19 Sep 2010',
+        location: 'Tokyo, JAPAN',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2024-safety',
+        date: '15-19 May 2024',
+        location: 'Jakarta, INDONESIA',
+        glowColor: 'green',
+    },
+    {
+        filename: '2024-data',
+        date: '15-19 May 2024',
+        location: 'Jakarta, INDONESIA',
+        glowColor: 'blue',
+    },
+    {
+        filename: '2021-autonomous',
+        date: '20-24 Sep 2021',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'red',
+    },
+    {
+        filename: '2017-urban-1',
+        date: '7-11 Jul 2017',
+        location: 'Doha, QATAR',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2018-regional',
+        date: '8-12 Dec 2018',
+        location: 'Bangkok, THAILAND',
+        glowColor: 'silver',
+    },
+    {
+        filename: '2025-regional',
+        date: '18-22 Jun 2025',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2021-technical',
+        date: '20-24 Sep 2021',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'blue',
+    },
+    {
+        filename: '2023-world-champs',
+        date: '10-14 Jul 2023',
+        location: 'Surabaya, INDONESIA',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2017-world-champs',
+        date: '7-11 Jul 2017',
+        location: 'Doha, QATAR',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2022-urban',
+        date: '8-12 Aug 2022',
+        location: 'Manila, PHILIPPINES',
+        glowColor: 'gold',
+    },
+    {
+        filename: '2022-autonomous',
+        date: '8-12 Aug 2022',
+        location: 'Manila, PHILIPPINES',
+        glowColor: 'red',
+    },
+    {
+        filename: '2021-league',
+        date: '20-24 Sep 2021',
+        location: 'Singapore, SINGAPORE',
+        glowColor: 'bronze',
+    },
 ];
 
 const SAE_AWARDS = ['2016-sae', '2015-sae', '2014-sae', '2013-sae'];
 
 // Helper Components
 const StatCard = ({ number, label }: { number: string; label: string }) => (
-    <div className="flex flex-col items-center justify-between h-auto md:h-[212px] gap-2 md:gap-0">
-        <p className="font-extrabold text-5xl md:text-7xl lg:text-[128px] tracking-[-3.84px] leading-normal">
+    <div className="flex flex-col items-center justify-center h-fit gap-2 md:gap-0">
+        <p className="font-extrabold text-7xl md:text-7xl lg:text-[128px] tracking-[-3.84px] leading-normal">
             {number}
         </p>
         <p className="font-semibold text-lg md:text-2xl lg:text-[36px] tracking-[-1.08px] leading-normal">
@@ -96,10 +301,18 @@ const CountryCard = ({ name, image }: { name: string; image: string }) => (
     </div>
 );
 
-const AchievementBadge = ({ filename, date, location }: { filename: string; date: string; location: string }) => {
+const AchievementBadge = ({
+    filename,
+    date,
+    location,
+}: {
+    filename: string;
+    date: string;
+    location: string;
+}) => {
     const altText = filename
         .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
 
     return (
@@ -115,7 +328,9 @@ const AchievementBadge = ({ filename, date, location }: { filename: string; date
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                 <div className="bg-black/90 backdrop-blur-sm text-white rounded-lg px-4 py-3 shadow-xl border border-white/10">
                     <p className="text-md font-semibold text-center whitespace-nowrap">{date}</p>
-                    <p className="text-sm text-gray-300 text-center mt-1 whitespace-nowrap">{location}</p>
+                    <p className="text-sm text-gray-300 text-center mt-1 whitespace-nowrap">
+                        {location}
+                    </p>
                 </div>
             </div>
         </div>
@@ -127,11 +342,11 @@ export default function AchievementsPage() {
         <div className="bg-white flex flex-col items-start relative w-full">
             {/* Hero Section */}
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
-                <div 
+                <div
                     className="relative w-full h-full bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: "url('/page/achievements/hero-achievements.png')" }}
                 >
-                    <div className='container mx-auto px-4 md:px-6 lg:px-0'>
+                    <div className="container mx-auto px-4 md:px-6 lg:px-0">
                         <div className="absolute bottom-0 flex bg-[#e50808] w-fit h-fit px-3 py-1 md:px-4.5 md:py-1.5">
                             <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white tracking-[-1.44px] leading-tight">
                                 Achievements
@@ -146,13 +361,13 @@ export default function AchievementsPage() {
                 <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 items-center relative w-full max-w-7xl">
                     {/* World Champions Outline Image */}
                     <div className="w-full max-w-[1122px] aspect-[1122/434] relative group cursor-pointer">
-                        <Image 
+                        <Image
                             src="/page/achievements/world-champs-outline.png"
                             alt="World Champions"
                             fill
                             className="object-contain transition-opacity duration-300 group-hover:opacity-0"
                         />
-                        <Image 
+                        <Image
                             src="/page/achievements/world-champs-gold.png"
                             alt="World Champions Gold"
                             fill
@@ -169,7 +384,9 @@ export default function AchievementsPage() {
 
                     {/* Description */}
                     <p className="font-medium text-[#5d5d5d] text-sm md:text-lg lg:text-[24px] text-center tracking-[-0.96px] max-w-[1034px] leading-normal px-4">
-                        Celebrating a legacy of victory across global circuits. From Asia-Pacific to Europe, we consistently push the boundaries of automotive engineering to claim the top of the podium.
+                        Celebrating a legacy of victory across global circuits. From Asia-Pacific to
+                        Europe, we consistently push the boundaries of automotive engineering to
+                        claim the top of the podium.
                     </p>
                 </div>
             </div>
@@ -181,7 +398,7 @@ export default function AchievementsPage() {
                         Champions All Around The World
                     </p>
 
-                    <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 items-center relative w-fit">
+                    <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 items-center relative w-full">
                         {/* First Row */}
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10 lg:gap-12 relative w-full justify-items-center">
                             {COUNTRIES.slice(0, 4).map((country, index) => (
@@ -218,10 +435,15 @@ export default function AchievementsPage() {
 
                     {/* SAE Awards Section */}
                     <div className="flex flex-col gap-8 items-center w-full">
-                        <p className="text-white text-lg md:text-xl text-center">Formula Student Japan Rank</p>
+                        <p className="text-white text-lg md:text-xl text-center">
+                            Formula Student Japan Rank
+                        </p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-[800px] justify-items-center">
                             {SAE_AWARDS.map((award, index) => (
-                                <div key={index} className="flex items-center justify-center w-full max-w-[120px] lg:max-w-[180px] justify-self-center">
+                                <div
+                                    key={index}
+                                    className="flex items-center justify-center w-full max-w-[120px] lg:max-w-[180px] justify-self-center"
+                                >
                                     <Image
                                         src={`/page/achievements/hall-of-fame/${award}.svg`}
                                         alt={`${award.split('-')[0]} SAE Champion`}

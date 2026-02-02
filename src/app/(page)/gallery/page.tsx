@@ -5,13 +5,13 @@ export default function GalleryPage() {
         <div className="bg-white flex flex-col items-start relative w-full">
             {/* Hero Section */}
             <div className="h-137.5 overflow-hidden relative w-full">
-                <div 
+                <div
                     className="relative w-full h-full bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: "url('/page/gallery/hero-gallery.png')" }}
                 >
-                    <div className="absolute inset-0 bg-linear-to-l from-transparent to-black/80 px-12" /> 
-                    <div/>
-                    <div className='container mx-auto'>
+                    <div className="absolute inset-0 bg-linear-to-l from-transparent to-black/80 px-12" />
+                    <div />
+                    <div className="container mx-auto">
                         <div className="absolute bottom-0 flex bg-[#e50808] w-fit h-fit px-4.5 py-1.5">
                             <h1 className="font-bold text-4xl text-white tracking-[-1.44px] leading-tight">
                                 Gallery
@@ -37,7 +37,8 @@ export default function GalleryPage() {
                             </div>
                             <div className="flex flex-col justify-center">
                                 <p className="font-normal text-[#5d5d5d] text-lg tracking-[-0.8px] leading-normal w-62.75">
-                                    All photos are the official property of ITS Team Sapuangin during competitions
+                                    All photos are the official property of ITS Team Sapuangin
+                                    during competitions
                                 </p>
                             </div>
                         </div>
@@ -131,7 +132,8 @@ export default function GalleryPage() {
                             </div>
                             <div className="flex flex-col justify-center">
                                 <p className="font-normal text-[#5d5d5d] text-lg text-right tracking-[-0.8px] leading-normal w-62.75">
-                                    All photos are the official property of ITS Team Sapuangin during competitions
+                                    All photos are the official property of ITS Team Sapuangin
+                                    during competitions
                                 </p>
                             </div>
                         </div>
@@ -146,7 +148,7 @@ export default function GalleryPage() {
                         Activites
                     </h2>
                 </div>
-                
+
                 <div className="flex flex-col gap-6 items-start w-312.5">
                     <div className="bg-white flex gap-6 items-start overflow-hidden w-full">
                         {/* Column 1 */}
@@ -183,11 +185,14 @@ export default function GalleryPage() {
 
                 <div className="flex flex-col font-normal h-29.5 justify-center text-[#5d5d5d] text-[20px] text-center tracking-[-0.8px] w-256.5">
                     <p className="leading-normal">
-                        All photos displayed in this gallery are the official property of ITS Team Sapuangin and are part of its official documentation during competitions. Any use, reproduction, or distribution of these images without prior written permission from ITS Team Sapuangin is not permitted. © ITS Team Sapuangin. All rights reserved.
+                        All photos displayed in this gallery are the official property of ITS Team
+                        Sapuangin and are part of its official documentation during competitions.
+                        Any use, reproduction, or distribution of these images without prior written
+                        permission from ITS Team Sapuangin is not permitted. © ITS Team Sapuangin.
+                        All rights reserved.
                     </p>
                 </div>
             </div>
-
         </div>
     );
 }
