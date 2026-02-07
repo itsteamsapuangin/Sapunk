@@ -286,7 +286,7 @@ const StatCard = ({ number, label }: { number: string; label: string }) => (
 
 const CountryCard = ({ name, image }: { name: string; image: string }) => (
     <div className="flex flex-col gap-2 items-center w-full max-w-[211.104px]">
-        <div className="h-auto md:h-[135px] relative w-full md:w-[220px]">
+        <div className="h-auto md:h-33.75 relative w-full md:w-55">
             <Image
                 src={`/page/achievements/${image}`}
                 alt={name}
@@ -360,7 +360,7 @@ export default function AchievementsPage() {
             <div className="flex flex-col items-center overflow-hidden px-4 md:px-12 lg:px-24 py-8 md:py-12 lg:py-16 relative w-full">
                 <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 items-center relative w-full max-w-7xl">
                     {/* World Champions Outline Image */}
-                    <div className="w-full max-w-[1122px] aspect-[1122/434] relative group cursor-pointer">
+                    <div className="w-full max-w-280.5pect-[1122/434] relative group cursor-pointer">
                         <Image
                             src="/page/achievements/world-champs-outline.png"
                             alt="World Champions"
@@ -383,7 +383,7 @@ export default function AchievementsPage() {
                     </div>
 
                     {/* Description */}
-                    <p className="font-medium text-[#5d5d5d] text-sm md:text-lg lg:text-[24px] text-center tracking-[-0.96px] max-w-[1034px] leading-normal px-4">
+                    <p className="font-medium text-[#5d5d5d] text-sm md:text-lg lg:text-[24px] text-center tracking-[-0.96px] max-w-258.5ading-normal px-4">
                         Celebrating a legacy of victory across global circuits. From Asia-Pacific to
                         Europe, we consistently push the boundaries of automotive engineering to
                         claim the top of the podium.
@@ -392,7 +392,7 @@ export default function AchievementsPage() {
             </div>
 
             {/* Champions Around The World Section */}
-            <div className="container mx-auto flex flex-col gap-8 md:gap-12 lg:gap-[58px] items-center overflow-hidden pb-24 md:pb-32 lg:pb-[180px] pt-4 md:pt-6 lg:pt-[26px] px-4 md:px-12 lg:px-24 relative w-full">
+            <div className="container mx-auto flex flex-col gap-8 md:gap-12 lg:gap-14.5 items-center overflow-hidden pb-24 md:pb-32 lg:pb-45 pt-4 md:pt-6 lg:pt-6.5 px-4 md:px-12 lg:px-24 relative w-full">
                 <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 items-center relative w-full">
                     <p className="font-extrabold text-2xl md:text-4xl lg:text-[48px] text-black text-center tracking-[-1.44px] leading-normal">
                         Champions All Around The World
@@ -438,11 +438,11 @@ export default function AchievementsPage() {
                         <p className="text-white text-lg md:text-xl text-center">
                             Formula Student Japan Rank
                         </p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-[800px] justify-items-center">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-200 justify-items-center">
                             {SAE_AWARDS.map((award, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center justify-center w-full max-w-[120px] lg:max-w-[180px] justify-self-center"
+                                    className="flex items-center justify-center w-full max-w-30 lg:max-w-45 justify-self-center"
                                 >
                                     <Image
                                         src={`/page/achievements/hall-of-fame/${award}.svg`}

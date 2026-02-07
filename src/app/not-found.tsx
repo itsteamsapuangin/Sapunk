@@ -1,17 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function NotFound() {
     return (
         <div className="w-full h-screen flex flex-col gap-6 justify-center items-center">
-            <h1 className="text-bold text-5xl font-bold">404</h1>
-            <p className="font-normal text-center">
-                Hi the page u are looking for isnt available. <br /> I think u was typo mate.
-            </p>
-
-            <Link href="/" className="anim text-sm font-normal text-black/50 hover:text-foreground">
-                Go back to home
-            </Link>
+            <Image
+                src="/not-found.png"
+                alt="ITS Team Sapuangin"
+                width={600}
+                height={600}
+                className="h-80 w-auto object-contain transition-all duration-300"
+                priority
+            />
         </div>
     );
 }
