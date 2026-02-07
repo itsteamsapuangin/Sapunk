@@ -77,7 +77,7 @@ export default function GalleryPage() {
             </div>
 
             {/* Gallery Sections with Logos */}
-            {GALLERY_DATA.sections.map((section, index) => (
+            {GALLERY_DATA.sections.map((section) => (
                 <div
                     key={section.id}
                     className="flex flex-col items-center justify-center overflow-hidden px-6 md:px-24 py-16 relative w-full"
@@ -284,7 +284,7 @@ export default function GalleryPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col font-normal justify-center text-[#5d5d5d] text-base md:text-lg lg:text-[20px] text-center tracking-[-0.8px] w-full max-w-[1026px] px-4">
+                <div className="flex flex-col font-normal justify-center text-[#5d5d5d] text-base md:text-lg lg:text-[20px] text-center tracking-[-0.8px] w-full max-w-256.5 px-4">
                     <p className="leading-normal">{GALLERY_DATA.activities.copyright}</p>
                 </div>
             </div>
