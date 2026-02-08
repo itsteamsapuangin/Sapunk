@@ -28,7 +28,7 @@ export default function RootLayout({
             suppressContentEditableWarning
             className=" overflow-y-auto [&::-webkit-scrollbar]:w-0"
         >
-            <ReactLenis root>
+            {/* <ReactLenis root> */}
                 <Head>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 </Head>
@@ -38,7 +38,7 @@ export default function RootLayout({
                     <main>{children}</main>
                     <Footer />
                 </body>
-            </ReactLenis>
+            {/* </ReactLenis> */}
         </html>
     );
 }

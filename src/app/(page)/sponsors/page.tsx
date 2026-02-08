@@ -241,7 +241,7 @@ export default function SponsorshipPage() {
                             <SponsorCard
                                 key={index}
                                 {...sponsor}
-                                className="h-30-[180px] lg:h-[247.57px] flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-26.67px)]"
+                                className="h-40 lg:h-[247.57px] flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-26.67px)]"
                             />
                         ))}
                         {/* Second row - 2 columns centered */}
@@ -249,7 +249,7 @@ export default function SponsorshipPage() {
                             <SponsorCard
                                 key={index}
                                 {...sponsor}
-                                className="h-30-[180px] lg:h-[247.57px] flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-26.67px)]"
+                                className="h-40 lg:h-[247.57px] flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-26.67px)]"
                             />
                         ))}
                     </div>
@@ -257,7 +257,7 @@ export default function SponsorshipPage() {
                     {/* Official Media Partner Section */}
                     <div className="flex flex-col items-center gap-4 md:gap-6 lg:gap-12 mb-6 md:mb-8 lg:mb-14">
                         <SectionTitle>Official Media Partner</SectionTitle>
-                        <div className="w-full max-w-3xl h-30-md:h-45-[240.58px]">
+                        <div className="w-full max-w-3xl h-40 md:h-45 lg:h-[240.58px]">
                             <SponsorCard {...SPONSORSHIP_DATA.mediaPartner} className="h-full" />
                         </div>
                     </div>
@@ -265,7 +265,7 @@ export default function SponsorshipPage() {
                     {/* Gold Sponsors Section */}
                     <div className="flex flex-col items-center gap-4 md:gap-6 lg:gap-12 mb-6 md:mb-8 lg:mb-14">
                         <SectionTitle bgColor="bg-[#E5B208]">Gold Sponsors</SectionTitle>
-                        <div className="w-full max-w-3xl h-25 md:h-37.5 lg:h-[206.48px]">
+                        <div className="w-full max-w-3xl h-32 md:h-37.5 lg:h-[206.48px]">
                             <SponsorCard {...SPONSORSHIP_DATA.goldSponsors[0]} className="h-full" />
                         </div>
                     </div>
@@ -293,7 +293,7 @@ export default function SponsorshipPage() {
                                 <SponsorCard
                                     key={index}
                                     {...sponsor}
-                                    className="h-25 md:h-32.5 lg:h-[159.22px] flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(25%-19.28px)]"
+                                    className="h-22 md:h-32.5 lg:h-[159.22px] flex-[0_0_100%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(25%-19.28px)]"
                                 />
                             ))}
                         </div>
