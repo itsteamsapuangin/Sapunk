@@ -1,5 +1,10 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'Sponsors',
+};
 
 // Sponsorship data configuration organized by tiers matching the Figma design
 const SPONSORSHIP_DATA = {

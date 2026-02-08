@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function NotFound() {
     return (
-        <div className="w-full h-screen flex flex-col gap-6 justify-center items-center">
+        <div className="w-full h-screen bg-black flex flex-col gap-6 justify-center items-center">
             <Image
                 src="/not-found.png"
                 alt="ITS Team Sapuangin"
