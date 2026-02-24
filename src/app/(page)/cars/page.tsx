@@ -162,7 +162,7 @@ export default function CarsPage() {
                 <div className="w-full">
                     <div className="container mx-auto px-6 md:px-12 lg:px-0 flex flex-col lg:flex-row lg:items-center lg:justify-end gap-6 lg:gap-0">
                         {/* Car Image - overflows left on desktop */}
-                        <div className="relative w-full lg:w-[130%] shrink-0 aspect-1000/521">
+                        <div className="relative w-full lg:w-[130%] lg:translate-x-[8%] shrink-0 aspect-1000/421">
                             <Image
                                 src="/page/cars/urban-car.png"
                                 alt="Sapuangin XI Evo 5 Urban Car"
@@ -306,7 +306,7 @@ export default function CarsPage() {
                         </div>
 
                         {/* Car Image - overflows right on desktop */}
-                        <div className="relative w-full lg:w-[93%] shrink-0 aspect-[1165/521]">
+                        <div className="relative w-full lg:w-[130%] shrink-0 lg:translate-x-[-10%] aspect-1165/521">
                             <Image
                                 src="/page/cars/formula-car.png"
                                 alt="Sapuangin Speed 8 Formula Car"
