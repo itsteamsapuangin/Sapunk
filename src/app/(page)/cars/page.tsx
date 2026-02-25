@@ -51,15 +51,15 @@ const FORMULA_ACHIEVEMENTS = ['2016-sae', '2015-sae', '2014-sae', '2013-sae'];
 
 function SpecCard({ icon, label, value }: { icon: string; label: string; value: string }) {
     return (
-        <div className="flex flex-col items-start justify-between border border-[#ccc] rounded-xl p-4 md:p-5 lg:p-6 h-40 md:h-45 lg:h-50">
-            <div className="relative h-8 w-12 md:h-10 md:w-14 lg:h-12 lg:w-16">
+        <div className="group flex flex-col items-start justify-between border border-[#ececec] rounded-xl p-4 md:p-5 lg:p-6 h-40 md:h-45 lg:h-50 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01]">
+            <div className="relative h-8 w-12 md:h-10 md:w-14 lg:h-12 lg:w-16 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:scale-110">
                 <Image src={icon} alt={label} fill className="object-contain object-left" />
             </div>
-            <div className="flex flex-col">
-                <p className="font-extrabold text-lg md:text-xl lg:text-[26px] text-black tracking-tight">
+            <div className="flex flex-col transition-transform duration-300 ease-out group-hover:translate-x-0.5">
+                <p className="font-extrabold text-sm md:text-xl lg:text-2xl text-black tracking-tight">
                     {label}
                 </p>
-                <p className="font-normal text-base md:text-lg lg:text-2xl text-black tracking-tight">
+                <p className="font-normal text-sm md:text-lg lg:text-2xl text-[#5d5d5d] tracking-tight">
                     {value}
                 </p>
             </div>
@@ -116,7 +116,7 @@ export default function CarsPage() {
                                 </h3>
                                 <div className="w-1.5 h-7 bg-[#e93838]" />
                             </div>
-                            <p className="text-[#5d5d5d] text-sm md:text-base tracking-tight leading-normal">
+                            <p className="text-[#5d5d5d] text-sm md:text-md lg:text-xl tracking-tight leading-normal">
                                 In 2018, ITS Team Sapuangin made history as the first and only team
                                 from Indonesia to win the Drivers&apos; World Championship in
                                 London. This achievement marked a ...
@@ -134,7 +134,7 @@ export default function CarsPage() {
                                 </h3>
                                 <div className="w-1.5 h-7 bg-[#2e5fbd]" />
                             </div>
-                            <p className="text-[#5d5d5d] text-sm md:text-base tracking-tight leading-normal">
+                            <p className="text-[#5d5d5d] text-sm md:text-md lg:text-xl tracking-tight leading-normal">
                                 In 2018, ITS Team Sapuangin made history as the first and only team
                                 from Indonesia to win the Drivers&apos; World Championship in
                                 London. This achievement marked a ...
@@ -152,7 +152,7 @@ export default function CarsPage() {
                 className="w-full bg-white flex flex-col items-center gap-8 md:gap-10 lg:gap-12 pt-10 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-20"
             >
                 {/* Title Badge */}
-                <div className="bg-[#e50808] px-6 md:px-8 lg:px-10 py-2">
+                <div className="bg-[#e50808] px-4 md:px-8 lg:px-10 md:py-3 py-1">
                     <h2 className="font-bold text-2xl md:text-3xl lg:text-5xl text-white tracking-[-1.44px] text-center">
                         SAPUANGIN XI EVO 5
                     </h2>
@@ -186,7 +186,7 @@ export default function CarsPage() {
                                 <p className="font-extrabold italic text-xl md:text-2xl lg:text-[32px] text-[#ccc] tracking-tight uppercase">
                                     About The Car
                                 </p>
-                                <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-2xl tracking-tight leading-relaxed">
+                                <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl tracking-tight leading-relaxed">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -263,6 +263,7 @@ export default function CarsPage() {
                     fill
                     className="object-cover"
                 />
+                <div className="absolute inset-0 bg-linear-to-b from-black to-transparent" />
             </div>
 
             {/* ══════════════════════════════════════════════════════════════
@@ -270,10 +271,10 @@ export default function CarsPage() {
                  ══════════════════════════════════════════════════════════ */}
             <section
                 id="formula"
-                className="w-full bg-white flex flex-col items-center gap-8 md:gap-10 lg:gap-12 pt-10 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-20"
+                className="w-full bg-white flex flex-col items-center gap-8 md:gap-10 lg:gap-12 pt-12 md:pt-12 lg:pt-32 pb-12 md:pb-16 lg:pb-20"
             >
                 {/* Title Badge */}
-                <div className="bg-[#2e5fbd] px-6 md:px-8 lg:px-10 py-2">
+                <div className="bg-[#2e5fbd] px-4 md:px-8 lg:px-10 md:py-3 py-1">
                     <h2 className="font-bold text-2xl md:text-3xl lg:text-5xl text-white tracking-[-1.44px] text-center">
                         SAPUANGIN SPEED 8
                     </h2>
@@ -296,7 +297,7 @@ export default function CarsPage() {
                                 <p className="font-extrabold italic text-xl md:text-2xl lg:text-[32px] text-[#ccc] tracking-tight uppercase">
                                     About The Car
                                 </p>
-                                <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-2xl tracking-tight leading-relaxed">
+                                <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl tracking-tight leading-relaxed text-justify">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -306,7 +307,7 @@ export default function CarsPage() {
                         </div>
 
                         {/* Car Image - overflows right on desktop */}
-                        <div className="relative w-full lg:w-[130%] shrink-0 lg:translate-x-[-10%] aspect-1165/521">
+                        <div className="relative w-full lg:w-full shrink-0 lg:translate-x-[-5%] aspect-720/299">
                             <Image
                                 src="/page/cars/formula-car.png"
                                 alt="Sapuangin Speed 8 Formula Car"
@@ -337,12 +338,12 @@ export default function CarsPage() {
 
                     <SectionDivider />
 
-                    {/* About The Car (extended description) */}
+                    {/* About The Car (extended description)
                     <div>
                         <h3 className="font-extrabold italic text-xl md:text-2xl lg:text-[32px] text-[#2e5fbd] tracking-tight uppercase mb-4 md:mb-6">
                             About The Car
                         </h3>
-                        <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-2xl tracking-tight leading-relaxed">
+                        <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-2xl tracking-tight leading-relaxed text-justify">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -353,7 +354,7 @@ export default function CarsPage() {
                         </p>
                     </div>
 
-                    <SectionDivider />
+                    <SectionDivider /> */}
 
                     {/* Specifications */}
                     <div>
@@ -398,10 +399,11 @@ export default function CarsPage() {
             <div className="relative w-full h-64 md:h-96 lg:h-125 overflow-hidden">
                 <Image
                     src="/page/cars/hero-cars.png"
-                    alt="Sapuangin car on the track"
+                    alt="Sapuangin car in action"
                     fill
                     className="object-cover"
                 />
+                <div className="absolute inset-0 bg-linear-to-b from-black to-transparent" />
             </div>
         </div>
     );
