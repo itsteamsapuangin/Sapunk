@@ -77,19 +77,25 @@ const TESTIMONIALS = [
         hasQuote: true,
     },
     {
-        name: 'Erick Thohir',
+        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        name: 'Dr. (H.C.) H. Erick Thohir, B.A., M.B.A.',
+        role: 'Menteri Pemuda dan Olahraga Indonesia',
         image: '/page/home/testimonial-erick-thohir.png',
-        hasQuote: false,
+        hasQuote: true,
     },
     {
-        name: 'Tri Rismaharini',
+        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        name: 'Dr. (H.C.) Ir. Hj. Tri Rismaharini, M.T.',
+        role: 'Menteri Sosial 2020 - 2024',
         image: '/page/home/testimonial-risma.png',
-        hasQuote: false,
+        hasQuote: true,
     },
     {
-        name: 'Khofifah Indar Parawansa',
+        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        name: 'Dr. Eri Cahyadi, S.T., M.T.',
+        role: 'Walikota Surabaya',
         image: '/page/home/testimonial-governor.png',
-        hasQuote: false,
+        hasQuote: true,
     },
 ];
 
@@ -241,7 +247,7 @@ function NewsCard({
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                 {/* Badge */}
-                <div className="absolute left-4 md:left-5 bottom-24 md:bottom-28">
+                <div className="absolute left-4 md:left-5 bottom-18 md:bottom-24">
                     <span className="bg-[#e50808] text-white font-bold text-xs md:text-sm px-3 py-1">
                         {badge}
                     </span>
@@ -308,27 +314,25 @@ export default function HomePage() {
             {/* ── Hero Section ─────────────────────────────────────────── */}
             <div className="overflow-hidden relative w-full">
                 <div
-                    className="relative w-full h-70 md:h-125 lg:h-[867px] bg-cover bg-center bg-no-repeat"
+                    className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex flex-col gap-8 justify-end items-center px-6 md:px-12 lg:px-24 pb-12 md:pb-16 lg:pb-24"
                     style={{ backgroundImage: "url('/page/home/hero-home.png')" }}
                 >
                     <div
-                        className="absolute inset-0"
+                        className="absolute inset-0 w-full z-0"
                         style={{
                             backgroundImage:
-                                'linear-gradient(to top, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0) 32.5%)',
+                                'linear-gradient(to top, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0) 62.5%)',
                         }}
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-                        <div className="bg-[#e50808] px-4 py-1.5 md:px-5 md:py-2">
-                            <h1 className="font-bold text-xl md:text-3xl lg:text-[48px] text-white tracking-[-1.44px] leading-tight uppercase">
+                    ></div>
+
+                    <div className="left-0 right-0 flex justify-center z-20">
+                        <div className="bg-[#e50808] px-4 py-1.5 md:px-6 md:py-2">
+                            <h1 className="font-bold text-xl md:text-3xl lg:text-[48px] text-white tracking-[-1.20px] leading-tight uppercase text-center">
                                 Fuel-Efficient Car Research Team
                             </h1>
                         </div>
                     </div>
-                </div>
-                {/* Subtitle */}
-                <div className="container mx-auto px-6 md:px-12 lg:px-24 py-6 md:py-10 lg:py-14">
-                    <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl text-center tracking-tight leading-relaxed max-w-5xl mx-auto">
+                    <p className="text-white text-sm md:text-lg lg:text-xl z-20 text-center tracking-tight leading-relaxed max-w-5xl mx-auto">
                         ITS Team Sapuangin is the research and development team from Institut
                         Teknologi Sepuluh Nopember, competing in Shell Eco-marathon and FSAE Japan.
                         For 15 consecutive years, we have achieved international recognition and
@@ -346,25 +350,25 @@ export default function HomePage() {
                             src="/page/home/about-urban-car.png"
                             alt="Urban Concept Car"
                             fill
-                            className="object-cover"
+                            className="object-contain"
                             priority
                         />
                     </div>
                     {/* Right - Content */}
                     <div className="w-full lg:w-[40%] bg-white flex flex-col justify-center px-6 md:px-12 lg:px-10 py-8 md:py-12 lg:py-0">
-                        <p className="font-bold text-sm md:text-base lg:text-lg text-black tracking-widest uppercase mb-2 md:mb-3">
+                        <p className="font-bold text-sm md:text-base lg:text-lg text-black tracking-widest uppercase mb-2 md:mb-3 text-center md:text-left">
                             About Us
                         </p>
-                        <h2 className="font-bold text-2xl md:text-3xl lg:text-[42px] text-black tracking-[-1px] leading-tight mb-4 md:mb-6">
+                        <h2 className="font-bold text-2xl md:text-3xl lg:text-[42px] text-black tracking-[-1px] text-center md:text-left leading-tight mb-4 md:mb-6">
                             World Champions in Energy Efficiency
                         </h2>
-                        <p className="text-[#5d5d5d] text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-8">
+                        <p className="text-[#5d5d5d] text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-8 text-center md:text-left">
                             Since 2009, ITS Team Sapuangin has advanced energy-efficient vehicle
-                            innovation. Competing in Shell Eco-marathon and Student Formula Japan, we
-                            became world champions in London 2018 and continue to represent Indonesia
-                            proudly on the global stage.
+                            innovation. Competing in Shell Eco-marathon and Student Formula Japan,
+                            we became world champions in London 2018 and continue to represent
+                            Indonesia proudly on the global stage.
                         </p>
-                        <div>
+                        <div className="w-full flex justify-center md:justify-start">
                             <OutlinedButton href="/achievements">GET STARTED</OutlinedButton>
                         </div>
                     </div>
@@ -393,13 +397,13 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-0 bg-black/50" />
                     {/* Content overlay */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+                    <div className="absolute inset-0 flex flex-col gap-8 items-center justify-center px-4">
                         <Image
                             src="/page/home/world-champs.png"
                             alt="World Champions - ITS Team Sapuangin"
                             width={941}
                             height={362}
-                            className="w-60 md:w-120 lg:w-[941px] h-auto object-contain mb-3 md:mb-5 lg:mb-8"
+                            className="w-60 md:w-120 lg:w-235.25 h-auto object-contain mb-3 md:mb-5 lg:mb-8"
                         />
                         <OutlinedButton href="/achievements" variant="light">
                             HALL OF CHAMPIONS
@@ -411,22 +415,21 @@ export default function HomePage() {
             {/* ── Highlights / Bento Cards Section ─────────────────────── */}
             <section className="w-full py-12 md:py-16 lg:py-20">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10">
-                        {/* Card 1: World Champions in London 2018 — text left, image right */}
-                        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6 justify-center">
-                            <h3 className="font-bold text-2xl md:text-3xl lg:text-[42px] text-black tracking-[-1px] leading-tight whitespace-pre-line">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-24">
+                        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6 justify-between order-2 lg:order-0">
+                            <h3 className="font-bold line-clamp-2 text-2xl md:text-3xl lg:text-4xl text-black tracking-[-1px] leading-tight whitespace-pre-line">
                                 {HIGHLIGHTS[0].title}
                             </h3>
-                            <p className="text-[#5d5d5d] text-sm md:text-base leading-relaxed pl-0 md:pl-16">
+                            <p className="text-[#5d5d5d] line-clamp-6 text-sm md:text-base leading-relaxed">
                                 {HIGHLIGHTS[0].description}
                             </p>
-                            <div className="flex justify-end">
+                            <div className="flex justify-start">
                                 <OutlinedButton href={HIGHLIGHTS[0].cta.href}>
                                     {HIGHLIGHTS[0].cta.label}
                                 </OutlinedButton>
                             </div>
                         </div>
-                        <div className="lg:col-span-7 relative h-64 md:h-80 lg:h-118.25 rounded-xl overflow-hidden">
+                        <div className="lg:col-span-7 relative h-64 md:h-80 lg:h-90 rounded-xl overflow-hidden order-1 lg:order-0">
                             <Image
                                 src={HIGHLIGHTS[0].image}
                                 alt="World Champions in London 2018"
@@ -436,7 +439,7 @@ export default function HomePage() {
                         </div>
 
                         {/* Card 2: Innovating Across Vehicle Classes — image left, text right */}
-                        <div className="lg:col-span-7 relative h-64 md:h-80 lg:h-118.25 rounded-xl overflow-hidden order-2 lg:order-0">
+                        <div className="lg:col-span-7 relative h-64 md:h-80 lg:h-90 rounded-xl overflow-hidden order-2 lg:order-0">
                             <Image
                                 src={HIGHLIGHTS[1].image}
                                 alt="Innovating Across Vehicle Classes"
@@ -444,11 +447,11 @@ export default function HomePage() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6 justify-center order-1 lg:order-0">
-                            <h3 className="font-bold text-2xl md:text-3xl lg:text-[42px] text-black tracking-[-1px] leading-tight whitespace-pre-line">
+                        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6 justify-between order-1 lg:order-0">
+                            <h3 className="font-bold line-clamp-2 text-2xl md:text-3xl lg:text-4xl  text-black tracking-[-1px] leading-tight whitespace-pre-line">
                                 {HIGHLIGHTS[1].title}
                             </h3>
-                            <p className="text-[#5d5d5d] text-sm md:text-base leading-relaxed">
+                            <p className="text-[#5d5d5d] line-clamp-6 text-sm md:text-base leading-relaxed">
                                 {HIGHLIGHTS[1].description}
                             </p>
                             <div>
@@ -459,11 +462,11 @@ export default function HomePage() {
                         </div>
 
                         {/* Card 3: The People Behind the Machines — text left, image right */}
-                        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6 justify-center">
-                            <h3 className="font-bold text-2xl md:text-3xl lg:text-[42px] text-black tracking-[-1px] leading-tight whitespace-pre-line">
+                        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6 justify-between order-2 lg:order-0">
+                            <h3 className="font-bold line-clamp-2 text-2xl md:text-3xl lg:text-4xl text-black tracking-[-1px] leading-tight whitespace-pre-line">
                                 {HIGHLIGHTS[2].title}
                             </h3>
-                            <p className="text-[#5d5d5d] text-sm md:text-base leading-relaxed">
+                            <p className="text-[#5d5d5d] line-clamp-6 text-sm md:text-base leading-relaxed">
                                 {HIGHLIGHTS[2].description}
                             </p>
                             <div>
@@ -472,7 +475,7 @@ export default function HomePage() {
                                 </OutlinedButton>
                             </div>
                         </div>
-                        <div className="lg:col-span-7 relative h-64 md:h-80 lg:h-118.25 rounded-xl overflow-hidden">
+                        <div className="lg:col-span-7 relative h-64 md:h-80 lg:h-90 rounded-xl overflow-hidden order-1 lg:order-0">
                             <Image
                                 src={HIGHLIGHTS[2].image}
                                 alt="The People Behind the Machines"
@@ -524,7 +527,7 @@ export default function HomePage() {
                                     <h2 className="font-bold text-3xl md:text-4xl lg:text-[56px] text-white tracking-[-1.5px] leading-tight mb-3 md:mb-4">
                                         Formula Student Japan
                                     </h2>
-                                    <p className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed max-w-xl">
+                                    <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed max-w-xl">
                                         Behind every victory stands a team of dedicated students
                                         from Institut Teknologi Sepuluh Nopember. We combine skills
                                         in engineering, design, and strategy to deliver world-class
@@ -534,18 +537,19 @@ export default function HomePage() {
                                 {/* JSAE + Formula SAE Japan Logos */}
                                 <div className="flex items-center gap-3 md:gap-4 shrink-0">
                                     <Image
-                                        src="/page/gallery/jsae-logo.svg"
+                                        src="/logo/jsae.png"
                                         alt="JSAE Logo"
-                                        width={106}
-                                        height={43}
+                                        width={106.74}
+                                        height={43.37}
                                         className="w-16 md:w-20 lg:w-26.5 h-auto brightness-0 invert"
                                     />
+
                                     <Image
-                                        src="/page/cars/jsae-logo.svg"
+                                        src="/logo/formula-sae.png"
                                         alt="Formula SAE Japan Logo"
-                                        width={99}
-                                        height={54}
-                                        className="w-14 md:w-18 lg:w-24.75 h-auto brightness-0 invert"
+                                        width={98.63}
+                                        height={54.2}
+                                        className="w-16 md:w-20 lg:w-26.5 h-auto brightness-0 invert"
                                     />
                                 </div>
                             </div>
@@ -556,48 +560,59 @@ export default function HomePage() {
 
             {/* ── Testimonials Section ─────────────────────────────────── */}
             <section className="w-full py-10 md:py-14 lg:py-20">
-                <div className="container mx-auto px-6 md:px-12 lg:px-24">
+                <div className="container mx-auto px-6 md:px-12 lg:px-0">
                     {/* Section Title */}
                     <h2 className="font-bold text-2xl md:text-4xl lg:text-[56px] text-black tracking-[-1.5px] leading-tight text-center mb-8 md:mb-10 lg:mb-14">
                         What They Said About Us ?
                     </h2>
 
                     {/* Testimonial Cards */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
-                        {TESTIMONIALS.map((testimonial, index) =>
-                            testimonial.hasQuote ? (
-                                <div
-                                    key={index}
-                                    className="relative rounded-2xl overflow-hidden h-55 md:h-80 lg:h-118.25 bg-linear-to-br from-[#c41e1e] to-[#8b0000]"
-                                >
-                                    <div className="absolute inset-0 p-4 md:p-6 lg:p-8 flex flex-col justify-between text-white">
-                                        <p className="text-[10px] md:text-sm lg:text-base italic leading-relaxed">
-                                            {testimonial.quote}
-                                        </p>
-                                        <div>
-                                            <p className="font-bold text-[9px] md:text-xs lg:text-sm leading-tight">
-                                                {testimonial.name}
-                                            </p>
-                                            <p className="text-[8px] md:text-xs lg:text-sm text-white/80 leading-tight mt-0.5">
-                                                {testimonial.role}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ) : (
-                                <div
-                                    key={index}
-                                    className="relative rounded-2xl overflow-hidden h-55 md:h-80 lg:h-118.25"
-                                >
+                    <div className="flex flex-wrap -m-1.5 md:-m-2 lg:-m-3 w-full">
+                        {TESTIMONIALS.map((testimonial, index) => (
+                            <div
+                                key={index}
+                                className="w-full md:w-1/2 lg:w-1/4 p-1.5 md:p-2 lg:p-3"
+                            >
+                                <div className="relative rounded-2xl overflow-hidden h-55 md:h-80 lg:h-118.25 group cursor-pointer">
+                                    {/* Photo (default state) */}
                                     <Image
                                         src={testimonial.image!}
                                         alt={testimonial.name || 'Testimonial'}
                                         fill
-                                        className="object-cover"
+                                        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110"
                                     />
+
+                                    {/* Hover overlay */}
+                                    {testimonial.hasQuote ? (
+                                        <div className="absolute inset-0 bg-linear-to-br from-[#c41e1e]/95 to-[#8b0000]/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+                                            <div className="absolute inset-0 p-4 md:p-6 lg:p-8 flex flex-col justify-between text-white">
+                                                <p className="text-[10px] md:text-sm lg:text-base italic leading-relaxed translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out">
+                                                    {'\u201C'}
+                                                    {testimonial.quote}
+                                                    {'\u201D'}
+                                                </p>
+                                                <div className="flex flex-col gap-2 translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 ease-out">
+                                                    <p className="font-bold text-sm md:text-md lg:text-lg leading-tight">
+                                                        {testimonial.name}
+                                                    </p>
+                                                    <p className="text-[8px] md:text-xs lg:text-sm text-white/80 leading-tight mt-0.5">
+                                                        {testimonial.role}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+                                            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8">
+                                                <p className="font-bold text-sm md:text-base lg:text-lg text-white translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out">
+                                                    {testimonial.name}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
-                            ),
-                        )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -627,7 +642,7 @@ export default function HomePage() {
                                     integrate new technologies, and prepare for the future of
                                     sustainable mobility.
                                 </p>
-                                <OutlinedButton href="/team" variant="light">
+                                <OutlinedButton href="/career" variant="light">
                                     JOIN US NOW
                                 </OutlinedButton>
                             </div>
