@@ -1,11 +1,66 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { JsonLd, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo/jsonld';
+import Breadcrumb from '@/app/components/Breadcrumb';
+
+export const metadata: Metadata = {
+    title: 'Behind the Glorious World Champions in London 2018',
+    description:
+        "Read about ITS Team Sapuangin's historic journey to becoming World Champions at the 2018 Shell Eco-marathon Drivers' World Championship in London.",
+    openGraph: {
+        title: 'Behind the Glorious World Champions in London 2018 | ITS Team Sapuangin',
+        description:
+            "The story behind ITS Team Sapuangin's historic World Championship victory in London 2018.",
+        url: '/news/behind-the-glorious-world-champions-in-london-2018',
+        type: 'article',
+        images: [
+            {
+                url: '/page/news/detail/img-news.png',
+                width: 1200,
+                height: 630,
+                alt: 'ITS Team Sapuangin World Champions London 2018',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Behind the Glorious World Champions in London 2018',
+        description:
+            "The story behind ITS Team Sapuangin's historic World Championship victory in London 2018.",
+        images: ['/page/news/detail/img-news.png'],
+    },
+    alternates: {
+        canonical: '/news/behind-the-glorious-world-champions-in-london-2018',
+    },
+};
 
 export default function NewsDetailPage() {
     return (
         <div className="bg-white flex flex-col items-center w-full overflow-x-hidden">
+            <JsonLd
+                data={articleJsonLd({
+                    title: 'Behind the Glorious World Champions in London 2018',
+                    description:
+                        "ITS Team Sapuangin's historic journey to becoming World Champions at the 2018 Shell Eco-marathon.",
+                    url: '/news/behind-the-glorious-world-champions-in-london-2018',
+                    image: '/page/news/detail/img-news.png',
+                    datePublished: '2024-01-17',
+                    authorName: 'Prana Ali Basyah',
+                })}
+            />
+            <JsonLd
+                data={breadcrumbJsonLd([
+                    { name: 'Home', href: '/' },
+                    { name: 'News', href: '/news' },
+                    {
+                        name: 'Behind the Glorious World Champions in London 2018',
+                        href: '/news/behind-the-glorious-world-champions-in-london-2018',
+                    },
+                ])}
+            />
             {/* Sapang Times Banner */}
-            <div className="h-50 md:h-70 lg:h-93.75 overflow-hidden relative w-full bg-white flex items-center justify-center">
+            <div className="h-50 mt-16 md:h-70 lg:h-93.75 overflow-hidden relative w-full bg-white flex items-center justify-center">
                 <div className="relative w-80 md:w-120 lg:w-162.5 h-25 md:h-35.5 lg:h-48.25">
                     <Image
                         src="/page/news/detail/sapang-times.png"
@@ -32,10 +87,26 @@ export default function NewsDetailPage() {
             {/* Content Section */}
             <div className="bg-white w-full rounded-t-lg relative overflow-hidden">
                 <div className="max-w-258.25 mx-auto px-5 md:px-10 lg:px-0 pt-8 md:pt-10 lg:pt-11.25 pb-12 md:pb-16 lg:pb-20">
+                    {/* Breadcrumb Navigation */}
+                    <div className="mb-6">
+                        <Breadcrumb
+                            items={[
+                                { name: 'Home', href: '/' },
+                                { name: 'News', href: '/news' },
+                                {
+                                    name: 'Behind the Glorious World Champions in London 2018',
+                                    href: '/news/behind-the-glorious-world-champions-in-london-2018',
+                                },
+                            ]}
+                            skipJsonLd
+                        />
+                    </div>
+
                     {/* Back Button */}
                     <div className="flex gap-4 md:gap-5 lg:gap-6 items-center mb-8 md:mb-10 lg:mb-13.5">
                         <Link
                             href="/news"
+                            aria-label="Go back to news listing"
                             className="border border-[#a0a0a0] rounded-[6.356px] p-1.5 md:p-2 flex items-center justify-center hover:bg-gray-50 transition-colors"
                         >
                             <svg

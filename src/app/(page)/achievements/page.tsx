@@ -1,8 +1,34 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { JsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
     title: 'Achievements',
+    description:
+        "Explore ITS Team Sapuangin's 50+ championship titles across 8 countries, including the 2018 Shell Eco-marathon Drivers' World Championship in London. Hall of fame and competition history.",
+    openGraph: {
+        title: 'Achievements | ITS Team Sapuangin',
+        description:
+            '50+ championship titles across 8 countries. 2018 Shell Eco-marathon World Champions in London.',
+        url: '/achievements',
+        images: [
+            {
+                url: '/page/achievements/hall-of-fame/2018-world-champs.png',
+                width: 1200,
+                height: 630,
+                alt: 'ITS Team Sapuangin Hall of Fame',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Achievements | ITS Team Sapuangin',
+        description: '50+ championship titles across 8 countries. See our full hall of fame.',
+        images: ['/page/achievements/hall-of-fame/2018-world-champs.png'],
+    },
+    alternates: {
+        canonical: '/achievements',
+    },
 };
 
 // Data structures
@@ -345,6 +371,13 @@ const AchievementBadge = ({
 export default function AchievementsPage() {
     return (
         <div className="bg-white flex flex-col items-start relative w-full">
+            <JsonLd data={organizationJsonLd()} />
+            <JsonLd
+                data={breadcrumbJsonLd([
+                    { name: 'Home', href: '/' },
+                    { name: 'Achievements', href: '/achievements' },
+                ])}
+            />
             {/* Hero Section */}
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div

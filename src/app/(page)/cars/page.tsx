@@ -1,8 +1,35 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { JsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-    title: 'Cars',
+    title: 'Cars — Urban Concept & Formula Student Vehicles',
+    description:
+        "Discover ITS Team Sapuangin's engineering vehicles: Sapuangin XI Evo 5 Urban Concept (513 km/l efficiency) and Sapuangin Speed 8 Formula Student race car. Full technical specifications and achievements.",
+    openGraph: {
+        title: 'Our Cars | ITS Team Sapuangin',
+        description:
+            'Sapuangin XI Evo 5 Urban Concept and Sapuangin Speed 8 Formula Student vehicles. Technical specs and achievements.',
+        url: '/cars',
+        images: [
+            {
+                url: '/page/cars/urban-car-hero.png',
+                width: 1200,
+                height: 630,
+                alt: 'ITS Team Sapuangin Vehicles',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Our Cars | ITS Team Sapuangin',
+        description:
+            'Sapuangin XI Evo 5 Urban Concept and Sapuangin Speed 8 Formula Student vehicles.',
+        images: ['/page/cars/urban-car-hero.png'],
+    },
+    alternates: {
+        canonical: '/cars',
+    },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -76,6 +103,13 @@ function SectionDivider() {
 export default function CarsPage() {
     return (
         <div className="bg-white flex flex-col items-center w-full overflow-x-hidden">
+            <JsonLd data={organizationJsonLd()} />
+            <JsonLd
+                data={breadcrumbJsonLd([
+                    { name: 'Home', href: '/' },
+                    { name: 'Cars', href: '/cars' },
+                ])}
+            />
             {/* ── Hero Section ─────────────────────────────────────────── */}
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div

@@ -63,6 +63,7 @@ export default function Footer() {
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Team
+                                            {/* TODO: SEO — /team page does not exist. Create page or remove link */}
                                         </Link>
                                     </li>
                                     <li>
@@ -87,6 +88,7 @@ export default function Footer() {
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Competition
+                                            {/* TODO: SEO — /competition page does not exist. Create page or remove link */}
                                         </Link>
                                     </li>
                                     <li>
@@ -126,6 +128,7 @@ export default function Footer() {
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Recruitment
+                                            {/* TODO: SEO — /recruitment page does not exist. Create page or remove link */}
                                         </Link>
                                     </li>
                                     <li>
@@ -134,6 +137,7 @@ export default function Footer() {
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Contact Us
+                                            {/* TODO: SEO — /contact page does not exist. Create page or remove link */}
                                         </Link>
                                     </li>
                                 </ul>

@@ -1,12 +1,38 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { JsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-    title: 'Sponsors',
+    title: 'Sponsorship',
+    description:
+        "Partner with ITS Team Sapuangin, Indonesia's world-champion energy-efficient vehicle team. Sponsorship opportunities, benefits, and current partners. Support sustainable mobility innovation.",
+    openGraph: {
+        title: 'Sponsorship | ITS Team Sapuangin',
+        description:
+            "Partner with Indonesia's world-champion energy-efficient vehicle team. See sponsorship tiers and benefits.",
+        url: '/sponsors',
+        images: [
+            {
+                url: '/page/sponsorship/hero-sponsorship.png',
+                width: 1200,
+                height: 630,
+                alt: 'ITS Team Sapuangin Sponsorship',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Sponsorship | ITS Team Sapuangin',
+        description: "Partner with Indonesia's world-champion energy-efficient vehicle team.",
+        images: ['/page/sponsorship/hero-sponsorship.png'],
+    },
+    alternates: {
+        canonical: '/sponsors',
+    },
 };
 
-// Sponsorship data configuration organized by tiers matching the Figma design
+// Sponsorship data
 const SPONSORSHIP_DATA = {
     hero: {
         title: 'Sponsorship',
@@ -90,19 +116,27 @@ const SPONSORSHIP_DATA = {
     benefits: [
         {
             icon: 'badge.png',
-            title: 'Grand\nChampion\nLegacy',
+            title: 'Grand\nChampion\nLegaaacy',
+            description:
+                'Behind every victory stands a team of dedicated students from Institut Teknologi Sepuluh Nopember. We combine skills in engineering, design, and strategy to deliver world-class results.',
         },
         {
             icon: 'world.png',
             title: 'Unmatched\nInternational\nExposure',
+            description:
+                'Behind every victory stands a team of dedicated students from Institut Teknologi Sepuluh Nopember. We combine skills in engineering, design, and strategy to deliver world-class results.',
         },
         {
             icon: 'csr.png',
-            title: 'Drive\nCSR\nExcellence',
+            title: 'Driven CSR\nExcellence',
+            description:
+                'Behind every victory stands a team of dedicated students from Institut Teknologi Sepuluh Nopember. We combine skills in engineering, design, and strategy to deliver world-class results.',
         },
         {
             icon: 'collab.png',
-            title: 'Innovation\nand\nCollaboration',
+            title: 'Innovation and\nCollaboration',
+            description:
+                'Behind every victory stands a team of dedicated students from Institut Teknologi Sepuluh Nopember. We combine skills in engineering, design, and strategy to deliver world-class results.',
         },
     ],
     contacts: [
@@ -207,6 +241,13 @@ const SectionTitle = ({
 export default function SponsorshipPage() {
     return (
         <div className="bg-white flex flex-col items-center w-full overflow-x-hidden">
+            <JsonLd data={organizationJsonLd()} />
+            <JsonLd
+                data={breadcrumbJsonLd([
+                    { name: 'Home', href: '/' },
+                    { name: 'Sponsors', href: '/sponsors' },
+                ])}
+            />
             {/* Hero Section */}
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div
@@ -230,7 +271,7 @@ export default function SponsorshipPage() {
                     <h2 className="font-bold text-2xl md:text-4xl lg:text-6xl text-black tracking-[-1.5px] leading-normal text-center">
                         Thank You for Supporting Us
                     </h2>
-                    <p className="font-normal text-[#5d5d5d] text-sm md:text-lg lg:text-2xl leading-normal text-center max-w-4xl">
+                    <p className="font-normal text-[#5d5d5d] text-sm md:text-base leading-normal text-center max-w-4xl">
                         All photos displayed in this gallery are the official property of ITS Team
                         Sapuangin and are part of its official documentation during competitions.
                         Any use, reproduction, or distribution of these images without prior written
@@ -333,23 +374,34 @@ export default function SponsorshipPage() {
                         </div>
 
                         {/* Benefits Grid */}
-                        <div className="flex flex-col items-center md:grid md:grid-cols-2 gap-x-8 md:gap-x-12 lg:gap-x-20 gap-y-8 md:gap-y-10 lg:gap-y-16 w-full max-w-225 mx-auto md:place-items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 w-full max-w-312 mx-auto">
                             {SPONSORSHIP_DATA.benefits.map((benefit, index) => (
                                 <div
                                     key={index}
-                                    className="flex gap-4 md:gap-5 lg:gap-6 items-center w-fit mx-auto md:mx-0 md:w-full md:max-w-[320px]"
+                                    className="flex items-center justify-center bg-white border border-[#d5d5d5] rounded-xl overflow-hidden px-6 md:px-8 lg:px-9 py-4 md:py-5"
                                 >
-                                    <div className="relative shrink-0 w-14 h-14 md:w-16 md:h-16 lg:w-22.5g:h-[90px]">
-                                        <Image
-                                            src={`/page/sponsorship/${benefit.icon}`}
-                                            alt={benefit.title}
-                                            fill
-                                            className="object-contain"
-                                        />
+                                    <div className="flex flex-col items-start justify-between gap-5 h-full w-full">
+                                        {/* Icon */}
+                                        <div className="relative w-[72px] h-[85px] md:w-[80px] md:h-[90px]">
+                                            <Image
+                                                src={`/page/sponsorship/${benefit.icon}`}
+                                                alt={benefit.title.replace(/\n/g, ' ')}
+                                                height={100}
+                                                width={100}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        {/* Title */}
+                                        <h3 className="font-extrabold text-xl md:text-2xl lg:text-[26px] text-[#2e2e2e] tracking-[-0.77px] leading-tight whitespace-pre-line">
+                                            {benefit.title}
+                                        </h3>
+                                        {/* Divider */}
+                                        <div className="w-48 h-px bg-[#d0d0d0]" />
+                                        {/* Description */}
+                                        <p className="font-normal text-sm md:text-base text-[#5d5d5d] tracking-[-0.6px] leading-normal">
+                                            {benefit.description}
+                                        </p>
                                     </div>
-                                    <h3 className="font-semibold text-base md:text-xl lg:text-[28px] text-black tracking-[-0.9px] leading-[1.1] whitespace-pre-line flex-1">
-                                        {benefit.title}
-                                    </h3>
                                 </div>
                             ))}
                         </div>
@@ -392,8 +444,8 @@ export default function SponsorshipPage() {
                                 </Link>
 
                                 {/* Divider */}
-                                <div className="hidden md:block w-[2.2px] h-27.25 bg-[#626262]"></div>
-                                <div className="md:hidden w-32 h-px bg-[#626262]"></div>
+                                <div className="hidden md:block w-[1px] h-27.25 bg-gray-300"></div>
+                                <div className="md:hidden w-32 h-px bg-gray-300"></div>
 
                                 {/* Second Contact */}
                                 <Link

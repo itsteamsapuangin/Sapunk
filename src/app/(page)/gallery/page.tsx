@@ -1,8 +1,35 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { JsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-    title: 'Gallery',
+    title: 'Gallery — Competition & Team Photos',
+    description:
+        "Browse ITS Team Sapuangin's photo gallery from Shell Eco-marathon, Formula Student Japan (JSAE), and team activities. Official competition photos and behind-the-scenes moments.",
+    openGraph: {
+        title: 'Gallery | ITS Team Sapuangin',
+        description:
+            'Official photos from Shell Eco-marathon, Formula Student Japan, and team activities.',
+        url: '/gallery',
+        images: [
+            {
+                url: '/page/gallery/hero-gallery.png',
+                width: 1200,
+                height: 630,
+                alt: 'ITS Team Sapuangin Gallery',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Gallery | ITS Team Sapuangin',
+        description:
+            'Official photos from Shell Eco-marathon, Formula Student Japan, and team activities.',
+        images: ['/page/gallery/hero-gallery.png'],
+    },
+    alternates: {
+        canonical: '/gallery',
+    },
 };
 
 // Gallery data configuration
@@ -65,6 +92,13 @@ const GALLERY_DATA = {
 export default function GalleryPage() {
     return (
         <div className="bg-white flex flex-col items-start relative w-full">
+            <JsonLd data={organizationJsonLd()} />
+            <JsonLd
+                data={breadcrumbJsonLd([
+                    { name: 'Home', href: '/' },
+                    { name: 'Gallery', href: '/gallery' },
+                ])}
+            />
             {/* Hero Section */}
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div
@@ -122,7 +156,7 @@ export default function GalleryPage() {
                                         <div className="bg-[#d6d6d6] h-80 md:h-102 w-full relative overflow-hidden">
                                             <Image
                                                 src={section.images.column1[0]}
-                                                alt="Team Photo"
+                                                alt={`ITS Team Sapuangin at ${section.id === 'shell' ? 'Shell Eco-marathon' : 'Formula Student Japan'} competition`}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -130,7 +164,7 @@ export default function GalleryPage() {
                                         <div className="bg-[#d6d6d6] h-80 md:flex-1 md:min-h-px md:min-w-px w-full relative overflow-hidden">
                                             <Image
                                                 src={section.images.column1[1]}
-                                                alt="Team Photo"
+                                                alt={`ITS Team Sapuangin ${section.id === 'shell' ? 'Shell Eco-marathon' : 'JSAE Formula Student'} team photo`}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -141,7 +175,7 @@ export default function GalleryPage() {
                                         <div className="bg-[#d6d6d6] h-80 lg:h-63.25 w-full relative overflow-hidden">
                                             <Image
                                                 src={section.images.column2[0]}
-                                                alt="Team Photo"
+                                                alt={`${section.id === 'shell' ? 'Shell Eco-marathon' : 'Formula Student Japan'} vehicle preparation`}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -149,7 +183,7 @@ export default function GalleryPage() {
                                         <div className="bg-[#d6d6d6] h-80 lg:flex-1 lg:min-h-px lg:min-w-px w-full relative overflow-hidden">
                                             <Image
                                                 src={section.images.column2[1]}
-                                                alt="Team Photo"
+                                                alt={`ITS Team Sapuangin ${section.id === 'shell' ? 'Shell Eco-marathon' : 'JSAE'} competition moment`}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -160,7 +194,7 @@ export default function GalleryPage() {
                                         <div className="bg-[#d6d6d6] h-105.25 w-full relative overflow-hidden">
                                             <Image
                                                 src={section.images.column3[0]}
-                                                alt="Team Photo"
+                                                alt={`${section.id === 'shell' ? 'Shell Eco-marathon' : 'Formula Student Japan'} event highlights`}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -168,7 +202,7 @@ export default function GalleryPage() {
                                         <div className="bg-[#d6d6d6] h-62.75 w-full relative overflow-hidden">
                                             <Image
                                                 src={section.images.column3[1]}
-                                                alt="Team Photo"
+                                                alt={`ITS Team Sapuangin at ${section.id === 'shell' ? 'Shell Eco-marathon' : 'Formula Student Japan'}`}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -180,7 +214,7 @@ export default function GalleryPage() {
                                     <div className="bg-[#d6d6d6] h-80 md:h-full overflow-hidden relative w-full">
                                         <Image
                                             src={section.images.bottomRow[0]}
-                                            alt="Team Photo"
+                                            alt={`ITS Team Sapuangin ${section.id === 'shell' ? 'Shell Eco-marathon' : 'JSAE'} gallery panoramic view`}
                                             fill
                                             className="object-cover md:object-center"
                                         />
@@ -188,7 +222,7 @@ export default function GalleryPage() {
                                     <div className="bg-[#d6d6d6] h-80 md:h-full overflow-hidden relative w-full">
                                         <Image
                                             src={section.images.bottomRow[1]}
-                                            alt="Team Photo"
+                                            alt={`ITS Team Sapuangin ${section.id === 'shell' ? 'Shell Eco-marathon' : 'Formula Student Japan'} group photo`}
                                             fill
                                             className="object-cover"
                                         />
@@ -215,7 +249,7 @@ export default function GalleryPage() {
                             <div className="bg-[#d6d6d6] h-80 md:h-102 w-full relative overflow-hidden">
                                 <Image
                                     src={GALLERY_DATA.activities.images.column1[0]}
-                                    alt="Team Photo"
+                                    alt="ITS Team Sapuangin team activity and engineering workshop"
                                     fill
                                     className="object-cover"
                                 />
@@ -223,7 +257,7 @@ export default function GalleryPage() {
                             <div className="bg-[#d6d6d6] h-80 md:flex-1 md:min-h-px md:min-w-px w-full relative overflow-hidden">
                                 <Image
                                     src={GALLERY_DATA.activities.images.column1[1]}
-                                    alt="Team Photo"
+                                    alt="ITS Team Sapuangin members during team building"
                                     fill
                                     className="object-cover"
                                 />
@@ -234,7 +268,7 @@ export default function GalleryPage() {
                             <div className="bg-[#d6d6d6] h-80 lg:h-63.25 w-full relative overflow-hidden">
                                 <Image
                                     src={GALLERY_DATA.activities.images.column2[0]}
-                                    alt="Team Photo"
+                                    alt="Sapuangin team engineering and vehicle assembly"
                                     fill
                                     className="object-cover"
                                 />
@@ -242,7 +276,7 @@ export default function GalleryPage() {
                             <div className="bg-[#d6d6d6] h-80 lg:flex-1 lg:min-h-px lg:min-w-px w-full relative overflow-hidden">
                                 <Image
                                     src={GALLERY_DATA.activities.images.column2[1]}
-                                    alt="Team Photo"
+                                    alt="ITS Team Sapuangin behind-the-scenes preparation"
                                     fill
                                     className="object-cover"
                                 />
@@ -253,7 +287,7 @@ export default function GalleryPage() {
                             <div className="bg-[#d6d6d6] h-105.25 w-full relative overflow-hidden">
                                 <Image
                                     src={GALLERY_DATA.activities.images.column3[0]}
-                                    alt="Team Photo"
+                                    alt="ITS Team Sapuangin community and outreach activities"
                                     fill
                                     className="object-cover"
                                 />
@@ -261,7 +295,7 @@ export default function GalleryPage() {
                             <div className="bg-[#d6d6d6] h-62.75 w-full relative overflow-hidden">
                                 <Image
                                     src={GALLERY_DATA.activities.images.column3[1]}
-                                    alt="Team Photo"
+                                    alt="Sapuangin team daily activities and collaboration"
                                     fill
                                     className="object-cover"
                                 />
@@ -273,7 +307,7 @@ export default function GalleryPage() {
                         <div className="bg-[#d6d6d6] h-80 md:h-full overflow-hidden relative w-full">
                             <Image
                                 src={GALLERY_DATA.activities.images.bottomRow[0]}
-                                alt="Activities Photo"
+                                alt="ITS Team Sapuangin group activity panoramic view"
                                 fill
                                 className="object-cover md:object-center"
                             />
@@ -281,7 +315,7 @@ export default function GalleryPage() {
                         <div className="bg-[#d6d6d6] h-80 md:h-full overflow-hidden relative w-full">
                             <Image
                                 src={GALLERY_DATA.activities.images.bottomRow[1]}
-                                alt="Team Photo"
+                                alt="ITS Team Sapuangin team activities group photo"
                                 fill
                                 className="object-cover"
                             />

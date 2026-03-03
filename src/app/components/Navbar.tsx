@@ -10,24 +10,50 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
 
+    // Pages with transparent-to-white navbar on scroll
+    const transparentPages = [
+        '/',
+        '/team',
+        '/cars',
+        '/achievements',
+        '/gallery',
+        '/sponsors',
+        '/news',
+    ];
+    const isSolid = !transparentPages.includes(pathname);
+
     useEffect(() => {
+        if (isSolid) {
+            setIsScrolled(true);
+            return;
+        }
+
         const handleScroll = () => {
             // Change navbar style after scrolling past hero section (typically 400-600px)
             setIsScrolled(window.scrollY > 400);
         };
 
+        // Reset on route change
+        handleScroll();
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isSolid]);
 
     const navLinks = [
-        { href: '/team', label: 'Team' },
+        {
+            href: '/team',
+            label: 'Team',
+        } /* TODO: SEO — /team page does not exist yet. Create it or remove link to avoid 404 */,
         { href: '/cars', label: 'Cars' },
         { href: '/achievements', label: 'Achievements' },
         { href: '/gallery', label: 'Gallery' },
         { href: '/news', label: 'News' },
         { href: '/sponsors', label: 'Sponsors' },
-        { href: '/contact', label: 'Contact Us' },
+        {
+            href: '/contact',
+            label: 'Contact Us',
+        } /* TODO: SEO — /contact page does not exist yet. Create it or remove link to avoid 404 */,
     ];
 
     return (
@@ -62,7 +88,8 @@ export default function Navbar() {
                     {/* Desktop Navigation Links */}
                     <div className="flex items-center gap-12">
                         {navLinks.map((link) => {
-                            const isActive = pathname === link.href;
+                            const isActive =
+                                pathname === link.href || pathname.startsWith(`${link.href}/`);
                             return (
                                 <Link
                                     key={link.href}
@@ -174,7 +201,8 @@ export default function Navbar() {
                     <div className="container mx-auto px-4 py-4">
                         <div className="flex flex-col gap-1">
                             {navLinks.map((link) => {
-                                const isActive = pathname === link.href;
+                                const isActive =
+                                    pathname === link.href || pathname.startsWith(`${link.href}/`);
                                 return (
                                     <Link
                                         key={link.href}

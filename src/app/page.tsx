@@ -1,9 +1,36 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { JsonLd, websiteJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-    title: 'Home',
+    title: 'Home — World Champion Energy-Efficient Car Team',
+    description:
+        'ITS Team Sapuangin is the world-champion energy-efficient vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. Winners of Shell Eco-marathon and Formula Student Japan competitors.',
+    openGraph: {
+        title: 'ITS Team Sapuangin — Home',
+        description:
+            'World-champion energy-efficient vehicle team from ITS Surabaya. 50+ championship titles, 513 km/l fuel efficiency record.',
+        url: '/',
+        images: [
+            {
+                url: '/page/home/world-champions-celebration.png',
+                width: 1200,
+                height: 630,
+                alt: 'ITS Team Sapuangin World Champions Celebration',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'ITS Team Sapuangin — World Champion Energy-Efficient Car Team',
+        description:
+            'World-champion energy-efficient vehicle team from ITS Surabaya. 50+ championship titles.',
+        images: ['/page/home/world-champions-celebration.png'],
+    },
+    alternates: {
+        canonical: '/',
+    },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -311,6 +338,8 @@ function SponsorRow({
 export default function HomePage() {
     return (
         <div className="bg-white flex flex-col items-center w-full overflow-x-hidden">
+            <JsonLd data={websiteJsonLd()} />
+            <JsonLd data={organizationJsonLd()} />
             {/* ── Hero Section ─────────────────────────────────────────── */}
             <div className="overflow-hidden relative w-full">
                 <div
