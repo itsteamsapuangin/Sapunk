@@ -19,6 +19,22 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Prevent AOS transform animations from causing horizontal overflow */
+html,
+body {
+    overflow-x: clip;
+}
+
+/* Hide vertical scrollbar across all browsers while keeping scroll functional */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
 /* Animated glow border for achievement tooltips */
 @keyframes spin-slow {
     from {
