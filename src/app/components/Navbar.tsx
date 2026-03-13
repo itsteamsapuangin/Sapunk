@@ -41,10 +41,7 @@ export default function Navbar() {
     }, [isSolid]);
 
     const navLinks = [
-        {
-            href: '/team',
-            label: 'Team',
-        } /* TODO: SEO — /team page does not exist yet. Create it or remove link to avoid 404 */,
+        { href: '/team', label: 'Team' },
         { href: '/cars', label: 'Cars' },
         { href: '/achievements', label: 'Achievements' },
         { href: '/gallery', label: 'Gallery' },
