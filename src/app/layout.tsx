@@ -5,6 +5,7 @@ import Footer from '@/app/components/sections/footer';
 import WelcomeScreen from '@/app/components/WelcomeScreen';
 import { DM_Sans } from 'next/font/google';
 import { ReactLenis } from '@/lib/lenis';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTopButton from '@/app/components/ScrollToTopButton';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sapuangin.its.ac.id';
@@ -102,6 +103,7 @@ export default function RootLayout({
                     <WelcomeScreen />
                     <Navbar />
                     <main>{children}</main>
+                    <Analytics />
                     <Footer />
                     <ScrollToTopButton />
                 </body>
