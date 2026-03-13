@@ -37,6 +37,7 @@ type Member = {
     title: string;
     image: string;
     role?: string;
+    priority?: boolean;
 };
 
 const HISTORY_PARAGRAPHS = [
@@ -332,7 +333,7 @@ function SectionBadge({ text }: { text: string }) {
     );
 }
 
-function PersonCard({ person }: { person: Member }) {
+function PersonCard({ person, priority = false }: { person: Member; priority?: boolean }) {
     return (
         <article className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[280px] flex flex-col gap-4 group cursor-pointer">
             <div className="relative w-full aspect-[280/270] rounded-xl overflow-hidden bg-[#d9d9d9] border border-[#d9d9d9]">
@@ -340,6 +341,9 @@ function PersonCard({ person }: { person: Member }) {
                     src={person.image}
                     alt={person.name}
                     fill
+                    priority={priority}
+                    loading={priority ? 'eager' : 'lazy'}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
                     className="object-cover object-top transition-all duration-500 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
@@ -353,9 +357,7 @@ function PersonCard({ person }: { person: Member }) {
                         {person.role}
                     </p>
                 ) : null}
-                <p
-                    className={`whitespace-pre-line font-medium text-base md:text-lg max-w-56 break-words tracking-tight ${person.role ? 'text-black' : 'text-[#e50808]'}`}
-                >
+                <p className={`whitespace-pre-line font-medium text-base md:text-lg max-w-56 break-words tracking-tight ${person.role ? 'text-black' : 'text-[#e50808]'}`}>
                     {person.title}
                 </p>
             </div>
@@ -519,8 +521,8 @@ export default function TeamPage() {
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 flex flex-col items-center gap-6 md:gap-12">
                     <SectionBadge text="FACULTY ADVISORS" />
                     <div className="w-full flex flex-wrap justify-center gap-5 md:gap-12">
-                        {FACULTY_ADVISORS.map((person) => (
-                            <PersonCard key={person.name} person={person} />
+                        {FACULTY_ADVISORS.map((person, index) => (
+                            <PersonCard key={person.name} person={person} priority={index < 4} />
                         ))}
                     </div>
                 </div>
