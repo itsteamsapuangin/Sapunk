@@ -61,20 +61,15 @@ const SPONSORSHIP_DATA = {
             logo: 'triputra-argo-persada.png',
             url: 'https://www.triputraagropersada.com',
         },
+        { name: 'Haston', logo: 'haston.png', url: 'https://www.instagram.com/hastonid' },
     ],
     silverSponsors: [
         { name: 'TDR', logo: 'tdr.png', url: 'https://www.tdr-racing.com' },
-        { name: 'Haston', logo: 'haston.png', url: 'https://www.instagram.com/hastonid' },
         { name: 'AHM', logo: 'ahm.png', url: 'https://www.astra-honda.com' },
         {
             name: 'PLN Indonesia Power',
             logo: 'pln-indonesia-power.png',
             url: 'https://www.indonesiapower.co.id',
-        },
-        {
-            name: 'Pelindo Indonesia Maritime Gateway',
-            logo: 'pelindo-indonesia-matitime-gateway.png',
-            url: 'https://www.pelindo.co.id',
         },
     ],
     bronzeSponsors: [
@@ -90,6 +85,7 @@ const SPONSORSHIP_DATA = {
         { name: 'Indowire', logo: 'indowire.png', url: 'https://www.indowire.com' },
         { name: 'Lintech', logo: 'lintech.png', url: 'https://www.lintech.co.id' },
         { name: 'Kiny Tours', logo: 'kiny-tours.png', url: 'https://www.instagram.com/kinytours' },
+        { name: 'Pelindo Indonesia Maritime Gateway', logo: 'pelindo-indonesia-matitime-gateway.png', url: 'https://www.pelindo.co.id'},
     ],
     supportSponsors: [
         { name: 'Akebono', logo: 'akebono.png', url: 'https://www.akebono-brake.com' },
@@ -314,10 +310,13 @@ export default function SponsorshipPage() {
                         <div className="w-full max-w-3xl h-32 md:h-37.5 lg:h-[206.48px]">
                             <SponsorCard {...SPONSORSHIP_DATA.goldSponsors[0]} className="h-full" />
                         </div>
+                        <div className="w-full max-w-3xl h-32 md:h-37.5 lg:h-[206.48px]">
+                            <SponsorCard {...SPONSORSHIP_DATA.goldSponsors[1]} className="h-full" />
+                        </div>
                     </div>
 
                     {/* Silver Sponsors Section */}
-                    <div className="flex flex-col items-center gap-4 md:gap-6 lg:gap-11.5 mb-6 md:mb-8 lg:mb-14">
+                    <div className="flex flex-col items-center gap-3 md:gap-6 lg:gap-11.5 mb-6 md:mb-8 lg:mb-14">
                         <SectionTitle bgColor="bg-[#ABABAB]">Silver Sponsors</SectionTitle>
                         <div className="flex flex-wrap gap-3 md:gap-4 lg:gap-[33.46px] w-full justify-center">
                             {SPONSORSHIP_DATA.silverSponsors.map((sponsor, index) => (
