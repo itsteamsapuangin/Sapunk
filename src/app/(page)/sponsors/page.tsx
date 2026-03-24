@@ -112,7 +112,7 @@ const SPONSORSHIP_DATA = {
     benefits: [
         {
             icon: 'badge.png',
-            title: 'Grand\nChampion\nLegaaacy',
+            title: 'Grand\nChampion\nLegacy',
             description:
                 'Behind every victory stands a team of dedicated students from Institut Teknologi Sepuluh Nopember. We combine skills in engineering, design, and strategy to deliver world-class results.',
         },

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { JsonLd, websiteJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-    title: 'Home — World Champion Energy-Efficient Car Team',
+    title: 'ITS Team Sapuangin',
     description:
         'ITS Team Sapuangin is the world-champion energy-efficient vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. Winners of Shell Eco-marathon and Formula Student Japan competitors.',
     openGraph: {
@@ -356,7 +356,7 @@ export default function HomePage() {
 
                     <div className="left-0 right-0 flex justify-center z-20">
                         <div className="bg-[#e50808] px-4 py-1.5 md:px-6 md:py-2">
-                            <h1 className="font-bold text-xl md:text-3xl lg:text-[48px] text-white tracking-[-1.20px] leading-tight uppercase text-center">
+                            <h1 className="font-bold text-xl md:text-3xl lg:text-[36px] text-white tracking-[-1.20px] leading-tight uppercase text-center">
                                 Fuel-Efficient Car Research Team
                             </h1>
                         </div>
