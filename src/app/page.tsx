@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { JsonLd, websiteJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
+import ShellFormulaBannerCarousel from './components/ShellFormulaBannerCarousel';
 
 export const metadata: Metadata = {
     title: 'ITS Team Sapuangin',
     description:
-        'ITS Team Sapuangin is the world-champion energy-efficient vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. Winners of Shell Eco-marathon and Formula Student Japan competitors.',
+        'ITS Team Sapuangin is the world-champion energy-efficient vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. Winners of 70 Eco-marathon and Formula Student Japan competitors.',
     openGraph: {
         title: 'ITS Team Sapuangin — Home',
         description:
@@ -106,14 +107,14 @@ const TESTIMONIALS = [
     {
         quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
         name: 'Dr. (H.C.) H. Erick Thohir, B.A., M.B.A.',
-        role: 'Menteri Pemuda dan Olahraga Indonesia',
+        role: 'Menteri Pemuda dan Olahraga Republik Indonesia',
         image: '/page/home/testimonial-erick-thohir.png',
         hasQuote: true,
     },
     {
         quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
         name: 'Dr. (H.C.) Ir. Hj. Tri Rismaharini, M.T.',
-        role: 'Menteri Sosial 2020 - 2024',
+        role: 'Menteri Sosial Republik Indonesia (2020 - 2024)',
         image: '/page/home/testimonial-risma.png',
         hasQuote: true,
     },
@@ -269,6 +270,7 @@ function NewsCard({
                     src={image}
                     alt={title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Gradient overlay */}
@@ -325,6 +327,7 @@ function SponsorRow({
                         src={`/page/sponsorship/${sponsor.logo}`}
                         alt={sponsor.name}
                         fill
+                        sizes="(max-width: 768px) 144px, (max-width: 1024px) 192px, 288px"
                         className="object-contain p-2 md:p-3 lg:p-4"
                     />
                 </div>
@@ -342,10 +345,16 @@ export default function HomePage() {
             <JsonLd data={organizationJsonLd()} />
             {/* ── Hero Section ─────────────────────────────────────────── */}
             <div className="overflow-hidden relative w-full">
-                <div
-                    className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex flex-col gap-8 justify-end items-center px-6 md:px-12 lg:px-24 pb-12 md:pb-16 lg:pb-24"
-                    style={{ backgroundImage: "url('/page/home/hero-home.png')" }}
-                >
+                <div className="relative w-full h-screen flex flex-col gap-8 justify-end items-center px-6 md:px-12 lg:px-24 pb-12 md:pb-16 lg:pb-24">
+                    <Image
+                        src="/page/home/hero-home.png"
+                        alt="ITS Team Sapuangin Hero"
+                        fill
+                        sizes="100vw"
+                        quality={85}
+                        priority
+                        className="object-cover"
+                    />
                     <div
                         className="absolute inset-0 w-full z-0"
                         style={{
@@ -379,8 +388,8 @@ export default function HomePage() {
                             src="/page/home/about-urban-car.png"
                             alt="Urban Concept Car"
                             fill
+                            sizes="(max-width: 1024px) 100vw, 60vw"
                             className="object-contain"
-                            priority
                         />
                     </div>
                     {/* Right - Content */}
@@ -422,6 +431,8 @@ export default function HomePage() {
                         src="/page/home/world-champions-banner.png"
                         alt="World Champions Banner"
                         fill
+                        sizes="100vw"
+                        quality={82}
                         className="object-cover grayscale"
                     />
                     <div className="absolute inset-0 bg-black/50" />
@@ -463,6 +474,7 @@ export default function HomePage() {
                                 src={HIGHLIGHTS[0].image}
                                 alt="World Champions in London 2018"
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 58vw"
                                 className="object-cover"
                             />
                         </div>
@@ -473,6 +485,7 @@ export default function HomePage() {
                                 src={HIGHLIGHTS[1].image}
                                 alt="Innovating Across Vehicle Classes"
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 58vw"
                                 className="object-cover"
                             />
                         </div>
@@ -509,6 +522,7 @@ export default function HomePage() {
                                 src={HIGHLIGHTS[2].image}
                                 alt="The People Behind the Machines"
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 58vw"
                                 className="object-cover"
                             />
                         </div>
@@ -538,61 +552,15 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* ── Formula Student Japan Banner ─────────────────────────── */}
-            <section className="w-full relative">
-                <div className="relative w-full h-75 md:h-120 lg:h-196.25 overflow-hidden">
-                    <Image
-                        src="/page/home/formula-student-japan.png"
-                        alt="Formula Student Japan"
-                        fill
-                        className="object-cover grayscale"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-14">
-                        <div className="container mx-auto">
-                            <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 lg:gap-8">
-                                <div className="max-w-2xl">
-                                    <h2 className="font-bold text-3xl md:text-4xl lg:text-[56px] text-white tracking-[-1.5px] leading-tight mb-3 md:mb-4">
-                                        Formula Student Japan
-                                    </h2>
-                                    <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed max-w-xl">
-                                        Behind every victory stands a team of dedicated students
-                                        from Institut Teknologi Sepuluh Nopember. We combine skills
-                                        in engineering, design, and strategy to deliver world-class
-                                        results.
-                                    </p>
-                                </div>
-                                {/* JSAE + Formula SAE Japan Logos */}
-                                <div className="flex items-center gap-3 md:gap-4 shrink-0">
-                                    <Image
-                                        src="/logo/jsae.png"
-                                        alt="JSAE Logo"
-                                        width={106.74}
-                                        height={43.37}
-                                        className="w-16 md:w-20 lg:w-26.5 h-auto brightness-0 invert"
-                                    />
-
-                                    <Image
-                                        src="/logo/formula-sae.png"
-                                        alt="Formula SAE Japan Logo"
-                                        width={98.63}
-                                        height={54.2}
-                                        className="w-16 md:w-20 lg:w-26.5 h-auto brightness-0 invert"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* ── Competition Banner Carousel ─────────────────────────── */}
+            <ShellFormulaBannerCarousel />
 
             {/* ── Testimonials Section ─────────────────────────────────── */}
             <section className="w-full py-10 md:py-14 lg:py-20">
                 <div className="container mx-auto px-6 md:px-12 lg:px-0">
                     {/* Section Title */}
                     <h2 className="font-bold text-2xl md:text-4xl lg:text-[56px] text-black tracking-[-1.5px] leading-tight text-center mb-8 md:mb-10 lg:mb-14">
-                        What They Said About Us ?
+                        What They Said About Us?
                     </h2>
 
                     {/* Testimonial Cards */}
@@ -603,37 +571,48 @@ export default function HomePage() {
                                 className="w-full md:w-1/2 lg:w-1/4 p-1.5 md:p-2 lg:p-3"
                             >
                                 <div className="relative rounded-2xl overflow-hidden h-55 md:h-80 lg:h-118.25 group cursor-pointer">
+                                    <input
+                                        id={`testimonial-toggle-${index}`}
+                                        type="checkbox"
+                                        className="peer sr-only lg:hidden"
+                                        aria-label={`Toggle testimonial from ${testimonial.name}`}
+                                    />
+                                    <label
+                                        htmlFor={`testimonial-toggle-${index}`}
+                                        className="absolute inset-0 z-20 lg:hidden cursor-pointer"
+                                    />
                                     {/* Photo (default state) */}
                                     <Image
                                         src={testimonial.image!}
                                         alt={testimonial.name || 'Testimonial'}
                                         fill
-                                        className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-110"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                        className="object-cover object-top transition-transform duration-500 ease-out max-lg:peer-checked:scale-110 lg:group-hover:scale-110"
                                     />
 
                                     {/* Hover overlay */}
                                     {testimonial.hasQuote ? (
-                                        <div className="absolute inset-0 bg-linear-to-br from-[#c41e1e]/95 to-[#8b0000]/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+                                        <div className="absolute inset-0 z-10 bg-linear-to-br from-[#c41e1e]/95 to-[#8b0000]/95 opacity-0 max-lg:peer-checked:opacity-100 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
                                             <div className="absolute inset-0 p-4 md:p-6 lg:p-8 flex flex-col justify-between text-white">
-                                                <p className="text-[10px] md:text-sm lg:text-base italic leading-relaxed translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out">
+                                                <p className="text-sm md:text-sm lg:text-base italic leading-relaxed lg:translate-y-3 lg:group-hover:translate-y-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500 delay-100 ease-out">
                                                     {'\u201C'}
                                                     {testimonial.quote}
                                                     {'\u201D'}
                                                 </p>
-                                                <div className="flex flex-col gap-2 translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 ease-out">
+                                                <div className="flex flex-col gap-1 lg:translate-y-3 lg:group-hover:translate-y-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500 delay-200 ease-out">
                                                     <p className="font-bold text-sm md:text-md lg:text-lg leading-tight">
                                                         {testimonial.name}
                                                     </p>
-                                                    <p className="text-[8px] md:text-xs lg:text-sm text-white/80 leading-tight mt-0.5">
+                                                    <p className="text-xs md:text-xs lg:text-sm text-white/80 leading-tight mt-0.5">
                                                         {testimonial.role}
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     ) : (
-                                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+                                        <div className="absolute inset-0 z-10 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 max-lg:peer-checked:opacity-100 lg:group-hover:opacity-100 transition-opacity duration-300 ease-out">
                                             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8">
-                                                <p className="font-bold text-sm md:text-base lg:text-lg text-white translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out">
+                                                <p className="font-bold text-sm md:text-base lg:text-lg text-white lg:translate-y-2 lg:group-hover:translate-y-0 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500 delay-100 ease-out">
                                                     {testimonial.name}
                                                 </p>
                                             </div>
@@ -653,6 +632,8 @@ export default function HomePage() {
                         src="/page/home/cta-pitlane.png"
                         alt="Join Us"
                         fill
+                        sizes="100vw"
+                        quality={82}
                         className="object-cover"
                     />
                     <div className="absolute inset-0 bg-black/40" />

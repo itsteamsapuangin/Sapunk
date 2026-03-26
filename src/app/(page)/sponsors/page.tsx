@@ -85,7 +85,11 @@ const SPONSORSHIP_DATA = {
         { name: 'Indowire', logo: 'indowire.png', url: 'https://www.indowire.com' },
         { name: 'Lintech', logo: 'lintech.png', url: 'https://www.lintech.co.id' },
         { name: 'Kiny Tours', logo: 'kiny-tours.png', url: 'https://www.instagram.com/kinytours' },
-        { name: 'Pelindo Indonesia Maritime Gateway', logo: 'pelindo-indonesia-matitime-gateway.png', url: 'https://www.pelindo.co.id'},
+        {
+            name: 'Pelindo Indonesia Maritime Gateway',
+            logo: 'pelindo-indonesia-matitime-gateway.png',
+            url: 'https://www.pelindo.co.id',
+        },
     ],
     supportSponsors: [
         { name: 'Akebono', logo: 'akebono.png', url: 'https://www.akebono-brake.com' },

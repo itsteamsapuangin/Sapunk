@@ -357,7 +357,9 @@ function PersonCard({ person, priority = false }: { person: Member; priority?: b
                         {person.role}
                     </p>
                 ) : null}
-                <p className={`whitespace-pre-line font-medium text-base md:text-lg max-w-56 break-words tracking-tight ${person.role ? 'text-black' : 'text-[#e50808]'}`}>
+                <p
+                    className={`whitespace-pre-line font-medium text-base md:text-lg max-w-56 break-words tracking-tight ${person.role ? 'text-black' : 'text-[#e50808]'}`}
+                >
                     {person.title}
                 </p>
             </div>

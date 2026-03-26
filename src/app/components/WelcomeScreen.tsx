@@ -97,6 +97,7 @@ export default function WelcomeScreen() {
                         src="/asset/OG-square.png"
                         alt="Sapuangin Logo"
                         fill
+                        sizes="80px"
                         className="object-contain"
                         priority
                     />
