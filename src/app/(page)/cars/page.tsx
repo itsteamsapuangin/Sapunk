@@ -35,30 +35,51 @@ export const metadata: Metadata = {
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const URBAN_SPECS = [
-    { icon: '/page/cars/icon-engine.png', label: 'ENGINE', value: '4 Stroke Honda 110cc' },
-    { icon: '/page/cars/icon-steering.png', label: 'STEERING', value: 'Ackerman Steering' },
-    { icon: '/page/cars/icon-chassis.png', label: 'CHASSIS', value: 'Hollow Aluminium' },
-    { icon: '/page/cars/icon-body.png', label: 'BODY', value: 'Dual Layer Carbon' },
-    { icon: '/page/cars/icon-steering.png', label: 'DRIVETRAIN', value: 'Chain with Sprocket' },
-    { icon: '/page/cars/icon-steering.png', label: 'BRAKING', value: 'Hydraulic System' },
-    { icon: '/page/cars/icon-width.svg', label: 'WIDTH', value: '1290 mm' },
-    { icon: '/page/cars/icon-steering.png', label: 'HEIGHT', value: '800 mm' },
-    { icon: '/page/cars/icon-steering.png', label: 'LENGTH', value: '2600 mm' },
+    { icon: '/page/cars/urban/icon-engine.png', label: 'ENGINE', value: '4 Stroke Honda 110cc' },
+    { icon: '/page/cars/urban/icon-steering.png', label: 'STEERING', value: 'Ackerman Steering' },
+    { icon: '/page/cars/urban/icon-chassis.png', label: 'CHASSIS', value: 'Hollow Aluminium' },
+    { icon: '/page/cars/urban/icon-body.png', label: 'BODY', value: 'Dual Layer Carbon' },
+    {
+        icon: '/page/cars/urban/icon-drivetrain.png',
+        label: 'DRIVETRAIN',
+        value: 'Chain with Sprocket',
+    },
+    { icon: '/page/cars/urban/icon-breaking.png', label: 'BRAKING', value: 'Hydraulic System' },
+    { icon: '/page/cars/urban/icon-width.png', label: 'WIDTH', value: '1290 mm' },
+    { icon: '/page/cars/urban/icon-height.png', label: 'HEIGHT', value: '800 mm' },
+    { icon: '/page/cars/urban/icon-length.png', label: 'LENGTH', value: '2600 mm' },
+];
+
+const URBAN_SPECS_MOBILE_ROWS = [
+    ['ENGINE', 'STEERING'],
+    ['CHASSIS'],
+    ['DRIVETRAIN', 'BRAKING'],
+    ['BODY'],
+    ['WIDTH', 'HEIGHT'],
+    ['LENGTH'],
 ];
 
 const FORMULA_SPECS = [
-    { icon: '/page/cars/icon-engine.png', label: 'ENGINE', value: 'Kawasaki ZX-6R' },
-    { icon: '/page/cars/icon-steering.png', label: 'MAX TORQUE', value: '48 Nm' },
-    { icon: '/page/cars/icon-steering.png', label: 'MAX POWER', value: '70 HP' },
-    { icon: '/page/cars/icon-steering.png', label: 'ECU', value: 'Motec M130' },
-    { icon: '/page/cars/icon-steering.png', label: 'FRONT TYPE', value: 'LCO Hoosier 10 in' },
-    { icon: '/page/cars/icon-steering.png', label: 'REAR TYPE', value: 'R25B Hoosier 10 in' },
-    { icon: '/page/cars/icon-steering.png', label: 'COWL', value: 'Fiberglass Carbon Fiber' },
-    { icon: '/page/cars/icon-steering.png', label: 'WEIGHT DISTRIBUTION', value: '47:53' },
-    { icon: '/page/cars/icon-steering.png', label: 'WIDTH', value: '1400 mm' },
-    { icon: '/page/cars/icon-steering.png', label: 'LENGTH', value: '2900 mm' },
-    { icon: '/page/cars/icon-steering.png', label: 'FRAME', value: 'Steel Space AISI 1020' },
-    { icon: '/page/cars/icon-steering.png', label: 'HEIGHT', value: '1212 mm' },
+    { icon: '/page/cars/formula/icon-engine.png', label: 'ENGINE', value: 'Kawasaki ZX-6R' },
+    { icon: '/page/cars/formula/icon-maxtorque.png', label: 'MAX TORQUE', value: '48 Nm' },
+    { icon: '/page/cars/formula/icon-maxpower.png', label: 'MAX POWER', value: '70 HP' },
+    { icon: '/page/cars/formula/icon-ecu.png', label: 'ECU', value: 'Motec M130' },
+    {
+        icon: '/page/cars/formula/icon-fronttype.png',
+        label: 'FRONT TYPE',
+        value: 'LCO Hoosier 10 in',
+    },
+    {
+        icon: '/page/cars/formula/icon-reartype.png',
+        label: 'REAR TYPE',
+        value: 'R25B Hoosier 10 in',
+    },
+    { icon: '/page/cars/formula/icon-cowl.png', label: 'COWL', value: 'Fiberglass Carbon Fiber' },
+    { icon: '/page/cars/formula/icon-weight.png', label: 'WEIGHT DISTRIBUTION', value: '47:53' },
+    { icon: '/page/cars/formula/icon-width.png', label: 'WIDTH', value: '1400 mm' },
+    { icon: '/page/cars/formula/icon-length.png', label: 'LENGTH', value: '2900 mm' },
+    { icon: '/page/cars/formula/icon-frame.png', label: 'FRAME', value: 'Steel Space AISI 1020' },
+    { icon: '/page/cars/formula/icon-height.png', label: 'HEIGHT', value: '1212 mm' },
 ];
 
 const URBAN_ACHIEVEMENTS = [
@@ -255,7 +276,31 @@ export default function CarsPage() {
                         <h3 className="font-extrabold italic text-xl md:text-2xl lg:text-[32px] text-[#e50808] tracking-tight uppercase mb-6 md:mb-8 lg:mb-9">
                             Specification
                         </h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-9">
+
+                        {/* Mobile layout follows the design grouping with full-width rows for specific specs. */}
+                        <div className="md:hidden flex flex-col gap-4">
+                            {URBAN_SPECS_MOBILE_ROWS.map((row) => (
+                                <div key={row.join('-')} className="flex gap-4">
+                                    {row.map((label) => {
+                                        const spec = URBAN_SPECS.find(
+                                            (item) => item.label === label
+                                        );
+                                        if (!spec) return null;
+
+                                        return (
+                                            <div
+                                                key={spec.label}
+                                                className={row.length === 1 ? 'w-full' : 'flex-1'}
+                                            >
+                                                <SpecCard {...spec} />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-9">
                             {URBAN_SPECS.map((spec) => (
                                 <SpecCard key={spec.label} {...spec} />
                             ))}
@@ -265,9 +310,9 @@ export default function CarsPage() {
             </section>
 
             {/* ── Urban Achievements ───────────────────────────────────── */}
-            <section className="w-full bg-black py-10 md:py-14 lg:py-16">
+            <section className="w-full py-10 md:py-14 lg:py-16">
                 <div className="container mx-auto px-6 md:px-12 lg:px-0">
-                    <h3 className="font-extrabold italic text-2xl md:text-3xl lg:text-[32px] text-white tracking-tight uppercase text-center mb-8 md:mb-10 lg:mb-12">
+                    <h3 className="font-extrabold italic text-2xl md:text-3xl lg:text-[32px] text-[#e50808] tracking-tight uppercase text-center mb-8 md:mb-10 lg:mb-12">
                         Achievements
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 justify-items-center">
@@ -288,17 +333,6 @@ export default function CarsPage() {
                     </div>
                 </div>
             </section>
-
-            {/* ── Transition Image ─────────────────────────────────────── */}
-            <div className="relative w-full h-64 md:h-96 lg:h-125 overflow-hidden">
-                <Image
-                    src="/page/cars/hero-cars.png"
-                    alt="Sapuangin car in action"
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-linear-to-b from-black to-transparent" />
-            </div>
 
             {/* ══════════════════════════════════════════════════════════════
                  FORMULA CAR SECTION
@@ -405,9 +439,9 @@ export default function CarsPage() {
             </section>
 
             {/* ── Formula Achievements ─────────────────────────────────── */}
-            <section className="w-full bg-black py-10 md:py-14 lg:py-16">
+            <section className="w-full py-10 md:py-14 lg:py-16">
                 <div className="container mx-auto px-6 md:px-12 lg:px-0">
-                    <h3 className="font-extrabold italic text-2xl md:text-3xl lg:text-[32px] text-white tracking-tight uppercase text-center mb-8 md:mb-10 lg:mb-12">
+                    <h3 className="font-extrabold italic text-2xl md:text-3xl lg:text-[32px] text-[#2e5fbd] tracking-tight uppercase text-center mb-8 md:mb-10 lg:mb-12">
                         Achievements
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 lg:gap-12 justify-items-center max-w-4xl mx-auto">
@@ -421,24 +455,13 @@ export default function CarsPage() {
                                         .join(' ')}
                                     width={260}
                                     height={229}
-                                    className="object-contain w-full h-auto"
+                                    className="object-contain w-full h-auto brightness-65"
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
-
-            {/* ── Bottom Image ─────────────────────────────────────────── */}
-            <div className="relative w-full h-64 md:h-96 lg:h-125 overflow-hidden">
-                <Image
-                    src="/page/cars/hero-cars.png"
-                    alt="Sapuangin car in action"
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-linear-to-b from-black to-transparent" />
-            </div>
         </div>
     );
 }
