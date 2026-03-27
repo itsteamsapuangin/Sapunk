@@ -345,21 +345,30 @@ const AchievementBadge = ({
         .split('-')
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
+    const toggleId = `achievement-badge-${filename}`;
 
     return (
         <div className="flex items-center justify-center group relative max-w-sm w-full">
+            <input id={toggleId} type="checkbox" className="peer sr-only lg:hidden" />
+            <label
+                htmlFor={toggleId}
+                className="absolute inset-0 z-20 cursor-pointer lg:hidden"
+                aria-label={`Toggle details for ${altText}`}
+            />
             <Image
                 src={`/page/achievements/hall-of-fame/${filename}.svg`}
                 alt={altText}
                 width={150}
                 height={150}
-                className="object-contain w-full h-auto transition-all duration-300 group-hover:brightness-75"
+                className="object-contain w-full h-auto transition-all duration-300 max-lg:peer-checked:brightness-75 lg:group-hover:brightness-75"
             />
             {/* Hover Tooltip */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="bg-black/90 backdrop-blur-sm text-white rounded-lg px-4 py-3 shadow-xl border border-white/10">
-                    <p className="text-md font-semibold text-center whitespace-nowrap">{date}</p>
-                    <p className="text-sm text-gray-300 text-center mt-1 whitespace-nowrap">
+            <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 max-lg:peer-checked:opacity-100 lg:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="bg-black/90 backdrop-blur-sm text-white rounded-lg px-2.5 py-2 md:px-4 md:py-3 shadow-xl border border-white/10 max-w-[92%] md:max-w-none">
+                    <p className="text-xs md:text-sm lg:text-md font-semibold text-center whitespace-nowrap">
+                        {date}
+                    </p>
+                    <p className="text-[10px] md:text-xs lg:text-sm text-gray-300 text-center mt-1 leading-tight break-words whitespace-normal md:whitespace-nowrap">
                         {location}
                     </p>
                 </div>
@@ -384,20 +393,18 @@ export default function AchievementsPage() {
                     className="relative w-full h-full bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: "url('/page/achievements/hero-achievements.png')" }}
                 >
-                    <div className="container mx-auto px-4 md:px-6 lg:px-0">
-                        <div className="absolute bottom-0 flex bg-[#e50808] w-fit h-fit px-3 py-1 md:px-4.5 md:py-1.5">
-                            <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white tracking-[-1.44px] leading-tight">
-                                Achievements
-                            </h1>
-                        </div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex bg-[#e50808] w-fit h-fit px-3 py-1 md:px-4.5 md:py-1.5">
+                        <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white tracking-[-1.44px] leading-tight whitespace-nowrap">
+                            Hall of Fame
+                        </h1>
                     </div>
                 </div>
             </div>
 
-            {/* World Champions Section */}
+            {/* World Champions Section*/}
+            {/*
             <div className="flex flex-col items-center overflow-hidden px-4 md:px-12 lg:px-24 py-8 md:py-12 lg:py-16 relative w-full">
                 <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 items-center relative w-full max-w-7xl">
-                    {/* World Champions Outline Image */}
                     <div className="w-full max-w-280.5pect-[1122/434] relative group cursor-pointer">
                         <Image
                             src="/page/achievements/world-champs-outline.png"
@@ -413,14 +420,12 @@ export default function AchievementsPage() {
                         />
                     </div>
 
-                    {/* Stats */}
                     <div className="flex flex-col md:flex justify-evenly md:justify-evenly md:items-start md:flex-row gap-8 md:gap-16 lg:gap-lg items-center justify-items-center text-black text-center w-full">
                         {STATS.map((stat, index) => (
                             <StatCard key={index} {...stat} />
                         ))}
                     </div>
 
-                    {/* Description */}
                     <p className="font-medium text-[#5d5d5d] text-sm md:text-lg lg:text-[24px] text-center tracking-[-0.96px] max-w-258.5ading-normal px-4">
                         Celebrating a legacy of victory across global circuits. From Asia-Pacific to
                         Europe, we consistently push the boundaries of automotive engineering to
@@ -428,8 +433,10 @@ export default function AchievementsPage() {
                     </p>
                 </div>
             </div>
+            */}
 
-            {/* Champions Around The World Section */}
+            {/* Champions Around The World Section*/}
+            {/*
             <div className="container mx-auto flex flex-col gap-8 md:gap-12 lg:gap-14.5 items-center overflow-hidden pb-24 md:pb-32 lg:pb-45 pt-4 md:pt-6 lg:pt-6.5 px-4 md:px-12 lg:px-24 relative w-full">
                 <div className="flex flex-col gap-6 md:gap-8 lg:gap-12 items-center relative w-full">
                     <p className="font-extrabold text-2xl md:text-4xl lg:text-[48px] text-black text-center tracking-[-1.44px] leading-normal">
@@ -437,14 +444,12 @@ export default function AchievementsPage() {
                     </p>
 
                     <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 items-center relative w-full">
-                        {/* First Row */}
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10 lg:gap-12 relative w-full justify-items-center">
                             {COUNTRIES.slice(0, 4).map((country, index) => (
                                 <CountryCard key={index} {...country} />
                             ))}
                         </div>
 
-                        {/* Second Row */}
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10 lg:gap-12 relative w-full justify-items-center">
                             {COUNTRIES.slice(4, 8).map((country, index) => (
                                 <CountryCard key={index} {...country} />
@@ -453,13 +458,13 @@ export default function AchievementsPage() {
                     </div>
                 </div>
 
-                {/* Hall of Champions Badge */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 transform bg-[#e50808] text-center px-4 py-1 md:px-6 md:py-1.5 lg:px-8 lg:py-2">
                     <p className="font-bold text-xl md:text-3xl lg:text-[48px] text-white tracking-[-1px] leading-tight">
                         HALL OF CHAMPIONS
                     </p>
                 </div>
             </div>
+            */}
 
             {/* Hall of Champions Section */}
             <div className="bg-black flex flex-col items-center overflow-hidden px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-20 relative w-full">
