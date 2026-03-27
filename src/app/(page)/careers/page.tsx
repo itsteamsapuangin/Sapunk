@@ -223,7 +223,7 @@ function DivisionCard({ division, isBlue = false }: { division: Division; isBlue
                     {division.skills.map((skill) => (
                         <span
                             key={skill}
-                            className={`rounded-lg px-4 py-1 text-xs md:text-base font-semibold text-white transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-0.5 ${isBlue ? 'bg-[#275dc3]' : 'bg-[#e51717]'}`}
+                            className={`rounded-md px-4 py-1 text-xs md:text-base text-white transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-0.5 ${isBlue ? 'bg-[#275dc3]' : 'bg-[#e51717]'}`}
                         >
                             {skill}
                         </span>
