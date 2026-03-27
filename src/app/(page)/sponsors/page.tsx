@@ -433,7 +433,7 @@ export default function SponsorshipPage() {
                                     <div className="flex items-center gap-2 md:gap-3 mt-1">
                                         <div className="w-4 h-4 md:w-5 md:h-5 relative transition-transform duration-300 ease-out group-hover/contact:translate-x-0.5">
                                             <Image
-                                                src="/icons/call.png"
+                                                src="/icons/call.svg"
                                                 alt="Call"
                                                 fill
                                                 className="object-contain"
@@ -467,7 +467,7 @@ export default function SponsorshipPage() {
                                     <div className="flex items-center gap-2 md:gap-3 mt-1">
                                         <div className="w-4 h-4 md:w-5 md:h-5 relative transition-transform duration-300 ease-out group-hover/contact:translate-x-0.5">
                                             <Image
-                                                src="/icons/call.png"
+                                                src="/icons/call.svg"
                                                 alt="Call"
                                                 fill
                                                 className="object-contain"

@@ -212,7 +212,7 @@ export default function Footer() {
                     </div>
 
                     {/* Copyright - Left on Desktop, Center on Mobile */}
-                    <p className="text-sm text-gray-400 text-center lg:text-left">
+                    <p className="text-sm text-[#5D5D5D] text-center lg:text-left">
                         Institut Teknologi Sepuluh Nopember © 2026 ITS Team Sapuangin. All Rights
                         Reserved
                     </p>
