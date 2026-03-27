@@ -279,10 +279,51 @@ export default function CareersPage() {
                             growing your technical and professional skills.
                         </p>
                     </div>
+                    <nav className="mx-auto w-fit flex flex-wrap items-center justify-center gap-x-4 md:gap-x-6 gap-y-2 text-[11px] md:text-xs uppercase tracking-[0.12em]">
+                        <a
+                            href="#general-requirements"
+                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                        >
+                            General Requirements
+                        </a>
+                        <a
+                            href="#timeline"
+                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                        >
+                            Timeline
+                        </a>
+                        <a
+                            href="#divisions"
+                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                        >
+                            Divisions
+                        </a>
+                        <a
+                            href="#required-documents"
+                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                        >
+                            Required Documents
+                        </a>
+                        <a
+                            href="#apply-now"
+                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                        >
+                            Apply Now
+                        </a>
+                        <a
+                            href="#faq"
+                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                        >
+                            FAQ
+                        </a>
+                    </nav>
                 </div>
             </section>
 
-            <section className="border-y border-[#d5d5d5] py-10 md:py-14 lg:py-16">
+            <section
+                id="general-requirements"
+                className="scroll-mt-24 md:scroll-mt-28 border-y border-[#d5d5d5] py-10 md:py-14 lg:py-16"
+            >
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 space-y-8 md:space-y-10">
                     <h2 className="text-black text-center font-black text-3xl md:text-[42px] tracking-tight">
                         General Requirements
@@ -295,7 +336,7 @@ export default function CareersPage() {
                 </div>
             </section>
 
-            <section className="py-10 md:py-14 lg:py-16">
+            <section id="timeline" className="scroll-mt-24 md:scroll-mt-28 py-10 md:py-14 lg:py-16">
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 space-y-10 md:space-y-24">
                     <div className="flex justify-center">
                         <SectionBadge title="Timeline" />
@@ -322,7 +363,10 @@ export default function CareersPage() {
                 </div>
             </section>
 
-            <section className="py-10 md:py-14 lg:py-16">
+            <section
+                id="divisions"
+                className="scroll-mt-24 md:scroll-mt-28 py-10 md:py-14 lg:py-16"
+            >
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 space-y-10 md:space-y-12">
                     <div className="flex justify-center">
                         <SectionBadge title="Technical Divisions" />
@@ -348,7 +392,10 @@ export default function CareersPage() {
                 </div>
             </section>
 
-            <section className="border-y border-[#d5d5d5] py-10 md:py-14 lg:py-16">
+            <section
+                id="required-documents"
+                className="scroll-mt-24 md:scroll-mt-28 border-y border-[#d5d5d5] py-10 md:py-14 lg:py-16"
+            >
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 space-y-8 md:space-y-10">
                     <h2 className="text-black font-black text-3xl md:text-[42px] tracking-tight">
                         Required Documents
@@ -377,9 +424,48 @@ export default function CareersPage() {
                         </div>
                     </div>
                 </div>
+
+                <section className="py-10 md:py-14 lg:py-16" id="apply-now">
+                    <div className="container mx-auto px-6 md:px-10 lg:px-0">
+                        <div className="relative overflow-hidden rounded-2xl border border-[#dcdcdc] bg-gradient-to-br from-white to-[#f7f7f7] p-6 md:p-10 lg:p-12 shadow-[0_12px_35px_-28px_rgba(0,0,0,0.45)]">
+                            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-[#e50808]/10 blur-2xl" />
+                            <div className="absolute -bottom-12 -left-12 h-44 w-44 rounded-full bg-[#275dc3]/8 blur-2xl" />
+
+                            <div className="relative flex flex-col gap-8">
+                                <div className="space-y-4 max-w-3xl">
+                                    <h3 className="text-black text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                                        Ready to Build the Future? Join Us.
+                                    </h3>
+                                    <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl leading-relaxed tracking-tight">
+                                        Take your first step with ITS Team Sapuangin. Submit your
+                                        documents, choose your division, and grow with a team that
+                                        turns ideas into real competition machines.
+                                    </p>
+                                </div>
+
+                                <div className="mt-2 flex flex-col sm:flex-row gap-2 justify-end">
+                                    <Link
+                                        href="#"
+                                        className="rounded-md bg-[#e50808] px-12 py-2 text-sm md:text-lg text-center font-black text-white hover:bg-[#c90606] transition-colors"
+                                    >
+                                        Guidebook
+                                    </Link>
+
+                                    <Link
+                                        href="https://wa.me/6289633433256"
+                                        target="_blank"
+                                        className="rounded-md border border-[#e50808] px-12 py-2 text-sm md:text-lg text-center font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
+                                    >
+                                        Apply Now
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
 
-            <section className="bg-[#fafafa] py-10 md:py-14 lg:py-16">
+            <section className="bg-[#fafafa] py-10 md:py-14 lg:py-16" id="faq">
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[640px_1fr] gap-10 md:gap-12 lg:gap-16">
                     <div className="order-1 flex flex-col gap-10 md:justify-between text-center md:text-left">
                         <div className="space-y-3">
