@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 
 // --- Types ---
@@ -16,6 +17,7 @@ interface FilterCategory {
 
 interface NewsArticle {
     id: number;
+    slug: string;
     categoryId: CategoryId;
     categoryLabel: string;
     categoryColor: string;
@@ -67,6 +69,7 @@ const FILTER_CATEGORIES: FilterCategory[] = [
 const NEWS_ARTICLES: NewsArticle[] = [
     {
         id: 1,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'sponsorship',
         categoryLabel: 'Ini Lho ITS! 2026',
         categoryColor: '#872ebe',
@@ -78,6 +81,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 2,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'shell-eco-marathon',
         categoryLabel: 'Shell Eco-marathon',
         categoryColor: '#e51717',
@@ -89,6 +93,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 3,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'formula-student',
         categoryLabel: 'Formula Student',
         categoryColor: '#0d82d1',
@@ -100,6 +105,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 4,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'sponsorship',
         categoryLabel: 'Ini Lho ITS! 2026',
         categoryColor: '#872ebe',
@@ -111,6 +117,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 5,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'shell-eco-marathon',
         categoryLabel: 'Shell Eco-marathon',
         categoryColor: '#e51717',
@@ -122,6 +129,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 6,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'shell-eco-marathon',
         categoryLabel: 'Shell Eco-marathon',
         categoryColor: '#e51717',
@@ -133,6 +141,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 7,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'shell-eco-marathon',
         categoryLabel: 'Shell Eco-marathon',
         categoryColor: '#e51717',
@@ -144,6 +153,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
     },
     {
         id: 8,
+        slug: 'behind-the-glorious-world-champions-in-london-2018',
         categoryId: 'shell-eco-marathon',
         categoryLabel: 'Shell Eco-marathon',
         categoryColor: '#e51717',
@@ -169,18 +179,15 @@ function CategoryBadge({ label, color }: { label: string; color: string }) {
     );
 }
 
-/** "READ MORE" button */
-{
-    /* TODO: SEO — Replace this <button> with a <Link href="/news/[slug]"> when dynamic routing is implemented */
-}
-function ReadMoreButton() {
+function ReadMoreButton({ href }: { href: string }) {
     return (
-        <button
+        <Link
+            href={href}
             className="shrink-0 rounded-md border border-[#e50808] px-4 py-2 text-lg font-black tracking-tight text-[#e50808] transition-colors hover:bg-[#e50808] hover:text-white"
             aria-label="Read more about this article"
         >
             READ MORE
-        </button>
+        </Link>
     );
 }
 
@@ -221,7 +228,7 @@ function FeaturedCard({ article }: { article: NewsArticle }) {
                         </p>
                     </div>
                     <div className="flex items-end justify-between">
-                        <ReadMoreButton />
+                        <ReadMoreButton href={`/news/${article.slug}`} />
                         <span className="text-sm font-medium tracking-tight text-[#ccc]">
                             {article.date}
                         </span>
@@ -258,7 +265,7 @@ function SmallVerticalCard({ article }: { article: NewsArticle }) {
                         {article.excerpt}
                     </p>
                     <div className="mt-auto flex items-end justify-between">
-                        <ReadMoreButton />
+                        <ReadMoreButton href={`/news/${article.slug}`} />
                         <span className="text-sm font-medium tracking-tight text-[#c8c8c8]">
                             {article.date}
                         </span>
@@ -284,7 +291,7 @@ function WideCardTextLeft({ article }: { article: NewsArticle }) {
                         {article.excerpt}
                     </p>
                     <div className="flex items-end justify-between">
-                        <ReadMoreButton />
+                        <ReadMoreButton href={`/news/${article.slug}`} />
                         <span className="text-sm font-medium tracking-tight text-[#c8c8c8]">
                             {article.date}
                         </span>
@@ -325,7 +332,7 @@ function WideCardImageLeft({ article }: { article: NewsArticle }) {
                         <span className="text-sm font-medium tracking-tight text-[#c8c8c8]">
                             {article.date}
                         </span>
-                        <ReadMoreButton />
+                        <ReadMoreButton href={`/news/${article.slug}`} />
                     </div>
                 </div>
             </div>
@@ -352,7 +359,7 @@ function StandardVerticalCard({ article }: { article: NewsArticle }) {
                         {article.excerpt}
                     </p>
                     <div className="mt-auto flex items-end justify-between">
-                        <ReadMoreButton />
+                        <ReadMoreButton href={`/news/${article.slug}`} />
                         <span className="text-sm font-medium tracking-tight text-[#c8c8c8]">
                             {article.date}
                         </span>
