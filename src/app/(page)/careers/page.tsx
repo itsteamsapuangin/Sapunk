@@ -342,15 +342,23 @@ export default function CareersPage() {
                         <SectionBadge title="Timeline" />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-                        {TIMELINE.map((item) => (
+                    <div className="relative mx-auto w-fit px-10 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-10">
+                        <span className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-6 hidden h-0.5 rounded-full bg-gradient-to-r from-[#e51717]/65 via-[#e51717]/30 to-[#e51717]/65 md:block" />
+
+                        {TIMELINE.map((item, index) => (
                             <article
                                 key={item.title}
-                                className="text-center flex flex-col items-center gap-4 md:gap-5"
+                                className="relative flex items-start gap-4 md:flex-col md:items-center md:gap-5 md:text-center"
                             >
-                                <div className="h-12 w-12 rounded-full border-7 border-[#e51717] bg-white" />
-                                <div className="flex flex-col gap-2">
-                                    <h3 className="text-black text-lg md:text-3xl font-bold tracking-tight leading-tight whitespace-pre-line">
+                                <div className="relative flex h-full w-12 shrink-0 items-start justify-center md:h-auto md:w-auto">
+                                    {index < TIMELINE.length - 1 && (
+                                        <span className="absolute left-1/2 top-8 -translate-x-1/2 h-[calc(100%+2.5rem)] w-0.5 rounded-full bg-gradient-to-b from-[#e51717]/65 via-[#e51717]/35 to-[#e51717]/20 md:hidden" />
+                                    )}
+                                    <div className="relative z-10 h-8 w-8 md:h-12 md:w-12 rounded-full border-4 md:border-6 border-[#e51717] bg-white" />
+                                </div>
+
+                                <div className="flex flex-col gap-2 pt-0.5 text-left md:pt-0 md:text-center">
+                                    <h3 className="text-black text-lg md:text-xl lg:text-3xl font-bold tracking-tight leading-tight whitespace-pre-line">
                                         {item.title}
                                     </h3>
                                     <p className="text-[#5d5d5d] text-base md:text-lg font-medium tracking-tight">
