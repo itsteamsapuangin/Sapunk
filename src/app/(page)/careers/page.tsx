@@ -105,7 +105,7 @@ const NON_TECHNICAL_DIVISIONS: Division[] = [
         skills: ['Microsoft Excel', 'Communication', 'Document Control', 'Management'],
     },
     {
-        icon: '/page/careers/division-tech-draw-cost-report.png',
+        icon: '/page/careers/division-icon-tech-draw-cost-report.png',
         name: 'Technical Drawing\nand Cost Report',
         description: [
             'Basic knowledge or willingness to learn CAD software (e.g., SolidWorks, Ansys) for drawing and simulation.',
@@ -122,7 +122,7 @@ const NON_TECHNICAL_DIVISIONS: Division[] = [
         ],
     },
     {
-        icon: '/page/careers/division-business-plan-and-research.png',
+        icon: '/page/careers/division-icon-business-plan-and-research.png',
         name: 'Business Plan\nand Research Division',
         description: [
             'Experienced in developing business plans and pitch decks.',

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { JsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
+import { icons } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Team',
@@ -49,38 +50,60 @@ const HISTORY_PARAGRAPHS = [
 const DIVISIONS = [
     {
         title: 'Engine and\nDrivetrain',
+        icons: '/page/careers/division-icon-engine-drivetrain.png',
         description:
             'Responsible for the design, development, and maintenance of engine and drivetrain systems, focusing on performance, integration, and reliability.',
     },
     {
         title: 'Vehicle \nDynamics',
+        icons: '/page/careers/division-icon-vehicle-dynamics.png',
         description:
             'Designs and manufactures steering, suspension, and braking systems to improve handling, stability, and overall vehicle performance.',
     },
     {
-        title: 'Electrical and Programming',
+        title: 'Electrical and\nProgramming',
+        icons: '/page/careers/division-icon-electrical-programming.png',
         description:
             'Handles electrical architecture and software, including circuit and PCB design, wiring, telemetry, and data acquisition.',
     },
     {
         title: 'Body and\nFrame',
+        icons: '/page/careers/division-icon-body-frame.png',
         description:
             'Designs, simulates, and manufactures the body and frame with strong focus on aerodynamics and structural performance.',
     },
     {
         title: 'Creative\nBranding',
+        icons: '/page/careers/division-icon-creative-branding.png',
         description:
             'Builds visual identity and digital storytelling to communicate team achievements and strengthen public engagement.',
     },
     {
-        title: 'External Relation and Sponsorship',
+        title: 'External Relation\nand Sponsorship',
+        icons: '/page/careers/division-icon-external-relations.png',
         description:
             'Develops strategic partnerships, sponsorship opportunities, and collaboration networks that support team growth.',
+        smallTitle: true,
     },
     {
-        title: 'Accommodation, Administration, and Finance',
+        title: 'Accommodation, Administration,\nand Finance',
+        icons: '/page/careers/division-icon-admin-finance.png',
         description:
             'Coordinates logistics, budgeting, documentation, and operational administration to keep activities efficient and sustainable.',
+        smallTitle: true,
+    },
+    {
+        title: 'Technical Drawing\nand Cost Report',
+        icons: '/page/careers/division-icon-tech-draw-cost-report.png',
+        description:
+            'Prepares detailed technical drawings and comprehensive cost reports to support design decisions, manufacturability, and competition documentation.',
+        smallTitle: true,
+    },
+    {
+        title: 'Business Plan and\nResearch Division',
+        icons: '/page/careers/division-icon-business-plan-and-research.png',
+        description:
+            'Develops business strategy and research insights, including market analysis, proposal preparation, and innovation planning.',
         smallTitle: true,
     },
 ];
@@ -373,17 +396,19 @@ function DivisionCard({
     division: {
         [x: string]: any;
         title: string;
+        icons: string;
         description: string;
     };
 }) {
     return (
-        <article className="group rounded-2xl border content-between border-[#d9d9d9] md:w-[320px] h-full bg-white p-8 flex flex-col items-center text-center gap-4 transition-colors duration-300 hover:bg-[#e51717] hover:border-[#e51717] h-fit">
-            <div className="relative w-12 h-12 md:w-14 md:h-14 shrink-0">
+        <article className="group w-full sm:w-[280px] rounded-2xl border content-between border-[#d9d9d9] md:h-[390px] h-fit bg-white py-6 px-2 items-center flex flex-col items-center text-center gap-4 transition-colors duration-300 hover:bg-[#e51717] hover:border-[#e51717]">
+            <div className="relative shrink-0">
                 <Image
-                    src="/page/team/icons/division-card-mark.svg"
-                    alt="Division mark"
-                    fill
-                    className="transition duration-300 group-hover:brightness-0 group-hover:invert"
+                    src={division.icons}
+                    alt={division.icons}
+                    width={56}
+                    height={56}
+                    className="h-10 w-auto transition duration-300 group-hover:brightness-0 group-hover:invert"
                 />
             </div>
             <h3
@@ -391,13 +416,13 @@ function DivisionCard({
                 whitespace-pre-line font-extrabold tracking-tight text-[#e51717] w-full 
                 transition-colors duration-300 group-hover:text-white leading-snug 
                 flex items-center justify-center min-h-[4rem] md:min-h-[4.5rem]
-                ${division.smallTitle ? 'text-base md:text-xl' : 'text-xl md:text-2xl'}
+                ${division.smallTitle ? 'text-xl md:text-xl' : 'text-xl md:text-2xl'}
             `}
             >
                 {division.title}
             </h3>
             <div className="w-3/4 h-px bg-[#d9d9d9] shrink-0 transition-colors duration-300 group-hover:bg-white/70" />
-            <p className="h-fit px-4 text-lg leading-relaxed tracking-tight text-[#5d5d5d] transition-colors duration-300 group-hover:text-white">
+            <p className="h-fit px-4 text-base md:text-lg leading-relaxed tracking-tight text-[#5d5d5d] transition-colors duration-300 group-hover:text-white">
                 {division.description}
             </p>
         </article>
@@ -452,7 +477,7 @@ export default function TeamPage() {
                                         {text}
                                     </p>
                                 </div>
-                                <div className="relative w-full flex-1 rounded-xl overflow-hidden aspect-[460/300] max-w-1/2 max-h-[350px]">
+                                <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-auto flex-1 rounded-xl overflow-hidden aspect-[16/10] md:aspect-[460/300] max-w-full lg:max-w-1/2">
                                     <Image
                                         src="/page/team/history-team.jpg"
                                         alt="ITS Team Sapuangin history"
@@ -503,13 +528,13 @@ export default function TeamPage() {
 
                     <div className="w-full flex flex-col items-center gap-4 md:gap-6">
                         {/* Row 1: 4 cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mx-auto">
+                        <div className="w-full flex flex-wrap justify-center gap-4 md:gap-6 mx-auto">
                             {DIVISIONS.slice(0, 4).map((division) => (
                                 <DivisionCard key={division.title} division={division} />
                             ))}
                         </div>
-                        {/* Row 2: 3 cards centered */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mx-auto">
+                        {/* Row 2: 5 cards */}
+                        <div className="w-full flex flex-wrap justify-center gap-4 md:gap-6 mx-auto">
                             {DIVISIONS.slice(4).map((division) => (
                                 <DivisionCard key={division.title} division={division} />
                             ))}
