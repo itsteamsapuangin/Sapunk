@@ -20,10 +20,14 @@ const GENERAL_REQUIREMENTS = [
 ];
 
 const TIMELINE = [
-    { title: 'Document\nSubmission', subtitle: 'Coming Soon' },
-    { title: 'Administration\nAnnouncement', subtitle: 'Coming Soon' },
-    { title: 'Interview\nPhase', subtitle: 'Coming Soon' },
-    { title: 'Internship\nStarts', subtitle: 'Coming Soon' },
+    { title: 'Document\nSubmission', subtitle: '25 April 2026' },
+    { title: 'Close\nRegistration', subtitle: '1 May 2026' },
+    { title: 'Administration\nAnnouncement', subtitle: '4 May 2026' },
+    { title: 'Initial\nInterview', subtitle: '5 May 2026' },
+    { title: 'Initial Interview\nResults', subtitle: '8 May 2026' },
+    { title: 'Secondary\nInterview', subtitle: '16 May 2026' },
+    { title: 'Secondary\nInterview Results', subtitle: '19 May 2026' },
+    { title: 'Internship\nStart', subtitle: '20 May 2026' },
 ];
 
 const TECHNICAL_DIVISIONS: Division[] = [
@@ -342,30 +346,41 @@ export default function CareersPage() {
                         <SectionBadge title="Timeline" />
                     </div>
 
-                    <div className="relative mx-auto w-fit px-10 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-10">
-                        <span className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-6 hidden h-0.5 rounded-full bg-gradient-to-r from-[#e51717]/65 via-[#e51717]/30 to-[#e51717]/65 md:block" />
-
-                        {TIMELINE.map((item, index) => (
-                            <article
-                                key={item.title}
-                                className="relative flex items-start gap-4 md:flex-col md:items-center md:gap-5 md:text-center"
+                    <div className="mx-auto w-fit px-4 md:px-8 space-y-10 md:space-y-14">
+                        {[TIMELINE.slice(0, 4), TIMELINE.slice(4, 8)].map((row, rowIndex) => (
+                            <div
+                                key={`timeline-row-${rowIndex}`}
+                                className="relative grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-24"
                             >
-                                <div className="relative flex h-full w-12 shrink-0 items-start justify-center md:h-auto md:w-auto">
-                                    {index < TIMELINE.length - 1 && (
-                                        <span className="absolute left-1/2 top-8 -translate-x-1/2 h-[calc(100%+2.5rem)] w-0.5 rounded-full bg-gradient-to-b from-[#e51717]/65 via-[#e51717]/35 to-[#e51717]/20 md:hidden" />
-                                    )}
-                                    <div className="relative z-10 h-8 w-8 md:h-12 md:w-12 rounded-full border-4 md:border-6 border-[#e51717] bg-white" />
-                                </div>
+                                <span className="pointer-events-none absolute left-[10%] right-[10%] top-6 hidden h-0.5 rounded-full bg-gradient-to-r from-[#e51717]/65 via-[#e51717]/30 to-[#e51717]/65 md:block" />
 
-                                <div className="flex flex-col gap-2 pt-0.5 text-left md:pt-0 md:text-center">
-                                    <h3 className="text-black text-lg md:text-xl lg:text-3xl font-bold tracking-tight leading-tight whitespace-pre-line">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-[#5d5d5d] text-base md:text-lg font-medium tracking-tight">
-                                        {item.subtitle}
-                                    </p>
-                                </div>
-                            </article>
+                                {row.map((item, colIndex) => {
+                                    const globalIndex = rowIndex * 4 + colIndex;
+
+                                    return (
+                                        <article
+                                            key={item.title}
+                                            className="relative flex items-start gap-4 md:flex-col md:items-center md:gap-5 md:text-center"
+                                        >
+                                            <div className="relative flex h-full w-12 shrink-0 items-start justify-center md:h-auto md:w-auto">
+                                                {globalIndex < TIMELINE.length - 1 && (
+                                                    <span className="absolute left-1/2 top-8 -translate-x-1/2 h-[calc(100%+2.5rem)] w-0.5 rounded-full bg-gradient-to-b from-[#e51717]/65 via-[#e51717]/35 to-[#e51717]/20 md:hidden" />
+                                                )}
+                                                <div className="relative z-10 h-8 w-8 md:h-12 md:w-12 rounded-full border-4 md:border-6 border-[#e51717] bg-white" />
+                                            </div>
+
+                                            <div className="flex flex-col gap-2 pt-0.5 text-left md:pt-0 md:text-center">
+                                                <h3 className="text-black text-lg lg:text-3xl font-bold tracking-tight leading-tight whitespace-pre-line">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="text-[#5d5d5d] text-base lg:text-xl font-medium tracking-tight leading-none md:leading-tight">
+                                                    {item.subtitle}
+                                                </p>
+                                            </div>
+                                        </article>
+                                    );
+                                })}
+                            </div>
                         ))}
                     </div>
                 </div>
