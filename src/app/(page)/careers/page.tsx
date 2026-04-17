@@ -104,13 +104,40 @@ const NON_TECHNICAL_DIVISIONS: Division[] = [
         ],
         skills: ['Microsoft Excel', 'Communication', 'Document Control', 'Management'],
     },
+    {
+        icon: '/page/careers/division-tech-draw-cost-report.png',
+        name: 'Technical Drawing\nand Cost Report',
+        description: [
+            'Basic knowledge or willingness to learn CAD software (e.g., SolidWorks, Ansys) for drawing and simulation.',
+            'Able to create and read standard engineering drawings.',
+            'Understand materials used in automotive assemblies and parts as specified in technical drawings.',
+            'Able to present technical drawings and cost data clearly and confidently.',
+        ],
+        skills: [
+            'Solidworks',
+            'Ansys',
+            'Material Analysis',
+            'Engineering Design',
+            'Cost Estimation',
+        ],
+    },
+    {
+        icon: '/page/careers/division-business-plan-and-research.png',
+        name: 'Business Plan\nand Research Division',
+        description: [
+            'Experienced in developing business plans and pitch decks.',
+            'Skilled in market research, feasibility analysis, innovation analysis, and competitor benchmarking.',
+            'Able to write structured proposals, technical research papers, and reports professionally.',
+            'Strong presentation and communication skills; confident in defending ideas and answering judges under pressure.',
+        ],
+        skills: ['Market Research', 'Pitch Decking', 'Public Speaking', 'Business Strategy'],
+    },
 ];
 
 const REQUIRED_DOCUMENTS = [
     'Curriculum Vitae (ATS-Friendly)',
     'GPA Transcript / Academic Transcript',
     'ITS TEFL Result',
-    'Recruitment Form',
     'MBTI Test Result (16Personalities)',
     'Essay: Why you want to join ITS Team Sapuangin & innovation for your division',
     'Portfolio (Required for Creative Branding / Recommended for others)',
@@ -195,13 +222,13 @@ function RequirementItem({ number, text }: { number: number; text: string }) {
 function DivisionCard({ division, isBlue = false }: { division: Division; isBlue?: boolean }) {
     return (
         <article className="group rounded-xl border border-[#d5d5d5] bg-white p-5 md:p-6 flex flex-col gap-5 h-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_20px_45px_-24px_rgba(0,0,0,0.45)] motion-safe:hover:border-[#c7c7c7]">
-            <div className="size-[68px] rounded-xl bg-[#f3f3f3] flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-110 motion-safe:group-hover:-translate-y-0.5">
+            <div className="size-[55px] md:size-[70px] rounded-xl bg-[#f3f3f3] flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-110 motion-safe:group-hover:-translate-y-0.5">
                 <Image
                     src={division.icon}
                     alt={division.name}
                     width={40}
                     height={40}
-                    className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:rotate-3"
+                    className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] scale-75 md:scale-85 lg:scale-90 motion-safe:group-hover:rotate-3"
                 />
             </div>
 
@@ -394,9 +421,14 @@ export default function CareersPage() {
                     <div className="flex justify-center">
                         <SectionBadge title="Technical Divisions" />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+                    <div className="flex flex-wrap gap-5 md:gap-6">
                         {TECHNICAL_DIVISIONS.map((division) => (
-                            <DivisionCard key={division.name} division={division} />
+                            <div
+                                key={division.name}
+                                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+                            >
+                                <DivisionCard division={division} />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -407,9 +439,14 @@ export default function CareersPage() {
                     <div className="flex justify-center">
                         <SectionBadge title="Non-Technical Divisions" isBlue />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
+                    <div className="flex flex-wrap gap-5 md:gap-6 justify-center">
                         {NON_TECHNICAL_DIVISIONS.map((division) => (
-                            <DivisionCard key={division.name} division={division} isBlue />
+                            <div
+                                key={division.name}
+                                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                            >
+                                <DivisionCard division={division} isBlue />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -431,6 +468,23 @@ export default function CareersPage() {
                                     {document}
                                 </p>
                                 <div className="h-px w-full bg-[#d0d0d0]" />
+
+                                {document === 'ITS TEFL Result' && (
+                                    <div className="space-y-3">
+                                        <div className="flex flex-wrap items-center gap-4 justify-between">
+                                            <p className="text-black text-base md:text-2xl font-medium tracking-tight leading-snug">
+                                                ITS Team Sapuangin Recruitment Form
+                                            </p>
+                                            <Link
+                                                href="#"
+                                                className="rounded-md border border-[#e50808] px-4 py-2 text-sm md:text-lg font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
+                                            >
+                                                Check Here
+                                            </Link>
+                                        </div>
+                                        <div className="h-px w-full bg-[#d0d0d0]" />
+                                    </div>
+                                )}
                             </div>
                         ))}
 
@@ -439,11 +493,22 @@ export default function CareersPage() {
                                 <p className="text-black text-base md:text-2xl font-medium tracking-tight leading-snug">
                                     Additional task based on selected division
                                 </p>
-                                <button className="rounded-md border border-[#e50808] px-4 py-2 text-sm md:text-lg font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors">
+                                <Link
+                                    href="#"
+                                    className="rounded-md border border-[#e50808] px-4 py-2 text-sm md:text-lg font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
+                                >
                                     Check Here
-                                </button>
+                                </Link>
                             </div>
                             <div className="h-px w-full bg-[#d0d0d0]" />
+                        </div>
+
+                        <div className="pt-2 text-left text-[11px] md:text-sm text-[#5d5d5d] leading-relaxed">
+                            <p>
+                                *Minimum of 1 page required (Format: A4, TNR 12, Spacing 1.5, margin
+                                4-3-3-3)
+                            </p>
+                            <p>*Preferred in English for Non-Technical Division</p>
                         </div>
                     </div>
                 </div>
@@ -468,14 +533,7 @@ export default function CareersPage() {
 
                                 <div className="mt-2 flex flex-col sm:flex-row gap-2 justify-end">
                                     <Link
-                                        href="#"
-                                        className="rounded-md bg-[#e50808] px-12 py-2 text-sm md:text-lg text-center font-black text-white hover:bg-[#c90606] transition-colors"
-                                    >
-                                        Guidebook
-                                    </Link>
-
-                                    <Link
-                                        href="https://wa.me/6289633433256"
+                                        href="https://forms.gle/..."
                                         target="_blank"
                                         className="rounded-md border border-[#e50808] px-12 py-2 text-sm md:text-lg text-center font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
                                     >
@@ -512,18 +570,36 @@ export default function CareersPage() {
                                 For more information please contact us through:
                             </p>
                             <Link
-                                href={`https://wa.me/6289633433256`}
+                                href={`https://wa.me/6282132445002`}
                                 target="_blank"
-                                className="flex flex-col gap-1 items-center md:items-start group/contact"
+                                className="flex flex-col items-center md:items-start group/contact"
                             >
-                                <div className="flex flex-col items-center md:items-start">
-                                    <p className="font-bold text-base md:text-lg lg:text-xl text-black transition-colors duration-300 group-hover/contact:text-[#e51717]">
-                                        Farid Mubarok
-                                    </p>
-                                    <p className="font-bold text-base md:text-lg lg:text-xl text-[#e51717]">
-                                        Non-technical Manager
+                                <p className="font-bold text-base md:text-lg lg:text-xl text-black transition-colors duration-300 group-hover/contact:text-[#e51717]">
+                                    Kevin Octaviano
+                                </p>
+                                <div className="flex items-center gap-2 md:gap-3 mt-1">
+                                    <div className="w-4 h-4 md:w-5 md:h-5 relative transition-transform duration-300 ease-out group-hover/contact:translate-x-0.5">
+                                        <Image
+                                            src="/icons/call.svg"
+                                            alt="Call"
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <p className="relative font-normal text-sm md:text-base lg:text-lg text-[#e51717] pb-0.5">
+                                        +62 896-3343-3256
+                                        <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#e51717]/40 transition-all duration-300 ease-out group-hover/contact:w-full"></span>
                                     </p>
                                 </div>
+                            </Link>
+                            <Link
+                                href={`https://wa.me/6281230106763`}
+                                target="_blank"
+                                className="flex flex-col items-center md:items-start group/contact"
+                            >
+                                <p className="font-bold text-base md:text-lg lg:text-xl text-black transition-colors duration-300 group-hover/contact:text-[#e51717]">
+                                    Hanum Nur
+                                </p>
                                 <div className="flex items-center gap-2 md:gap-3 mt-1">
                                     <div className="w-4 h-4 md:w-5 md:h-5 relative transition-transform duration-300 ease-out group-hover/contact:translate-x-0.5">
                                         <Image
