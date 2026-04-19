@@ -63,7 +63,7 @@ const TECHNICAL_DIVISIONS: Division[] = [
     },
     {
         icon: '/page/careers/division-icon-body-frame.png',
-        name: 'Body\nand Frame',
+        name: 'Chassis and\nAerodynamics',
         description: [
             'Responsible for designing aerodynamic body and lightweight chassis to achieve optimal efficiency and structural strength.',
             'Perform airflow and structural simulations to ensure safety, durability, and minimal drag during competition runs.',
@@ -76,7 +76,7 @@ const TECHNICAL_DIVISIONS: Division[] = [
 const NON_TECHNICAL_DIVISIONS: Division[] = [
     {
         icon: '/page/careers/division-icon-creative-branding.png',
-        name: 'Creative\nBranding',
+        name: 'Creative Branding\nand Content Strategist',
         description: [
             'Responsible for planning and executing branding strategy to improve team awareness through media and publications.',
             'Create graphic design, video, and social media content for competitions, events, and promotional activities.',
@@ -219,7 +219,7 @@ function RequirementItem({ number, text }: { number: number; text: string }) {
     );
 }
 
-function DivisionCard({ division, isBlue = false }: { division: Division; isBlue?: boolean }) {
+function DivisionCard({ division }: { division: Division }) {
     return (
         <article className="group rounded-xl border border-[#d5d5d5] bg-white p-5 md:p-6 flex flex-col gap-5 h-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_20px_45px_-24px_rgba(0,0,0,0.45)] motion-safe:hover:border-[#c7c7c7]">
             <div className="size-[55px] md:size-[70px] rounded-xl bg-[#f3f3f3] flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-110 motion-safe:group-hover:-translate-y-0.5">
@@ -238,7 +238,7 @@ function DivisionCard({ division, isBlue = false }: { division: Division; isBlue
                 </h3>
                 <div className="h-px w-full bg-[#d0d0d0] overflow-hidden">
                     <div
-                        className={`h-full w-0 transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:w-full ${isBlue ? 'bg-[#275dc3]' : 'bg-[#e51717]'}`}
+                        className="h-full w-0 transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:w-full bg-[#e51717]"
                     />
                 </div>
                 <ul className="list-disc pl-5 space-y-2 text-[#5d5d5d] text-sm md:text-lg leading-relaxed tracking-tight">
@@ -254,7 +254,7 @@ function DivisionCard({ division, isBlue = false }: { division: Division; isBlue
                     {division.skills.map((skill) => (
                         <span
                             key={skill}
-                            className={`rounded-md px-4 py-1 text-xs md:text-base text-white transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-0.5 ${isBlue ? 'bg-[#275dc3]' : 'bg-[#e51717]'}`}
+                            className="rounded-md px-4 py-1 text-xs md:text-base text-white transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-0.5 bg-[#e51717]"
                         >
                             {skill}
                         </span>
@@ -272,7 +272,7 @@ export default function CareersPage() {
             <JsonLd
                 data={breadcrumbJsonLd([
                     { name: 'Home', href: '/' },
-                    { name: 'Careers', href: '/recruitments' },
+                    { name: 'Recruitment', href: '/recruitment' },
                 ])}
             />
 
@@ -286,7 +286,7 @@ export default function CareersPage() {
                     <div className="container mx-auto px-4 md:px-6 lg:px-0">
                         <div className="absolute bottom-0 flex bg-[#e50808] w-fit h-fit px-3 py-1 md:px-4.5 md:py-1.5">
                             <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white tracking-[-1.44px] leading-tight">
-                                Recruitments
+                                Recruitment
                             </h1>
                         </div>
                     </div>
@@ -337,6 +337,7 @@ export default function CareersPage() {
                         </a>
                         <a
                             href="#apply-now"
+                            
                             className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
                         >
                             Apply Now
@@ -437,7 +438,7 @@ export default function CareersPage() {
             <section className="py-10 md:py-14 lg:py-16">
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 space-y-10 md:space-y-12">
                     <div className="flex justify-center">
-                        <SectionBadge title="Non-Technical Divisions" isBlue />
+                        <SectionBadge title="Non-Technical Divisions" />
                     </div>
                     <div className="flex flex-wrap gap-5 md:gap-6 justify-center">
                         {NON_TECHNICAL_DIVISIONS.map((division) => (
@@ -445,7 +446,7 @@ export default function CareersPage() {
                                 key={division.name}
                                 className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                             >
-                                <DivisionCard division={division} isBlue />
+                                <DivisionCard division={division} />
                             </div>
                         ))}
                     </div>
@@ -477,9 +478,11 @@ export default function CareersPage() {
                                             </p>
                                             <Link
                                                 href="https://drive.google.com/file/d/1kYkpKpnGMkFsaHQe-p5C0vWLEZfxDk06/view?usp=sharing"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="rounded-md border border-[#e50808] px-4 py-2 text-sm md:text-lg font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
                                             >
-                                                Check Here
+                                            Check Here
                                             </Link>
                                         </div>
                                         <div className="h-px w-full bg-[#d0d0d0]" />
@@ -494,8 +497,10 @@ export default function CareersPage() {
                                     Additional task based on selected division
                                 </p>
                                 <Link
-                                    href="#"
+                                    href="https://drive.google.com/drive/folders/12UoaxZGLA8KAKoTd8v8t2knJwieMT6jS?hl=id"
                                     className="rounded-md border border-[#e50808] px-4 py-2 text-sm md:text-lg font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     Check Here
                                 </Link>
@@ -533,7 +538,7 @@ export default function CareersPage() {
 
                                 <div className="mt-2 flex flex-col sm:flex-row gap-2 justify-end">
                                     <Link
-                                        href="https://forms.gle/..."
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLSe0XtrpqktxwlEHUkxCkgglkwnv5-elaswOREqmJZNfpX1JJg/viewform"
                                         target="_blank"
                                         className="rounded-md border border-[#e50808] px-12 py-2 text-sm md:text-lg text-center font-black text-[#e50808] hover:bg-[#e50808] hover:text-white transition-colors"
                                     >
@@ -587,7 +592,7 @@ export default function CareersPage() {
                                         />
                                     </div>
                                     <p className="relative font-normal text-sm md:text-base lg:text-lg text-[#e51717] pb-0.5">
-                                        +62 896-3343-3256
+                                        +62 821-3244-5002
                                         <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#e51717]/40 transition-all duration-300 ease-out group-hover/contact:w-full"></span>
                                     </p>
                                 </div>
@@ -610,7 +615,7 @@ export default function CareersPage() {
                                         />
                                     </div>
                                     <p className="relative font-normal text-sm md:text-base lg:text-lg text-[#e51717] pb-0.5">
-                                        +62 896-3343-3256
+                                        +62 812-3010-6763
                                         <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#e51717]/40 transition-all duration-300 ease-out group-hover/contact:w-full"></span>
                                     </p>
                                 </div>

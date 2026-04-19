@@ -17,7 +17,7 @@ export default function Navbar() {
         '/cars',
         '/achievements',
         '/gallery',
-        '/careers',
+        '/recruitment',
         '/sponsors',
         '/news',
     ];
@@ -47,7 +47,7 @@ export default function Navbar() {
         { href: '/achievements', label: 'Achievements' },
         { href: '/gallery', label: 'Gallery' },
         { href: '/news', label: 'News' },
-        { href: '/careers', label: 'Careers' },
+        { href: '/recruitment', label: 'Recruitment' },
         { href: '/sponsors', label: 'Sponsors' },
         {
             href: '/contact',
