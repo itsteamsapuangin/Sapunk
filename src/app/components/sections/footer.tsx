@@ -84,7 +84,7 @@ export default function Footer() {
                                     </li>
                                     <li>
                                         <Link
-                                            href="/competition"
+                                            href="/404"
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Competition
@@ -93,7 +93,7 @@ export default function Footer() {
                                     </li>
                                     <li>
                                         <Link
-                                            href="/gallery"
+                                            href="/404"
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Gallery
@@ -108,7 +108,7 @@ export default function Footer() {
                                 <ul className="space-y-4">
                                     <li>
                                         <Link
-                                            href="/news"
+                                            href="/404"
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             News
@@ -133,7 +133,7 @@ export default function Footer() {
                                     </li>
                                     <li>
                                         <Link
-                                            href="/contact"
+                                            href="/404"
                                             className="text-base text-white hover:text-gray-300 transition-colors"
                                         >
                                             Contact Us
