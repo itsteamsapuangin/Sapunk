@@ -652,7 +652,7 @@ export default function HomePage() {
                                     integrate new technologies, and prepare for the future of
                                     sustainable mobility.
                                 </p>
-                                <OutlinedButton href="/career" variant="light">
+                                <OutlinedButton href="/recruitment" variant="light">
                                     JOIN US NOW
                                 </OutlinedButton>
                             </div>

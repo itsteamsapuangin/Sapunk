@@ -152,11 +152,7 @@ export default function CarsPage() {
             <section className="w-full py-10 md:py-14 lg:py-16">
                 <div className="container mx-auto px-6 md:px-12 lg:px-0 flex flex-col items-center gap-8 md:gap-10 lg:gap-12">
                     <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-2xl text-center tracking-tight leading-relaxed max-w-6xl">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat.
+                        ITS Team Sapuangin develops vehicles for international competitions across different categories. Each category has a distinct focus, requiring different approaches in design, engineering, and strategy. Through these challenges, the team strengthens its technical capability and adaptability in automotive development.
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
@@ -167,14 +163,12 @@ export default function CarsPage() {
                         >
                             <div className="flex items-center justify-between">
                                 <h3 className="font-extrabold text-xl md:text-2xl lg:text-[29px] text-black tracking-tight leading-tight">
-                                    Urban Class
+                                    Urban Car
                                 </h3>
                                 <div className="w-1.5 h-7 bg-[#e93838]" />
                             </div>
                             <p className="text-[#5d5d5d] text-sm md:text-md lg:text-xl tracking-tight leading-normal">
-                                In 2018, ITS Team Sapuangin made history as the first and only team
-                                from Indonesia to win the Drivers&apos; World Championship in
-                                London. This achievement marked a ...
+                                Urban Car focuses on energy efficiency in real world driving conditions. Vehicles are designed to minimize fuel consumption while maintaining practicality, safety, and reliability. The challenge lies in optimizing every component to achieve maximum efficiency without compromising functionality.
                             </p>
                         </a>
 
@@ -185,14 +179,12 @@ export default function CarsPage() {
                         >
                             <div className="flex items-center justify-between">
                                 <h3 className="font-extrabold text-xl md:text-2xl lg:text-[29px] text-black tracking-tight leading-tight">
-                                    Formula Class
+                                    Formula Car
                                 </h3>
                                 <div className="w-1.5 h-7 bg-[#2e5fbd]" />
                             </div>
                             <p className="text-[#5d5d5d] text-sm md:text-md lg:text-xl tracking-tight leading-normal">
-                                In 2018, ITS Team Sapuangin made history as the first and only team
-                                from Indonesia to win the Drivers&apos; World Championship in
-                                London. This achievement marked a ...
+                                Formula Car focuses on high performance racing. Vehicles are designed to deliver speed, acceleration, and precise handling on track. The category emphasizes engineering performance, technical design, and overall vehicle dynamics in a competitive motorsport environment.
                             </p>
                         </a>
                     </div>
@@ -242,10 +234,8 @@ export default function CarsPage() {
                                     About The Car
                                 </p>
                                 <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl tracking-tight leading-relaxed">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat.
+                                    Sapuangin XI EVO 5 is an energy efficient vehicle developed to compete in the Shell Eco marathon. The car focuses on minimizing fuel consumption through lightweight construction, aerodynamic design, and an optimized powertrain. Each component is engineered to reduce energy loss while maintaining reliability and control on track. This vehicle reflects the team’s commitment to sustainability, precision engineering, and continuous innovation in future mobility solutions.
+
                                 </p>
                             </div>
                         </div>
@@ -365,11 +355,8 @@ export default function CarsPage() {
                                 <p className="font-extrabold italic text-xl md:text-2xl lg:text-[32px] text-[#ccc] tracking-tight uppercase">
                                     About The Car
                                 </p>
-                                <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl tracking-tight leading-relaxed text-justify">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. Duis aute
+                                <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl tracking-tight leading-relaxed">
+                                    Sapuangin Speed VIII is a formula style race car built for the Formula Student Japan competition. The car is designed to deliver strong performance through a balance of speed, handling, and structural efficiency. It combines advanced design, precise manufacturing, and thorough testing to meet competition standards. This vehicle shows the team’s capability in motorsport engineering and its focus on competing at an international level.
                                 </p>
                             </div>
                         </div>
