@@ -24,6 +24,14 @@ function NotFound() {
                 className="h-80 w-auto object-contain transition-all duration-300"
                 priority
             />
+            <div className="text-center">
+                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-black tracking-tight mb-2">
+                    Oops Sorry..
+                </h1>
+                <p className="text-[#5d5d5d] text-lg md:text-xl leading-relaxed">
+                    We're still working on it
+                </p>
+            </div>
             <Link
                 href="/"
                 className="shrink-0 rounded-md border border-[#e50808] px-4 py-2 text-lg font-black tracking-tight text-[#e50808] transition-colors hover:bg-[#e50808] hover:text-white"

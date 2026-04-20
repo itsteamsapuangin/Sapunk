@@ -45,12 +45,12 @@ export default function Navbar() {
         { href: '/team', label: 'Team' },
         { href: '/cars', label: 'Cars' },
         { href: '/achievements', label: 'Achievements' },
-        { href: '/gallery', label: 'Gallery' },
-        { href: '/news', label: 'News' },
+        { href: '/404', label: 'Gallery' },
+        { href: '/404', label: 'News' },
         { href: '/recruitment', label: 'Recruitment' },
         { href: '/sponsors', label: 'Sponsors' },
         {
-            href: '/contact',
+            href: '/404',
             label: 'Contact Us',
         } /* TODO: SEO — /contact page does not exist yet. Create it or remove link to avoid 404 */,
     ];
@@ -88,7 +88,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-12">
                         {navLinks.map((link) => {
                             const isActive =
-                                pathname === link.href || pathname.startsWith(`${link.href}/`);
+                                link.href !== '/404' && (pathname === link.href || pathname.startsWith(`${link.href}/`));
                             return (
                                 <Link
                                     key={link.href}
@@ -201,7 +201,7 @@ export default function Navbar() {
                         <div className="flex flex-col gap-1">
                             {navLinks.map((link) => {
                                 const isActive =
-                                    pathname === link.href || pathname.startsWith(`${link.href}/`);
+                                    link.href !== '/404' && (pathname === link.href || pathname.startsWith(`${link.href}/`));
                                 return (
                                     <Link
                                         key={link.href}

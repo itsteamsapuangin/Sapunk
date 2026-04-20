@@ -25,7 +25,7 @@ export default function ShellFormulaBannerCarousel() {
             {
                 title: 'Formula Student Japan',
                 description:
-                    'Behind every victory stands a team of dedicated students from Institut Teknologi Sepuluh Nopember. We combine skills in engineering, design, and strategy to deliver world-class results.',
+                    'Formula Student Japan is an international student competition where teams design, build, and race formula-style cars. It evaluates performance, engineering design, cost, and business presentation.',
                 backgroundImage: '/page/home/formula-student-japan.png',
                 logos: [
                     {
@@ -47,7 +47,7 @@ export default function ShellFormulaBannerCarousel() {
             {
                 title: 'Shell Eco-marathon',
                 description:
-                    'ITS Team Sapuangin continues to push fuel-efficiency innovation in the Shell Eco-marathon arena, proving that student-led engineering from Indonesia can lead sustainable mobility on the global stage.',
+                    'Shell Eco-marathon is a global competition focused on energy-efficient vehicles. Teams design and build cars to achieve maximum efficiency while promoting innovation and sustainability.',
                 backgroundImage: '/page/home/shell-eco-marathon.png',
                 logos: [
                     {

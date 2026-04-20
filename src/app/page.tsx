@@ -98,30 +98,30 @@ const NEWS_ITEMS = [
 
 const TESTIMONIALS = [
     {
-        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        quote: 'I hope what the ITS Sapuangin Team is fighting for can provide the best results and can continue what has been achieved before, namely becoming the best energy efficient car research team in Asia.',
         name: 'Prof. Bambang Pramujati, S.T., M.Sc.Eng., Ph.D.',
-        role: 'Rektor Institut Teknologi Sepuluh Nopember',
+        role: 'Rector of Institut Teknologi Sepuluh Nopember',
         image: '/page/home/testimonial-rektor.png',
         hasQuote: true,
     },
     {
-        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        quote: 'In 2023 ITS Sapuangin Team could finish as the 3rd world champion with 50 percent fuel remaining. I hope ITS Sapuangin Team can always be the champion in the following years.',
         name: 'Dr. (H.C.) H. Erick Thohir, B.A., M.B.A.',
-        role: 'Menteri Pemuda dan Olahraga Republik Indonesia',
+        role: 'Minister of State Owned Enterprises of Indonesia',
         image: '/page/home/testimonial-erick-thohir.png',
         hasQuote: true,
     },
     {
-        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        quote: 'I am proud because this is truly done by ITS Surabaya students, truly their own creation, not handing it over to other people. I will startup to connect businessmen, higher education and government.',
         name: 'Dr. (H.C.) Ir. Hj. Tri Rismaharini, M.T.',
-        role: 'Menteri Sosial Republik Indonesia (2020 - 2024)',
+        role: 'Minister of Social Affairs of the Republic of Indonesia (2020 - 2024)',
         image: '/page/home/testimonial-risma.png',
         hasQuote: true,
     },
     {
-        quote: 'Semoga apa yang diperjuangkan ITS Team Sapuangin bisa memberikan hasil yang terbaik dan dapat melanjutkan apa yang telah dicapai sebelumnya, yaitu menjadi tim riset mobil hemat energi yang terbaik di Asia',
+        quote: 'Sapuangin team has often achieved proud achievements. Hopefully with high enthusiasm, the competition followed tomorrow brings satisfying results.',
         name: 'Dr. Eri Cahyadi, S.T., M.T.',
-        role: 'Walikota Surabaya',
+        role: 'Mayor of Surabaya',
         image: '/page/home/testimonial-governor.png',
         hasQuote: true,
     },
@@ -446,7 +446,7 @@ export default function HomePage() {
                             className="w-60 md:w-120 lg:w-235.25 h-auto object-contain mb-3 md:mb-5 lg:mb-8"
                         />
                         <OutlinedButton href="/achievements" variant="light">
-                            HALL OF CHAMPIONS
+                            HALL OF FAME
                         </OutlinedButton>
                     </div>
                 </div>
@@ -530,10 +530,10 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* ── News Section ─────────────────────────────────────────── */}
+            {/* ── News Section ───────────────────────────────────────────
             <section className="w-full bg-[#f5f5f5] py-10 md:py-14 lg:py-20">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                    {/* Section Header */}
+                    {/* Section Header *
                     <div className="mb-8 md:mb-10 lg:mb-14">
                         <p className="font-bold text-sm md:text-base text-black tracking-widest uppercase mb-1 md:mb-2">
                             Articles & News
@@ -543,14 +543,14 @@ export default function HomePage() {
                         </h2>
                     </div>
 
-                    {/* News Cards Grid */}
+                    {/* News Cards Grid *
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                         {NEWS_ITEMS.map((item, index) => (
                             <NewsCard key={index} {...item} />
                         ))}
                     </div>
                 </div>
-            </section>
+            </section>*/}
 
             {/* ── Competition Banner Carousel ─────────────────────────── */}
             <ShellFormulaBannerCarousel />

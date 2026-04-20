@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { JsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-    title: 'Cars — Urban Concept & Formula Student Vehicles',
+    title: 'Cars | ITS Team Sapuangin',
     description:
         "Discover ITS Team Sapuangin's engineering vehicles: Sapuangin XI Evo 5 Urban Concept (513 km/l efficiency) and Sapuangin Speed 8 Formula Student race car. Full technical specifications and achievements.",
     openGraph: {
-        title: 'Our Cars | ITS Team Sapuangin',
+        title: 'Cars | ITS Team Sapuangin',
         description:
             'Sapuangin XI Evo 5 Urban Concept and Sapuangin Speed 8 Formula Student vehicles. Technical specs and achievements.',
         url: '/cars',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Our Cars | ITS Team Sapuangin',
+        title: 'Cars | ITS Team Sapuangin',
         description:
             'Sapuangin XI Evo 5 Urban Concept and Sapuangin Speed 8 Formula Student vehicles.',
         images: ['/page/cars/urban-car-hero.png'],
@@ -344,7 +344,7 @@ export default function CarsPage() {
                 {/* Title Badge */}
                 <div className="bg-[#2e5fbd] px-4 md:px-8 lg:px-10 md:py-3 py-1">
                     <h2 className="font-bold text-2xl md:text-3xl lg:text-5xl text-white tracking-[-1.44px] text-center">
-                        SAPUANGIN SPEED 8
+                        SAPUANGIN SPEED VIII
                     </h2>
                 </div>
 
@@ -393,14 +393,14 @@ export default function CarsPage() {
                     <div className="flex flex-col md:flex-row items-center justify-between">
                         <p className="text-black text-center md:text-left">
                             <span className="font-extrabold text-6xl md:text-7xl lg:text-[96px] tracking-[-4.32px]">
-                                513{' '}
+                                120{' '}
                             </span>
                             <span className="font-normal text-4xl md:text-5xl lg:text-[64px]">
-                                km/l
+                                km/h
                             </span>
                         </p>
                         <p className="text-black text-base md:text-lg lg:text-2xl tracking-tight text-center md:text-right">
-                            Fuel Efficiency Record
+                            Top Speed
                         </p>
                     </div>
 
