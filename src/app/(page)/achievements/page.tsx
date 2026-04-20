@@ -363,16 +363,18 @@ const AchievementBadge = ({
                 className="object-contain w-full h-auto transition-all duration-300 max-lg:peer-checked:brightness-75 lg:group-hover:brightness-75"
             />
             {/* Hover Tooltip */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 max-lg:peer-checked:opacity-100 lg:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="bg-black/90 backdrop-blur-sm text-white rounded-lg px-2.5 py-2 md:px-4 md:py-3 shadow-xl border border-white/10 max-w-[92%] md:max-w-none">
-                    <p className="text-xs md:text-sm lg:text-md font-semibold text-center whitespace-nowrap">
-                        {date}
-                    </p>
-                    <p className="text-[10px] md:text-xs lg:text-sm text-gray-300 text-center mt-1 leading-tight break-words whitespace-normal md:whitespace-nowrap">
-                        {location}
-                    </p>
+            {false && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center opacity-0 max-lg:peer-checked:opacity-100 lg:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-black/90 backdrop-blur-sm text-white rounded-lg px-2.5 py-2 md:px-4 md:py-3 shadow-xl border border-white/10 max-w-[92%] md:max-w-none">
+                        <p className="text-xs md:text-sm lg:text-md font-semibold text-center whitespace-nowrap">
+                            {date}
+                        </p>
+                        <p className="text-[10px] md:text-xs lg:text-sm text-gray-300 text-center mt-1 leading-tight break-words whitespace-normal md:whitespace-nowrap">
+                            {location}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
