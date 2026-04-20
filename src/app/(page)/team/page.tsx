@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: '/team',
         images: [
             {
-                url: '/page/team/hero-team.jpg',
+                url: '/page/team/banner-team.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'ITS Team Sapuangin Team Page',
@@ -42,9 +42,18 @@ type Member = {
 };
 
 const HISTORY_PARAGRAPHS = [
-    'ITS Team Sapuangin is a student vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. The team was established in 2009 by a group of students from LBMM (Lembaga Bengkel Mahasiswa Mesin) under the Department of Mechanical Engineering, ITS. The team was formed to develop student capabilities in vehicle design and engineering through hands-on projects.',
-    'In 2010, ITS Team Sapuangin participated for the first time in the Shell Eco-marathon, an international competition focused on energy-efficient vehicles. Since then, Shell Eco-marathon has remained the main competition and is still actively followed by the team today. In addition to Shell Eco-marathon, the team also participated in the Formula SAE (FSAE) competition in Japan, first in 2013 and last in 2019.',
-    'Over time, ITS Team Sapuangin has grown into a multidisciplinary team. Membership is no longer limited to students from the Department of Mechanical Engineering but is open to students from various departments and faculties at ITS. Today, the team continues to focus on vehicle development and international competitions as part of student learning and research activities at ITS.',
+    {
+        heading: 'Our Foundation',
+        text: 'ITS Team Sapuangin is a student vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. The team was established in 2009 by a group of students from LBMM (Lembaga Bengkel Mahasiswa Mesin) under the Department of Mechanical Engineering, ITS. The team was formed to develop student capabilities in vehicle design and engineering through hands-on projects.',
+    },
+    {
+        heading: 'International Competition',
+        text: 'In 2010, ITS Team Sapuangin participated for the first time in the Shell Eco-marathon, an international competition focused on energy-efficient vehicles. Since then, Shell Eco-marathon has remained the main competition and is still actively followed by the team today. In addition to Shell Eco-marathon, the team also participated in the Formula SAE (FSAE) competition in Japan, first in 2013 and last in 2019.',
+    },
+    {
+        heading: 'Team Development',
+        text: 'Over time, ITS Team Sapuangin has grown into a multidisciplinary team. Membership is no longer limited to students from the Department of Mechanical Engineering but is open to students from various departments and faculties at ITS. Today, the team continues to focus on vehicle development and international competitions as part of student learning and research activities at ITS.',
+    },
 ];
 
 const DIVISIONS = [
@@ -67,7 +76,7 @@ const DIVISIONS = [
             'Handles electrical architecture and software, including circuit and PCB design, wiring, telemetry, and data acquisition.',
     },
     {
-        title: 'Body and\nFrame',
+        title: 'Chassis and\nAerodynamics',
         icons: '/page/careers/division-icon-body-frame.png',
         description:
             'Designs, simulates, and manufactures the body and frame with strong focus on aerodynamics and structural performance.',
@@ -91,21 +100,7 @@ const DIVISIONS = [
         description:
             'Coordinates logistics, budgeting, documentation, and operational administration to keep activities efficient and sustainable.',
         smallTitle: true,
-    },
-    {
-        title: 'Technical Drawing\nand Cost Report',
-        icons: '/page/careers/division-icon-tech-draw-cost-report.png',
-        description:
-            'Prepares detailed technical drawings and comprehensive cost reports to support design decisions, manufacturability, and competition documentation.',
-        smallTitle: true,
-    },
-    {
-        title: 'Business Plan and\nResearch Division',
-        icons: '/page/careers/division-icon-business-plan-and-research.png',
-        description:
-            'Develops business strategy and research insights, including market analysis, proposal preparation, and innovation planning.',
-        smallTitle: true,
-    },
+    }
 ];
 
 const FACULTY_ADVISORS: Member[] = [
@@ -444,7 +439,7 @@ export default function TeamPage() {
             <section className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div
                     className="relative w-full h-full bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/page/team/hero-team.jpg')" }}
+                    style={{ backgroundImage: "url('/page/team/banner-team.png')" }}
                 >
                     <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/30 to-black/85" />
                     <div className="container mx-auto px-4 md:px-6 lg:px-0">
@@ -464,17 +459,17 @@ export default function TeamPage() {
                         History
                     </h2>
                     <div className="w-full flex flex-col gap-8 md:gap-32">
-                        {HISTORY_PARAGRAPHS.map((text, index) => (
+                        {HISTORY_PARAGRAPHS.map((item, index) => (
                             <div
                                 key={index}
                                 className={`flex flex-col gap-6 lg:gap-32 items-center justify-between ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
                             >
                                 <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 max-w-lg">
                                     <h3 className="font-bold line-clamp-2 text-2xl md:text-3xl lg:text-4xl text-black tracking-[-1px] leading-tight whitespace-pre-line">
-                                        Lorem Ipsum
+                                        {item.heading}
                                     </h3>
                                     <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-xl max-w-xl leading-relaxed tracking-tight flex-1">
-                                        {text}
+                                        {item.text}
                                     </p>
                                 </div>
                                 <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-auto flex-1 rounded-xl overflow-hidden aspect-[16/10] md:aspect-[460/300] max-w-full lg:max-w-1/2">
@@ -518,11 +513,7 @@ export default function TeamPage() {
             <section className="w-full py-14 md:py-18 lg:py-20">
                 <div className="container mx-auto px-6 md:px-10 lg:px-0 flex flex-col items-center gap-8 md:gap-10">
                     <p className="text-[#5d5d5d] text-sm md:text-lg lg:text-2xl text-center leading-relaxed tracking-tight max-w-6xl mb-12">
-                        In 2018, ITS Team Sapuangin made history as the first and only team from
-                        Indonesia to win the Drivers&apos; World Championship in London. This
-                        achievement marked a milestone not only for our university but also for the
-                        nation, proving that Indonesian innovation can compete and triumph on the
-                        global stage.
+                        Behind every step of ITS Team Sapuangin, there is a mother’s prayer. “Doa ibu” reflects sincere support, hope, and strength from our mother, becoming a source of resilience in facing challenges and uncertainty, and helping the team move forward with purpose.
                     </p>
                     <SectionBadge text="DIVISIONS" />
 
@@ -562,7 +553,7 @@ export default function TeamPage() {
                     <h2 className="font-extrabold text-3xl md:text-4xl lg:text-[36px] text-black tracking-tight text-center">
                         Managers
                     </h2>
-                    <div className="w-full flex flex-wrap justify-center gap-5 md:gap-16 md:max-w-2/3">
+                    <div className="w-full flex flex-wrap justify-center gap-5 md:gap-16">
                         {BOARD_OF_MANAGERS.map((person) => (
                             <PersonCard key={person.name} person={person} />
                         ))}

@@ -252,7 +252,7 @@ export default function SponsorshipPage() {
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div
                     className="relative w-full h-full bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/page/gallery/hero-gallery.png')" }}
+                    style={{ backgroundImage: "url('/page/gallery/sponsorship-page.png')" }}
                 >
                     <div className="container mx-auto px-4 md:px-6 lg:px-0">
                         <div className="absolute bottom-0 flex bg-[#e50808] w-fit h-fit px-3 py-1 md:px-4.5 md:py-1.5">
@@ -272,10 +272,7 @@ export default function SponsorshipPage() {
                         Thank You for Supporting Us
                     </h2>
                     <p className="font-normal text-[#5d5d5d] text-sm md:text-base leading-normal text-center max-w-4xl">
-                        All photos displayed in this gallery are the official property of ITS Team
-                        Sapuangin and are part of its official documentation during competitions.
-                        Any use, reproduction, or distribution of these images without prior written
-                        permission from ITS Team Sapuangin is not permitted.
+                        We appreciate their support in enabling ITS Team Sapuangin to grow and compete. Their contribution enables ideas to grow, collaborations to happen, and meaningful impact to be created. Their trust and commitment play an important role in every step of this journey.
                     </p>
                 </div>
 
