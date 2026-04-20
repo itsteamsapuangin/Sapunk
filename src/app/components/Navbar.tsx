@@ -45,14 +45,14 @@ export default function Navbar() {
         { href: '/team', label: 'Team' },
         { href: '/cars', label: 'Cars' },
         { href: '/achievements', label: 'Achievements' },
-        { href: '/404', label: 'Gallery' },
-        { href: '/404', label: 'News' },
+        /*{ href: '/404', label: 'Gallery' },*/
+        /*{ href: '/404', label: 'News' },*/
         { href: '/recruitment', label: 'Recruitment' },
         { href: '/sponsors', label: 'Sponsors' },
-        {
+        /*{
             href: '/404',
             label: 'Contact Us',
-        } /* TODO: SEO — /contact page does not exist yet. Create it or remove link to avoid 404 */,
+        }/* TODO: SEO — /contact page does not exist yet. Create it or remove link to avoid 404 */
     ];
 
     return (

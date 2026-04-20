@@ -45,14 +45,17 @@ const HISTORY_PARAGRAPHS = [
     {
         heading: 'Our Foundation',
         text: 'ITS Team Sapuangin is a student vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. The team was established in 2009 by a group of students from LBMM (Lembaga Bengkel Mahasiswa Mesin) under the Department of Mechanical Engineering, ITS. The team was formed to develop student capabilities in vehicle design and engineering through hands-on projects.',
+        image: '/page/team/history-team-3.jpg',
     },
     {
         heading: 'International Competition',
         text: 'In 2010, ITS Team Sapuangin participated for the first time in the Shell Eco-marathon, an international competition focused on energy-efficient vehicles. Since then, Shell Eco-marathon has remained the main competition and is still actively followed by the team today. In addition to Shell Eco-marathon, the team also participated in the Formula SAE (FSAE) competition in Japan, first in 2013 and last in 2019.',
+        image: '/page/team/history-team-2.jpg',
     },
     {
         heading: 'Team Development',
         text: 'Over time, ITS Team Sapuangin has grown into a multidisciplinary team. Membership is no longer limited to students from the Department of Mechanical Engineering but is open to students from various departments and faculties at ITS. Today, the team continues to focus on vehicle development and international competitions as part of student learning and research activities at ITS.',
+        image: '/page/team/history-team.jpg',
     },
 ];
 
@@ -474,7 +477,7 @@ export default function TeamPage() {
                                 </div>
                                 <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-auto flex-1 rounded-xl overflow-hidden aspect-[16/10] md:aspect-[460/300] max-w-full lg:max-w-1/2">
                                     <Image
-                                        src="/page/team/history-team.jpg"
+                                        src={item.image}
                                         alt="ITS Team Sapuangin history"
                                         fill
                                         className="object-cover"

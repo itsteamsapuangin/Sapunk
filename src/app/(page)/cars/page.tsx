@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         url: '/cars',
         images: [
             {
-                url: '/page/cars/urban-car-hero.png',
+                url: '/page/gallery/hero-gallery.png',
                 width: 1200,
                 height: 630,
                 alt: 'ITS Team Sapuangin Vehicles',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         title: 'Cars | ITS Team Sapuangin',
         description:
             'Sapuangin XI Evo 5 Urban Concept and Sapuangin Speed 8 Formula Student vehicles.',
-        images: ['/page/cars/urban-car-hero.png'],
+        images: ['/page/gallery/hero-gallery.png'],
     },
     alternates: {
         canonical: '/cars',
@@ -135,7 +135,7 @@ export default function CarsPage() {
             <div className="h-48 md:h-96 lg:h-137.5 overflow-hidden relative w-full">
                 <div
                     className="relative w-full h-full bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/page/cars/hero-cars.png')" }}
+                    style={{ backgroundImage: "url('/page/gallery/hero-gallery.png')" }}
                 >
                     <div className="absolute inset-0 bg-linear-to-r from-black/80 to-transparent" />
                     <div className="container mx-auto px-4 md:px-6 lg:px-0">
