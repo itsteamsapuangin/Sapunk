@@ -301,7 +301,7 @@ export default function CareersPage() {
                     <div className="space-y-4 md:space-y-6 text-[#5d5d5d] text-sm md:text-lg lg:text-2xl tracking-tight leading-relaxed max-w-6xl mx-auto">
                         <p>
                             Join ITS Team Sapuangin and become part of a multidisciplinary team that
-                            builds world-class energy-efficient race vehicles through innovation,
+                            builds world class energy-efficient vehicles through innovation,
                             collaboration, and strong engineering culture.
                         </p>
                         <p>
@@ -313,38 +313,37 @@ export default function CareersPage() {
                     <nav className="mx-auto w-fit flex flex-wrap items-center justify-center gap-x-4 md:gap-x-6 gap-y-2 text-[11px] md:text-xs uppercase tracking-[0.12em]">
                         <a
                             href="#general-requirements"
-                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                            className="pb-1 text-[#6f6f6f] border-b-2 border-transparent transition-colors hover:text-[#e50808] hover:border-[#e50808]"
                         >
                             General Requirements
                         </a>
                         <a
                             href="#timeline"
-                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                            className="pb-1 text-[#6f6f6f] border-b-2 border-transparent transition-colors hover:text-[#e50808] hover:border-[#e50808]"
                         >
                             Timeline
                         </a>
                         <a
                             href="#divisions"
-                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                            className="pb-1 text-[#6f6f6f] border-b-2 border-transparent transition-colors hover:text-[#e50808] hover:border-[#e50808]"
                         >
                             Divisions
                         </a>
                         <a
                             href="#required-documents"
-                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                            className="pb-1 text-[#6f6f6f] border-b-2 border-transparent transition-colors hover:text-[#e50808] hover:border-[#e50808]"
                         >
                             Required Documents
                         </a>
                         <a
                             href="#apply-now"
-                            
-                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                            className="pb-1 text-[#6f6f6f] border-b-2 border-transparent transition-colors hover:text-[#e50808] hover:border-[#e50808]"
                         >
                             Apply Now
                         </a>
                         <a
                             href="#faq"
-                            className="pb-1 text-[#6f6f6f] transition-colors hover:text-[#e50808]"
+                            className="pb-1 text-[#6f6f6f] border-b-2 border-transparent transition-colors hover:text-[#e50808] hover:border-[#e50808]"
                         >
                             FAQ
                         </a>
@@ -639,16 +638,13 @@ export default function CareersPage() {
                             For more information please contact us through:
                         </p>
                         <Link
-                            href={`https://wa.me/6289633433256`}
+                            href={`https://wa.me/6282132445002`}
                             target="_blank"
                             className="flex flex-col gap-1 items-center md:items-start group/contact"
                         >
                             <div className="flex flex-col items-center md:items-start">
                                 <p className="font-bold text-base md:text-lg lg:text-xl text-black transition-colors duration-300 group-hover/contact:text-[#e51717]">
-                                    Farid Mubarok
-                                </p>
-                                <p className="font-bold text-base md:text-lg lg:text-xl text-[#e51717]">
-                                    Non-technical Manager
+                                    Kevin Octaviano
                                 </p>
                             </div>
                             <div className="flex items-center gap-2 md:gap-3 mt-1">
@@ -661,7 +657,32 @@ export default function CareersPage() {
                                     />
                                 </div>
                                 <p className="relative font-normal text-sm md:text-base lg:text-lg text-[#e51717] pb-0.5">
-                                    +62 896-3343-3256
+                                    +62 821-3244-5002
+                                    <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#e51717]/40 transition-all duration-300 ease-out group-hover/contact:w-full"></span>
+                                </p>
+                            </div>
+                        </Link>
+                        <Link
+                            href={`https://wa.me/6281230106763`}
+                            target="_blank"
+                            className="flex flex-col gap-1 items-center md:items-start group/contact"
+                        >
+                            <div className="flex flex-col items-center md:items-start">
+                                <p className="font-bold text-base md:text-lg lg:text-xl text-black transition-colors duration-300 group-hover/contact:text-[#e51717]">
+                                    Hanum Nur
+                                </p>
+                            </div>
+                            <div className="flex items-center gap-2 md:gap-3 mt-1">
+                                <div className="w-4 h-4 md:w-5 md:h-5 relative transition-transform duration-300 ease-out group-hover/contact:translate-x-0.5">
+                                    <Image
+                                        src="/icons/call.svg"
+                                        alt="Call"
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                                <p className="relative font-normal text-sm md:text-base lg:text-lg text-[#e51717] pb-0.5">
+                                    +62 812-3010-6763
                                     <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#e51717]/40 transition-all duration-300 ease-out group-hover/contact:w-full"></span>
                                 </p>
                             </div>
