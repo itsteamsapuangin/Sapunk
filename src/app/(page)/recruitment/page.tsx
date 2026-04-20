@@ -20,7 +20,7 @@ const GENERAL_REQUIREMENTS = [
 ];
 
 const TIMELINE = [
-    { title: 'Document\nSubmission', subtitle: '25 April 2026' },
+    { title: 'Document\nSubmission', subtitle: '22 April 2026' },
     { title: 'Close\nRegistration', subtitle: '1 May 2026' },
     { title: 'Administration\nAnnouncement', subtitle: '4 May 2026' },
     { title: 'Initial\nInterview', subtitle: '5 May 2026' },
