@@ -45,7 +45,7 @@ const HISTORY_PARAGRAPHS = [
     {
         heading: 'Our Foundation',
         text: 'ITS Team Sapuangin is a student vehicle team from Institut Teknologi Sepuluh Nopember (ITS), Surabaya. The team was established in 2009 by a group of students from LBMM (Lembaga Bengkel Mahasiswa Mesin) under the Department of Mechanical Engineering, ITS. The team was formed to develop student capabilities in vehicle design and engineering through hands-on projects.',
-        image: '/page/team/history-team-3.jpg',
+        image: '/page/team/history-team-6.jpg',
     },
     {
         heading: 'International Competition',
