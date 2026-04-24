@@ -49,7 +49,7 @@ const TECHNICAL_DIVISIONS: Division[] = [
             'Analyze vehicle behavior during acceleration, cornering, and braking using simulation tools and real testing sessions.',
             'Tune and optimize vehicle setup to achieve the best balance of performance, control, and reliability.',
         ],
-        skills: ['MATLAB', 'Simulation', 'Suspension', 'Steering'],
+        skills: ['MATLAB', 'SolidWorks', 'Ansys', 'Suspension', 'Steering'],
     },
     {
         icon: '/page/careers/division-icon-electrical-programming.png',
@@ -114,11 +114,10 @@ const NON_TECHNICAL_DIVISIONS: Division[] = [
             'Able to present technical drawings and cost data clearly and confidently.',
         ],
         skills: [
-            'Solidworks',
-            'Ansys',
-            'Material Analysis',
-            'Engineering Design',
-            'Cost Estimation',
+            'CAD Drawing',
+            'Microsoft Excel',
+            'Material & Component Analysis',
+            'Presentation Skills'
         ],
     },
     {
